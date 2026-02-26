@@ -72,7 +72,7 @@ const StatsSection = () => (
             transition={{ delay: i * 0.1 }}
             className="group rounded-2xl border border-border bg-card p-8 text-center transition-all duration-500 hover:border-secondary/30 card-hover"
           >
-            <p className="mb-3 font-heading text-4xl font-extrabold gradient-text md:text-5xl leading-tight pb-1">
+            <p className="mb-3 font-heading text-4xl font-extrabold gradient-text md:text-5xl leading-normal">
               <AnimatedCounter end={stat.value} suffix={stat.suffix} />
             </p>
             <p className="font-body text-sm text-muted-foreground">{stat.label}</p>
