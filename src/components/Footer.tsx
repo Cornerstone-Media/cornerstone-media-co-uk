@@ -31,8 +31,8 @@ const Footer = () => (
         <div className="lg:col-span-2">
           <img
             src={logo}
-            alt="Cornerstone Media – Creating Concepts"
-            className="mb-6 h-16 w-auto"
+            alt="Cornerstone Media"
+            className="mb-6 h-20 w-auto brightness-0 invert"
           />
           <p className="max-w-sm font-body text-sm leading-relaxed text-muted-foreground">
             Turning digital strategy into measurable growth. We help businesses

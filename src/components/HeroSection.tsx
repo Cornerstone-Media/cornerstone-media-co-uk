@@ -22,16 +22,6 @@ const HeroSection = () => {
 
       <div className="relative mx-auto max-w-7xl px-6 py-32 lg:px-8">
         <div className="max-w-4xl">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-muted/50 px-5 py-2 font-body text-sm font-medium text-secondary"
-          >
-            <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
-            Creating Concepts
-          </motion.p>
-
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
