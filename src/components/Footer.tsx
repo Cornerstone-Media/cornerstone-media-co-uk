@@ -1,0 +1,89 @@
+import { Link } from "react-router-dom";
+
+const footerLinks = [
+  {
+    title: "Services",
+    links: [
+      { label: "PPC Advertising", path: "/ppc" },
+      { label: "SEO", path: "/seo" },
+      { label: "Social Media", path: "/social-media" },
+      { label: "Website Design", path: "/website-design" },
+      { label: "Website Maintenance", path: "/website-maintenance" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { label: "About Us", path: "/" },
+      { label: "Case Studies", path: "/" },
+      { label: "Blog", path: "/" },
+      { label: "Careers", path: "/" },
+    ],
+  },
+];
+
+const Footer = () => {
+  return (
+    <footer className="border-t border-border bg-card">
+      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+          {/* Brand */}
+          <div className="lg:col-span-2">
+            <div className="flex items-center gap-1 mb-4">
+              <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-primary via-secondary to-accent" />
+              <span className="font-heading text-xl font-bold tracking-tight text-foreground">
+                Cornerstone<span className="gradient-text"> Media</span>
+              </span>
+            </div>
+            <p className="max-w-sm font-body text-sm leading-relaxed text-muted-foreground">
+              Turning digital strategy into measurable growth. We help businesses scale through data-driven marketing, high-converting websites, and strategic digital campaigns.
+            </p>
+            <div className="mt-6 flex gap-4">
+              {["LinkedIn", "Twitter", "Instagram", "Facebook"].map((name) => (
+                <a
+                  key={name}
+                  href="#"
+                  className="flex h-10 w-10 items-center justify-center rounded-lg border border-border text-xs font-heading font-medium text-muted-foreground transition-all duration-200 hover:border-secondary hover:text-secondary"
+                >
+                  {name[0]}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Links */}
+          {footerLinks.map((col) => (
+            <div key={col.title}>
+              <h4 className="mb-4 font-heading text-sm font-semibold text-foreground">
+                {col.title}
+              </h4>
+              <ul className="space-y-3">
+                {col.links.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      to={link.path}
+                      className="font-body text-sm text-muted-foreground transition-colors hover:text-accent"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 md:flex-row">
+          <p className="font-body text-xs text-muted-foreground">
+            © {new Date().getFullYear()} Cornerstone Media. All rights reserved.
+          </p>
+          <p className="font-body text-xs text-muted-foreground">
+            info@cornerstonemedia.co.uk
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
