@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Search, MousePointerClick, Share2, Palette, Wrench, ArrowUpRight } from "lucide-react";
+import { Search, MousePointerClick, Share2, PenLine, Palette, Wrench, ArrowUpRight } from "lucide-react";
 
 const services = [
   {
