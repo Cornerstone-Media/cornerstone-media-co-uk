@@ -32,7 +32,8 @@ const Footer = () => (
           <img
             src={logo}
             alt="Cornerstone Media – Creating Concepts"
-            className="mb-6 h-20 w-auto"
+            className="mb-6 h-16 w-auto rounded-lg brightness-95 contrast-105"
+            style={{ mixBlendMode: "lighten" }}
           />
           <p className="max-w-sm font-body text-sm leading-relaxed text-muted-foreground">
             Turning digital strategy into measurable growth. We help businesses
