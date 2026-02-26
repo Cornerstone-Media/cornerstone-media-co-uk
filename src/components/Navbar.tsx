@@ -43,7 +43,8 @@ const Navbar = () => {
             <img
               src={logo}
               alt="Cornerstone Media – Creating Concepts"
-              className="h-20 w-auto"
+              className="h-16 w-auto rounded-lg brightness-95 contrast-105"
+              style={{ mixBlendMode: "lighten" }}
             />
           </Link>
 
