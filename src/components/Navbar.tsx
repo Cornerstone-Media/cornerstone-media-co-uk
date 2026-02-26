@@ -6,12 +6,12 @@ import logo from "@/assets/logo.png";
 
 const navLinks = [
   { label: "Home", path: "/" },
-  { label: "PPC", path: "/ppc" },
+  { label: "Pay Per Click", path: "/ppc" },
   { label: "SEO", path: "/seo" },
   { label: "Social Media", path: "/social-media" },
-  { label: "Content Writing", path: "/content-writing" },
-  { label: "Website Design", path: "/website-design" },
-  { label: "Website Maintenance", path: "/website-maintenance" },
+  { label: "Content", path: "/content-writing" },
+  { label: "Web Design", path: "/website-design" },
+  { label: "Maintenance", path: "/website-maintenance" },
 ];
 
 const Navbar = () => {
