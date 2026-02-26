@@ -1,52 +1,40 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Quote } from "lucide-react";
 
 const testimonials = [
-  {
-    quote: "Cornerstone Media transformed our digital presence entirely. Our leads increased by 320% in just six months, and their team was phenomenal to work with.",
-    name: "Sarah Mitchell",
-    role: "Marketing Director, TechFlow",
-  },
-  {
-    quote: "The ROI we've seen from their PPC management has been extraordinary. They truly understand data-driven marketing and deliver results consistently.",
-    name: "James Worthington",
-    role: "CEO, Brighton Retail Group",
-  },
-  {
-    quote: "Their website redesign increased our conversion rate by 180%. The team at Cornerstone Media are strategic, creative, and deeply committed to our success.",
-    name: "Emma Clarke",
-    role: "Founder, Horizon Health",
-  },
+  { quote: "Cornerstone Media transformed our online presence. We saw a 300% increase in qualified leads within six months.", name: "Sarah Mitchell", role: "Managing Director, TechFlow UK" },
+  { quote: "Their data-driven approach to PPC and SEO delivered results we didn't think were possible. Outstanding team.", name: "James Carter", role: "CEO, Elevate Property Group" },
+  { quote: "Professional, creative, and results-focused. They truly understand digital marketing at every level.", name: "Emma Richardson", role: "Marketing Manager, BrightPath Solutions" },
 ];
 
 const TestimonialsSection = () => {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
+    const timer = setInterval(() => setCurrent((p) => (p + 1) % testimonials.length), 6000);
     return () => clearInterval(timer);
   }, []);
 
   return (
-    <section className="section-padding bg-background relative overflow-hidden">
+    <section className="section-padding relative overflow-hidden">
       <div className="absolute inset-0" style={{ background: "var(--gradient-glow)" }} />
       <div className="relative mx-auto max-w-4xl text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          className="mb-16"
         >
-          <p className="mb-2 font-heading text-sm font-semibold uppercase tracking-wider text-secondary">
+          <p className="mb-3 font-heading text-sm font-semibold uppercase tracking-[0.2em] text-secondary">
             Testimonials
           </p>
-          <h2 className="mb-12 font-heading text-3xl font-bold text-foreground md:text-4xl">
+          <h2 className="font-heading text-4xl font-bold text-foreground md:text-5xl">
             What Our <span className="gradient-text">Clients Say</span>
           </h2>
         </motion.div>
 
-        <div className="relative min-h-[200px]">
+        <div className="relative min-h-[220px]">
           <AnimatePresence mode="wait">
             <motion.div
               key={current}
@@ -54,15 +42,16 @@ const TestimonialsSection = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
-              className="glass-card p-10"
+              className="rounded-2xl border border-border bg-card p-10 md:p-14"
             >
-              <p className="mb-6 font-body text-lg italic leading-relaxed text-foreground/90">
+              <Quote className="mx-auto mb-6 h-8 w-8 text-secondary/40" />
+              <p className="mb-8 font-body text-lg leading-relaxed text-foreground/90 md:text-xl">
                 "{testimonials[current].quote}"
               </p>
-              <p className="font-heading text-sm font-semibold text-accent">
+              <p className="font-heading text-base font-bold text-foreground">
                 {testimonials[current].name}
               </p>
-              <p className="font-body text-xs text-muted-foreground">
+              <p className="font-body text-sm text-muted-foreground">
                 {testimonials[current].role}
               </p>
             </motion.div>
@@ -75,8 +64,9 @@ const TestimonialsSection = () => {
               key={i}
               onClick={() => setCurrent(i)}
               className={`h-2 rounded-full transition-all duration-300 ${
-                i === current ? "w-8 bg-accent" : "w-2 bg-muted-foreground/30"
+                i === current ? "w-8 bg-secondary" : "w-2 bg-border hover:bg-muted-foreground"
               }`}
+              aria-label={`View testimonial ${i + 1}`}
             />
           ))}
         </div>

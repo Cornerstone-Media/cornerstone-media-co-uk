@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Search, MousePointerClick, Share2, Palette, Wrench } from "lucide-react";
+import { Search, MousePointerClick, Share2, Palette, Wrench, ArrowUpRight } from "lucide-react";
 
 const services = [
   {
@@ -37,50 +37,49 @@ const services = [
 
 const ServicesOverview = () => {
   return (
-    <section className="section-padding bg-card">
+    <section className="section-padding bg-card/50">
       <div className="mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-16 text-center"
+          className="mb-20"
         >
-          <p className="mb-2 font-heading text-sm font-semibold uppercase tracking-wider text-secondary">
+          <p className="mb-3 font-heading text-sm font-semibold uppercase tracking-[0.2em] text-secondary">
             What We Do
           </p>
-          <h2 className="mb-4 font-heading text-3xl font-bold text-foreground md:text-4xl">
-            Full-Spectrum <span className="gradient-text">Digital Services</span>
+          <h2 className="max-w-lg font-heading text-4xl font-bold leading-tight text-foreground md:text-5xl">
+            Full-Spectrum{" "}
+            <span className="gradient-text">Digital Services</span>
           </h2>
-          <p className="mx-auto max-w-2xl font-body text-muted-foreground">
-            From strategy to execution, we provide everything your business needs to dominate the digital landscape.
-          </p>
         </motion.div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, i) => (
             <motion.div
               key={service.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
+              transition={{ delay: i * 0.08 }}
             >
               <Link
                 to={service.path}
-                className="gradient-border group flex h-full flex-col p-8 transition-all duration-300 hover:glow-effect"
+                className="group relative flex h-full flex-col rounded-2xl border border-border bg-card p-8 transition-all duration-500 hover:border-secondary/30 hover:bg-muted/30 card-hover"
               >
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-muted transition-colors group-hover:bg-secondary/20">
-                  <service.icon className="h-6 w-6 text-secondary transition-colors group-hover:text-accent" />
+                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl border border-border bg-muted/50 transition-all duration-500 group-hover:border-secondary/30 group-hover:bg-secondary/10">
+                  <service.icon className="h-6 w-6 text-muted-foreground transition-colors duration-500 group-hover:text-secondary" />
                 </div>
-                <h3 className="mb-2 font-heading text-lg font-semibold text-foreground">
+                <h3 className="mb-3 font-heading text-xl font-bold text-foreground">
                   {service.title}
                 </h3>
-                <p className="mb-4 flex-1 font-body text-sm leading-relaxed text-muted-foreground">
+                <p className="mb-6 flex-1 font-body text-sm leading-relaxed text-muted-foreground">
                   {service.description}
                 </p>
-                <span className="font-heading text-sm font-medium text-secondary transition-colors group-hover:text-accent">
-                  Learn More →
-                </span>
+                <div className="flex items-center gap-2 font-heading text-sm font-semibold text-secondary transition-all duration-300 group-hover:text-accent group-hover:gap-3">
+                  Learn More
+                  <ArrowUpRight className="h-4 w-4" />
+                </div>
               </Link>
             </motion.div>
           ))}
