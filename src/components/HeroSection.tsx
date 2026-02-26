@@ -3,53 +3,75 @@ import heroBg from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden">
+    <section className="relative flex min-h-[100vh] items-center overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0">
         <img
           src={heroBg}
-          alt="Digital marketing analytics dashboard"
-          className="h-full w-full object-cover opacity-30"
+          alt="Digital marketing analytics"
+          className="h-full w-full object-cover opacity-25"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/50 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background/80" />
       </div>
 
-      {/* Animated gradient orbs */}
-      <div className="absolute -top-40 -left-40 h-96 w-96 rounded-full bg-primary/20 blur-3xl animate-float" />
-      <div className="absolute -bottom-40 -right-40 h-96 w-96 rounded-full bg-accent/15 blur-3xl animate-float" style={{ animationDelay: "1.5s" }} />
+      {/* Gradient orbs */}
+      <div className="absolute top-1/4 -left-32 h-[500px] w-[500px] rounded-full bg-primary/15 blur-[120px] animate-float" />
+      <div className="absolute bottom-1/4 -right-32 h-[400px] w-[400px] rounded-full bg-accent/10 blur-[100px] animate-float" style={{ animationDelay: "2s" }} />
+      <div className="absolute top-1/2 left-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-secondary/8 blur-[80px]" />
 
       <div className="relative mx-auto max-w-7xl px-6 py-32 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-3xl"
-        >
+        <div className="max-w-4xl">
           <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            className="mb-4 font-heading text-sm font-semibold uppercase tracking-widest text-secondary"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-muted/50 px-5 py-2 font-body text-sm font-medium text-secondary"
           >
+            <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
             Creating Concepts
           </motion.p>
-          <h1 className="mb-6 font-heading text-5xl font-bold leading-tight tracking-tight text-foreground md:text-7xl">
-            Turning Digital Strategy Into{" "}
+
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.7 }}
+            className="mb-8 font-heading text-5xl font-extrabold leading-[1.05] tracking-tight text-foreground sm:text-6xl lg:text-8xl"
+          >
+            Turning Digital
+            <br />
+            Strategy Into{" "}
             <span className="gradient-text">Measurable Growth</span>
-          </h1>
-          <p className="mb-10 max-w-xl font-body text-lg leading-relaxed text-muted-foreground">
-            Cornerstone Media helps businesses scale through data-driven marketing, high-converting websites, and strategic digital campaigns.
-          </p>
-          <div className="flex flex-wrap gap-4">
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.6 }}
+            className="mb-12 max-w-xl font-body text-lg leading-relaxed text-muted-foreground md:text-xl"
+          >
+            Cornerstone Media helps businesses scale through data-driven
+            marketing, high-converting websites, and strategic digital campaigns.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.6 }}
+            className="flex flex-wrap gap-4"
+          >
             <a href="#cta" className="gradient-btn text-base">
               Get a Free Strategy Call
             </a>
             <a href="#services" className="gradient-btn-outline text-base">
               Explore Our Services
             </a>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
+
+      {/* Bottom fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
     </section>
   );
 };
