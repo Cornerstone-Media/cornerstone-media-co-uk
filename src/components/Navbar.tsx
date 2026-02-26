@@ -75,7 +75,7 @@ const Navbar = () => {
             ))}
             <a
               href="tel:07846798534"
-              className="ml-4 flex items-center gap-2 rounded-full border border-secondary/30 bg-secondary/10 px-4 py-2 font-body text-sm font-medium text-secondary transition-all duration-300 hover:bg-secondary/20"
+              className="gradient-btn-outline ml-4 flex items-center gap-2 text-sm"
             >
               <Phone className="h-4 w-4" />
               Free Strategy Call
@@ -128,7 +128,7 @@ const Navbar = () => {
               ))}
               <a
                 href="tel:07846798534"
-                className="flex items-center justify-center gap-2 rounded-full border border-secondary/30 bg-secondary/10 px-4 py-3 font-body text-sm font-medium text-secondary transition-all duration-300 hover:bg-secondary/20"
+                className="gradient-btn-outline flex items-center justify-center gap-2 text-sm"
               >
                 <Phone className="h-4 w-4" />
                 Free Strategy Call
