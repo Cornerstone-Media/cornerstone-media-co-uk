@@ -70,9 +70,9 @@ const StatsSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
-            className="group rounded-2xl border border-border bg-card p-8 text-center transition-all duration-500 hover:border-secondary/30 card-hover"
+            className="group rounded-2xl border border-border bg-card px-8 py-10 text-center transition-all duration-500 hover:border-secondary/30 card-hover overflow-visible"
           >
-            <p className="mb-3 font-heading text-4xl font-extrabold gradient-text md:text-5xl leading-normal">
+            <p className="mb-3 font-heading text-4xl font-extrabold text-secondary md:text-5xl">
               <AnimatedCounter end={stat.value} suffix={stat.suffix} />
             </p>
             <p className="font-body text-sm text-muted-foreground">{stat.label}</p>
