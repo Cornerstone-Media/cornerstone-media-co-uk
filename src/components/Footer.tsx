@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "@/assets/logo.jpeg";
+import logo from "@/assets/logo.png";
 
 const footerLinks = [
   {
@@ -32,8 +32,7 @@ const Footer = () => (
           <img
             src={logo}
             alt="Cornerstone Media – Creating Concepts"
-            className="mb-6 h-16 w-auto rounded-lg brightness-95 contrast-105"
-            style={{ mixBlendMode: "lighten" }}
+            className="mb-6 h-16 w-auto"
           />
           <p className="max-w-sm font-body text-sm leading-relaxed text-muted-foreground">
             Turning digital strategy into measurable growth. We help businesses
