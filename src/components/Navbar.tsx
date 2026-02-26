@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/logo.png";
 
@@ -73,7 +73,14 @@ const Navbar = () => {
                 )}
               </Link>
             ))}
-            <Link to="/contact" className="gradient-btn ml-6 text-sm">
+            <a
+              href="tel:07846798534"
+              className="ml-4 flex items-center gap-2 rounded-full border border-secondary/30 bg-secondary/10 px-4 py-2 font-body text-sm font-medium text-secondary transition-all duration-300 hover:bg-secondary/20"
+            >
+              <Phone className="h-4 w-4" />
+              07846 798 534
+            </a>
+            <Link to="/contact" className="gradient-btn ml-2 text-sm">
               Get in Touch
             </Link>
           </div>
@@ -119,7 +126,14 @@ const Navbar = () => {
                   </Link>
                 </motion.div>
               ))}
-              <Link to="/contact" className="gradient-btn mt-4 text-center text-sm">
+              <a
+                href="tel:07846798534"
+                className="flex items-center justify-center gap-2 rounded-full border border-secondary/30 bg-secondary/10 px-4 py-3 font-body text-sm font-medium text-secondary transition-all duration-300 hover:bg-secondary/20"
+              >
+                <Phone className="h-4 w-4" />
+                07846 798 534
+              </a>
+              <Link to="/contact" className="gradient-btn mt-2 text-center text-sm">
                 Get in Touch
               </Link>
             </div>

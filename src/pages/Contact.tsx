@@ -62,17 +62,23 @@ const Contact = () => {
               className="flex flex-col gap-8 lg:col-span-2"
             >
               {[
-                { icon: Phone, label: "Phone", value: "01onal number here" },
-                { icon: Mail, label: "Email", value: "hello@cornerstonemedia.co.uk" },
-                { icon: MapPin, label: "Location", value: "United Kingdom" },
-              ].map(({ icon: Icon, label, value }) => (
+                { icon: Phone, label: "Phone", value: "07846 798 534", href: "tel:07846798534" },
+                { icon: Mail, label: "Email", value: "hello@cornerstonemedia.co.uk", href: "mailto:hello@cornerstonemedia.co.uk" },
+                { icon: MapPin, label: "Location", value: "United Kingdom", href: undefined },
+              ].map(({ icon: Icon, label, value, href }) => (
                 <div key={label} className="glass-card flex items-start gap-4 p-6">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-secondary/15">
                     <Icon className="h-5 w-5 text-secondary" />
                   </div>
                   <div>
                     <p className="font-heading text-sm font-semibold text-muted-foreground">{label}</p>
-                    <p className="font-body text-foreground">{value}</p>
+                    {href ? (
+                      <a href={href} className="font-body text-foreground hover:text-secondary transition-colors">
+                        {value}
+                      </a>
+                    ) : (
+                      <p className="font-body text-foreground">{value}</p>
+                    )}
                   </div>
                 </div>
               ))}
