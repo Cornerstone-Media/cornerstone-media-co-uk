@@ -39,12 +39,12 @@ const Navbar = () => {
       }`}
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="flex h-36 items-center justify-between">
+        <div className="flex h-28 items-center justify-between">
           <Link to="/" className="flex-shrink-0">
             <img
               src={logo}
               alt="Cornerstone Media"
-              className="h-28 w-auto"
+              className="h-20 w-auto"
             />
           </Link>
 
