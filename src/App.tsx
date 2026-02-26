@@ -9,6 +9,7 @@ import SEO from "./pages/SEO";
 import SocialMedia from "./pages/SocialMedia";
 import WebsiteDesign from "./pages/WebsiteDesign";
 import WebsiteMaintenance from "./pages/WebsiteMaintenance";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/social-media" element={<SocialMedia />} />
           <Route path="/website-design" element={<WebsiteDesign />} />
           <Route path="/website-maintenance" element={<WebsiteMaintenance />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
