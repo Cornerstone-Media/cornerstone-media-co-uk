@@ -44,7 +44,7 @@ const Navbar = () => {
             <img
               src={logo}
               alt="Cornerstone Media"
-              className="h-28 w-auto"
+              className="h-20 w-auto"
             />
           </Link>
 

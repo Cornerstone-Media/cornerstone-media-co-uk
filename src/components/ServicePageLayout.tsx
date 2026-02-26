@@ -22,7 +22,7 @@ const ServicePageLayout = ({
   topics,
 }: ServicePageLayoutProps) => {
   return (
-    <div className="pt-24">
+    <div className="pt-36">
       {/* Hero */}
       <section className="section-padding relative overflow-hidden bg-card/50">
         <div className="absolute top-0 right-0 h-[500px] w-[500px] rounded-full bg-primary/10 blur-[120px] animate-float" />
