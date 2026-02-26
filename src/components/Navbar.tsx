@@ -38,8 +38,18 @@ const Navbar = () => {
       }`}
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="flex h-28 items-center justify-between">
-          <Link to="/" className="flex-shrink-0">
+      <div className="flex h-28 items-center justify-between">
+          {/* Mobile: hamburger on left */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className={`relative z-50 lg:hidden ${scrolled ? "text-[hsl(220_20%_15%)]" : "text-foreground"}`}
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+
+          {/* Logo: left on desktop, centered on mobile */}
+          <Link to="/" className="flex-shrink-0 absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0">
             <img
               src={logo}
               alt="Cornerstone Media"
@@ -85,14 +95,8 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Mobile toggle */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className={`relative z-50 lg:hidden ${scrolled ? "text-[hsl(220_20%_15%)]" : "text-foreground"}`}
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile: invisible spacer to balance the hamburger */}
+          <div className="w-6 lg:hidden" />
         </div>
       </div>
 
