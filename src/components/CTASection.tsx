@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const CTASection = () => (
   <section id="cta" className="section-padding relative overflow-hidden bg-card/50">
