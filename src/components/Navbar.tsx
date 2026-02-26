@@ -38,12 +38,12 @@ const Navbar = () => {
       }`}
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="flex h-24 items-center justify-between">
+        <div className="flex h-28 items-center justify-between">
           <Link to="/" className="flex-shrink-0">
             <img
               src={logo}
-              alt="Cornerstone Media – Creating Concepts"
-              className="h-16 w-auto"
+              alt="Cornerstone Media"
+              className="h-20 w-auto brightness-0 invert"
             />
           </Link>
 
