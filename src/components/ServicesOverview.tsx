@@ -22,6 +22,12 @@ const services = [
     path: "/social-media",
   },
   {
+    icon: PenLine,
+    title: "Content Writing",
+    description: "Engage your Birmingham audience with SEO-optimised blog posts, website copy, and content strategy that drives traffic and conversions.",
+    path: "/content-writing",
+  },
+  {
     icon: Palette,
     title: "Website Design",
     description: "Conversion-focused website design for Birmingham businesses — beautifully crafted, fast, and optimised for every device.",

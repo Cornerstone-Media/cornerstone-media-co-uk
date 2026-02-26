@@ -28,6 +28,7 @@ const App = () => (
           <Route path="/ppc" element={<PPC />} />
           <Route path="/seo" element={<SEO />} />
           <Route path="/social-media" element={<SocialMedia />} />
+          <Route path="/content-writing" element={<ContentWriting />} />
           <Route path="/website-design" element={<WebsiteDesign />} />
           <Route path="/website-maintenance" element={<WebsiteMaintenance />} />
           <Route path="/contact" element={<Contact />} />
