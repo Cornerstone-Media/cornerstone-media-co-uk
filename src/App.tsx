@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import PPC from "./pages/PPC";
 import SEO from "./pages/SEO";
 import SocialMedia from "./pages/SocialMedia";
+import ContentWriting from "./pages/ContentWriting";
 import WebsiteDesign from "./pages/WebsiteDesign";
 import WebsiteMaintenance from "./pages/WebsiteMaintenance";
 import Contact from "./pages/Contact";
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/ppc" element={<PPC />} />
           <Route path="/seo" element={<SEO />} />
           <Route path="/social-media" element={<SocialMedia />} />
+          <Route path="/content-writing" element={<ContentWriting />} />
           <Route path="/website-design" element={<WebsiteDesign />} />
           <Route path="/website-maintenance" element={<WebsiteMaintenance />} />
           <Route path="/contact" element={<Contact />} />

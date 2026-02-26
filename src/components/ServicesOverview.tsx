@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Search, MousePointerClick, Share2, Palette, Wrench, ArrowUpRight } from "lucide-react";
+import { Search, MousePointerClick, Share2, PenLine, Palette, Wrench, ArrowUpRight } from "lucide-react";
 
 const services = [
   {
@@ -20,6 +20,12 @@ const services = [
     title: "Social Media Marketing",
     description: "Build brand awareness and drive conversions for your Birmingham business through strategic social media campaigns.",
     path: "/social-media",
+  },
+  {
+    icon: PenLine,
+    title: "Content Writing",
+    description: "Engage your Birmingham audience with SEO-optimised blog posts, website copy, and content strategy that drives traffic and conversions.",
+    path: "/content-writing",
   },
   {
     icon: Palette,
