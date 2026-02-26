@@ -78,10 +78,10 @@ const Navbar = () => {
               className="ml-4 flex items-center gap-2 rounded-full border border-secondary/30 bg-secondary/10 px-4 py-2 font-body text-sm font-medium text-secondary transition-all duration-300 hover:bg-secondary/20"
             >
               <Phone className="h-4 w-4" />
-              07846 798 534
+              Free Strategy Call
             </a>
             <Link to="/contact" className="gradient-btn ml-2 text-sm">
-              Get in Touch
+              Get My Free Audit
             </Link>
           </div>
 
@@ -131,10 +131,10 @@ const Navbar = () => {
                 className="flex items-center justify-center gap-2 rounded-full border border-secondary/30 bg-secondary/10 px-4 py-3 font-body text-sm font-medium text-secondary transition-all duration-300 hover:bg-secondary/20"
               >
                 <Phone className="h-4 w-4" />
-                07846 798 534
+                Free Strategy Call
               </a>
               <Link to="/contact" className="gradient-btn mt-2 text-center text-sm">
-                Get in Touch
+                Get My Free Audit
               </Link>
             </div>
           </motion.div>
