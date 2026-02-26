@@ -33,7 +33,7 @@ const Navbar = () => {
       transition={{ duration: 0.5, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "glass-card border-b border-border shadow-lg shadow-background/50"
+          ? "bg-[hsl(220_40%_92%/0.95)] backdrop-blur-xl border-b border-[hsl(220_20%_80%/0.4)] shadow-lg shadow-background/20"
           : "bg-transparent"
       }`}
     >
@@ -43,7 +43,7 @@ const Navbar = () => {
             <img
               src={logo}
               alt="Cornerstone Media"
-              className="h-20 w-auto brightness-0 invert"
+              className="h-20 w-auto"
             />
           </Link>
 
@@ -54,9 +54,13 @@ const Navbar = () => {
                 key={link.path}
                 to={link.path}
                 className={`relative rounded-lg px-4 py-2 font-body text-sm font-medium transition-all duration-300 ${
-                  location.pathname === link.path
-                    ? "text-accent"
-                    : "text-muted-foreground hover:text-foreground"
+                  scrolled
+                    ? location.pathname === link.path
+                      ? "text-[hsl(210_90%_40%)]"
+                      : "text-[hsl(220_20%_35%)] hover:text-[hsl(220_20%_15%)]"
+                    : location.pathname === link.path
+                      ? "text-accent"
+                      : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {link.label}
@@ -77,7 +81,7 @@ const Navbar = () => {
           {/* Mobile toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="relative z-50 text-foreground lg:hidden"
+            className={`relative z-50 lg:hidden ${scrolled ? "text-[hsl(220_20%_15%)]" : "text-foreground"}`}
             aria-label="Toggle menu"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}

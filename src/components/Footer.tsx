@@ -32,7 +32,7 @@ const Footer = () => (
           <img
             src={logo}
             alt="Cornerstone Media"
-            className="mb-6 h-20 w-auto brightness-0 invert"
+            className="mb-6 h-20 w-auto"
           />
           <p className="max-w-sm font-body text-sm leading-relaxed text-muted-foreground">
             Turning digital strategy into measurable growth. We help businesses
