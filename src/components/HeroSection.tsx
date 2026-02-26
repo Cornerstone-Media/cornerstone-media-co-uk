@@ -31,7 +31,7 @@ const HeroSection = () => {
             transition={{ delay: 0.3 }}
             className="mb-4 font-heading text-sm font-semibold uppercase tracking-widest text-secondary"
           >
-            Data-Driven Digital Marketing
+            Creating Concepts
           </motion.p>
           <h1 className="mb-6 font-heading text-5xl font-bold leading-tight tracking-tight text-foreground md:text-7xl">
             Turning Digital Strategy Into{" "}
