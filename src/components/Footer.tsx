@@ -8,6 +8,7 @@ const footerLinks = [
       { label: "PPC Advertising Birmingham", path: "/ppc" },
       { label: "SEO Birmingham", path: "/seo" },
       { label: "Social Media Marketing", path: "/social-media" },
+      { label: "Content Writing Birmingham", path: "/content-writing" },
       { label: "Website Design Birmingham", path: "/website-design" },
       { label: "Website Maintenance", path: "/website-maintenance" },
     ],
