@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { type LucideIcon, CheckCircle2 } from "lucide-react";
 
 interface ServicePageLayoutProps {
@@ -155,9 +156,9 @@ const ServicePageLayout = ({
           <p className="mb-10 font-body text-lg text-muted-foreground">
             Book a free strategy session and discover how we can accelerate your growth.
           </p>
-          <a href="#" className="gradient-btn text-base">
+          <Link to="/contact" className="gradient-btn text-base">
             Request a Strategy Session
-          </a>
+          </Link>
         </motion.div>
       </section>
     </div>
