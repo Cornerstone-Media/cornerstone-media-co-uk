@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.jpeg";
 
 const footerLinks = [
   {
@@ -29,11 +30,8 @@ const Footer = () => {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-1 mb-4">
-              <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-primary via-secondary to-accent" />
-              <span className="font-heading text-xl font-bold tracking-tight text-foreground">
-                Cornerstone<span className="gradient-text"> Media</span>
-              </span>
+            <div className="mb-4">
+              <img src={logo} alt="Cornerstone Media" className="h-14 w-auto" />
             </div>
             <p className="max-w-sm font-body text-sm leading-relaxed text-muted-foreground">
               Turning digital strategy into measurable growth. We help businesses scale through data-driven marketing, high-converting websites, and strategic digital campaigns.
