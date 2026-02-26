@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "@/assets/logo.jpeg";
+import logo from "@/assets/logo.png";
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -43,8 +43,7 @@ const Navbar = () => {
             <img
               src={logo}
               alt="Cornerstone Media – Creating Concepts"
-              className="h-16 w-auto rounded-lg brightness-95 contrast-105"
-              style={{ mixBlendMode: "lighten" }}
+              className="h-16 w-auto"
             />
           </Link>
 
