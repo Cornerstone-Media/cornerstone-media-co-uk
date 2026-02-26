@@ -3,9 +3,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Quote } from "lucide-react";
 
 const testimonials = [
-  { quote: "Cornerstone Media transformed our online presence. We saw a 300% increase in qualified leads within six months.", name: "Sarah Mitchell", role: "Managing Director, TechFlow UK" },
-  { quote: "Their data-driven approach to PPC and SEO delivered results we didn't think were possible. Outstanding team.", name: "James Carter", role: "CEO, Elevate Property Group" },
-  { quote: "Professional, creative, and results-focused. They truly understand digital marketing at every level.", name: "Emma Richardson", role: "Marketing Manager, BrightPath Solutions" },
+  { quote: "Cornerstone Media completely turned around our online bookings. We've seen a huge uplift in enquiries since they took over our digital marketing.", name: "Five Star Minibus and Coaches", role: "Birmingham" },
+  { quote: "Professional, reliable, and results-driven. Our website traffic has doubled and we're getting consistent leads every week now.", name: "Mayfair Cleaning Services", role: "Birmingham" },
+  { quote: "They understood our business from day one. The PPC campaigns they built have been delivering quality leads at a fraction of what we were paying before.", name: "Waste Clearance Service", role: "Birmingham" },
+  { quote: "Cornerstone Media helped us build a strong online presence from scratch. Their team is responsive, creative, and genuinely invested in our growth.", name: "S4 Housing", role: "Birmingham" },
 ];
 
 const TestimonialsSection = () => {
