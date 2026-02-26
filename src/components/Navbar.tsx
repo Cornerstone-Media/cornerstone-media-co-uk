@@ -49,7 +49,7 @@ const Navbar = () => {
           </button>
 
           {/* Logo: left on desktop, centered on mobile */}
-          <Link to="/" className="flex-shrink-0 absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0">
+          <Link to="/" className="flex-shrink-0 lg:mr-auto">
             <img
               src={logo}
               alt="Cornerstone Media"
