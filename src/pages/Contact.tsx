@@ -1,0 +1,174 @@
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Send, Phone, Mail, MapPin } from "lucide-react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
+
+const Contact = () => {
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    message: "",
+  });
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitting(true);
+    // Simulate submission
+    setTimeout(() => {
+      setSubmitting(false);
+      toast({ title: "Message sent!", description: "We'll be in touch shortly." });
+      setFormData({ name: "", email: "", phone: "", company: "", message: "" });
+    }, 1200);
+  };
+
+  return (
+    <div className="min-h-screen bg-background">
+      <Navbar />
+
+      <section className="section-padding pt-48">
+        <div className="mx-auto max-w-6xl">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mb-16 text-center"
+          >
+            <h1 className="mb-6 font-heading text-4xl font-extrabold text-foreground md:text-6xl">
+              Get in <span className="gradient-text">Touch</span>
+            </h1>
+            <p className="mx-auto max-w-2xl font-body text-lg text-muted-foreground">
+              Ready to take your digital marketing to the next level? Fill in the form below and we'll get back to you within 24 hours.
+            </p>
+          </motion.div>
+
+          <div className="grid gap-12 lg:grid-cols-5">
+            {/* Contact info */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.15 }}
+              className="flex flex-col gap-8 lg:col-span-2"
+            >
+              {[
+                { icon: Phone, label: "Phone", value: "01onal number here" },
+                { icon: Mail, label: "Email", value: "hello@cornerstonemedia.co.uk" },
+                { icon: MapPin, label: "Location", value: "United Kingdom" },
+              ].map(({ icon: Icon, label, value }) => (
+                <div key={label} className="glass-card flex items-start gap-4 p-6">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-secondary/15">
+                    <Icon className="h-5 w-5 text-secondary" />
+                  </div>
+                  <div>
+                    <p className="font-heading text-sm font-semibold text-muted-foreground">{label}</p>
+                    <p className="font-body text-foreground">{value}</p>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+
+            {/* Form */}
+            <motion.form
+              onSubmit={handleSubmit}
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2 }}
+              className="glass-card space-y-6 p-8 lg:col-span-3"
+            >
+              <div className="grid gap-5 sm:grid-cols-2">
+                <div className="space-y-2">
+                  <label className="font-heading text-sm font-medium text-foreground">Name *</label>
+                  <Input
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    maxLength={100}
+                    placeholder="Your name"
+                    className="border-border bg-muted/30"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="font-heading text-sm font-medium text-foreground">Email *</label>
+                  <Input
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    maxLength={255}
+                    placeholder="you@example.com"
+                    className="border-border bg-muted/30"
+                  />
+                </div>
+              </div>
+
+              <div className="grid gap-5 sm:grid-cols-2">
+                <div className="space-y-2">
+                  <label className="font-heading text-sm font-medium text-foreground">Phone</label>
+                  <Input
+                    name="phone"
+                    type="tel"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    maxLength={20}
+                    placeholder="Your phone number"
+                    className="border-border bg-muted/30"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="font-heading text-sm font-medium text-foreground">Company</label>
+                  <Input
+                    name="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    maxLength={100}
+                    placeholder="Your company"
+                    className="border-border bg-muted/30"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <label className="font-heading text-sm font-medium text-foreground">Message *</label>
+                <Textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  maxLength={1000}
+                  rows={5}
+                  placeholder="Tell us about your project and goals..."
+                  className="border-border bg-muted/30"
+                />
+              </div>
+
+              <Button
+                type="submit"
+                disabled={submitting}
+                className="gradient-btn w-full border-0 text-base"
+              >
+                {submitting ? "Sending..." : <>Send Message <Send className="ml-2 h-4 w-4" /></>}
+              </Button>
+            </motion.form>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default Contact;

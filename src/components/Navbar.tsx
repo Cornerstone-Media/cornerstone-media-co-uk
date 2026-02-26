@@ -57,10 +57,10 @@ const Navbar = () => {
                   scrolled
                     ? location.pathname === link.path
                       ? "text-[hsl(210_90%_40%)]"
-                      : "text-[hsl(220_20%_35%)] hover:text-[hsl(220_20%_15%)]"
+                    : "text-[hsl(220_20%_35%)] hover:text-[hsl(210_90%_40%)] hover:bg-[hsl(210_90%_50%/0.08)]"
                     : location.pathname === link.path
                       ? "text-accent"
-                      : "text-muted-foreground hover:text-foreground"
+                      : "text-muted-foreground hover:text-accent hover:bg-accent/10"
                 }`}
               >
                 {link.label}
@@ -73,9 +73,9 @@ const Navbar = () => {
                 )}
               </Link>
             ))}
-            <a href="/#cta" className="gradient-btn ml-6 text-sm">
+            <Link to="/contact" className="gradient-btn ml-6 text-sm">
               Get in Touch
-            </a>
+            </Link>
           </div>
 
           {/* Mobile toggle */}
@@ -119,9 +119,9 @@ const Navbar = () => {
                   </Link>
                 </motion.div>
               ))}
-              <a href="/#cta" className="gradient-btn mt-4 text-center text-sm">
+              <Link to="/contact" className="gradient-btn mt-4 text-center text-sm">
                 Get in Touch
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}

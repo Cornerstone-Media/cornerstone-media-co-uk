@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const CTASection = () => (
   <section id="cta" className="section-padding relative overflow-hidden bg-card/50">
@@ -19,9 +20,9 @@ const CTASection = () => (
         Let's discuss how our team can help you achieve your digital marketing
         goals. Book a free, no-obligation strategy consultation today.
       </p>
-      <a href="#" className="gradient-btn text-lg">
+      <Link to="/contact" className="gradient-btn text-lg">
         Book a Free Consultation
-      </a>
+      </Link>
     </motion.div>
   </section>
 );
