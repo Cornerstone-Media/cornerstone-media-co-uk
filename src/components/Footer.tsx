@@ -31,7 +31,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="mb-4">
-              <img src={logo} alt="Cornerstone Media" className="h-14 w-auto" />
+              <img src={logo} alt="Cornerstone Media – Creating Concepts" className="h-20 w-auto" />
             </div>
             <p className="max-w-sm font-body text-sm leading-relaxed text-muted-foreground">
               Turning digital strategy into measurable growth. We help businesses scale through data-driven marketing, high-converting websites, and strategic digital campaigns.
