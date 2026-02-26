@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logo from "@/assets/logo.jpeg";
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -37,12 +38,7 @@ const Navbar = () => {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
-            <div className="flex items-center gap-1">
-              <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-primary via-secondary to-accent" />
-              <span className="font-heading text-xl font-bold tracking-tight text-foreground">
-                Cornerstone<span className="gradient-text"> Media</span>
-              </span>
-            </div>
+            <img src={logo} alt="Cornerstone Media" className="h-12 w-auto" />
           </Link>
 
           {/* Desktop nav */}
