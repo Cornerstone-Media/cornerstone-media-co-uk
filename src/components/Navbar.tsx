@@ -38,7 +38,7 @@ const Navbar = () => {
       }`}
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-      <div className="relative flex h-28 items-center justify-between">
+      <div className="flex h-28 items-center justify-between">
           {/* Mobile: hamburger on left */}
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -49,7 +49,7 @@ const Navbar = () => {
           </button>
 
           {/* Logo: left on desktop, centered on mobile */}
-          <Link to="/" className="flex-shrink-0 absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0">
+          <Link to="/" className="flex-shrink-0 lg:mr-auto">
             <img
               src={logo}
               alt="Cornerstone Media"
