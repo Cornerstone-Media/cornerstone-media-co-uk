@@ -1,15 +1,17 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative flex min-h-[85vh] items-center overflow-hidden">
+    <section className="relative flex min-h-[85vh] items-center overflow-hidden" aria-label="Hero">
       {/* Background image */}
       <div className="absolute inset-0">
         <img
           src={heroBg}
-          alt="Digital marketing analytics"
+          alt="Birmingham digital marketing agency office — data analytics dashboard"
           className="h-full w-full object-cover opacity-25"
+          loading="eager"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/50 to-background" />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background/80" />
@@ -22,6 +24,15 @@ const HeroSection = () => {
 
       <div className="relative mx-auto max-w-7xl px-6 py-20 lg:px-8">
         <div className="max-w-4xl">
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className="mb-4 font-heading text-sm font-semibold uppercase tracking-[0.2em] text-secondary"
+          >
+            Birmingham's Data-Driven Digital Marketing Agency
+          </motion.p>
+
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -40,8 +51,7 @@ const HeroSection = () => {
             transition={{ delay: 0.6, duration: 0.6 }}
             className="mb-12 max-w-xl font-body text-lg leading-relaxed text-muted-foreground md:text-xl"
           >
-            Cornerstone Media helps businesses scale through data-driven
-            marketing, high-converting websites, and strategic digital campaigns.
+            Cornerstone Media helps Birmingham businesses scale through expert PPC management, SEO, social media marketing, high-converting website design, and ongoing maintenance.
           </motion.p>
 
           <motion.div
@@ -50,9 +60,9 @@ const HeroSection = () => {
             transition={{ delay: 0.8, duration: 0.6 }}
             className="flex flex-wrap gap-4"
           >
-            <a href="#cta" className="gradient-btn text-base">
+            <Link to="/contact" className="gradient-btn text-base">
               Get a Free Strategy Call
-            </a>
+            </Link>
             <a href="#services" className="gradient-btn-outline text-base">
               Explore Our Services
             </a>

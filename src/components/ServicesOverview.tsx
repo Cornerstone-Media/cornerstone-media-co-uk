@@ -6,38 +6,38 @@ const services = [
   {
     icon: MousePointerClick,
     title: "PPC Advertising",
-    description: "Drive targeted traffic and maximise ROI with expertly managed pay-per-click campaigns across Google Ads and beyond.",
+    description: "Drive targeted traffic to your Birmingham business with expertly managed Google Ads and pay-per-click campaigns that maximise ROI.",
     path: "/ppc",
   },
   {
     icon: Search,
-    title: "SEO",
-    description: "Climb search rankings with technical optimisation, content strategy, and authoritative link building.",
+    title: "SEO Services",
+    description: "Climb Google rankings in Birmingham and beyond with technical SEO, content strategy, and authoritative link building.",
     path: "/seo",
   },
   {
     icon: Share2,
-    title: "Social Media",
-    description: "Build brand awareness and drive conversions through strategic social media campaigns and audience targeting.",
+    title: "Social Media Marketing",
+    description: "Build brand awareness and drive conversions for your Birmingham business through strategic social media campaigns.",
     path: "/social-media",
   },
   {
     icon: Palette,
     title: "Website Design",
-    description: "Conversion-focused, beautifully designed websites that deliver exceptional user experiences across all devices.",
+    description: "Conversion-focused website design for Birmingham businesses — beautifully crafted, fast, and optimised for every device.",
     path: "/website-design",
   },
   {
     icon: Wrench,
     title: "Website Maintenance",
-    description: "Keep your site secure, fast, and up-to-date with ongoing maintenance, monitoring, and performance optimisation.",
+    description: "Keep your website secure, fast, and up-to-date with our ongoing maintenance, monitoring, and performance optimisation plans.",
     path: "/website-maintenance",
   },
 ];
 
 const ServicesOverview = () => {
   return (
-    <section className="section-padding bg-card/50">
+    <section className="section-padding bg-card/50" aria-label="Our digital marketing services">
       <div className="mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -50,7 +50,7 @@ const ServicesOverview = () => {
           </p>
           <h2 className="max-w-lg font-heading text-4xl font-bold leading-tight text-foreground md:text-5xl">
             Full-Spectrum{" "}
-            <span className="gradient-text">Digital Services</span>
+            <span className="gradient-text">Digital Marketing Services</span> in Birmingham
           </h2>
         </motion.div>
 
