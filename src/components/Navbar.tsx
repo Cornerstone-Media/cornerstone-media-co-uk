@@ -66,8 +66,8 @@ const Navbar = () => {
                 className={`relative rounded-lg px-4 py-2 font-body text-sm font-medium transition-all duration-300 ${
                   scrolled
                     ? location.pathname === link.path
-                      ? "text-[hsl(210_90%_40%)]"
-                    : "text-[hsl(220_20%_35%)] hover:text-[hsl(210_90%_40%)] hover:bg-[hsl(210_90%_50%/0.08)]"
+                      ? "text-white font-bold"
+                    : "text-white/80 hover:text-white hover:bg-white/10"
                     : location.pathname === link.path
                       ? "text-accent"
                       : "text-muted-foreground hover:text-accent hover:bg-accent/10"
