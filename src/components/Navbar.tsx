@@ -42,7 +42,7 @@ const Navbar = () => {
           {/* Mobile: hamburger on left */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`relative z-50 lg:hidden ${scrolled ? "text-[hsl(220_20%_15%)]" : "text-foreground"}`}
+            className={`relative z-50 lg:hidden ${scrolled ? "text-white" : "text-foreground"}`}
             aria-label="Toggle menu"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
