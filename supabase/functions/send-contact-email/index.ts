@@ -49,6 +49,7 @@ Deno.serve(async (req) => {
       <p>${message}</p>
     `;
 
+    // Notify the team
     const resendRes = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
@@ -63,6 +64,48 @@ Deno.serve(async (req) => {
         reply_to: email,
       }),
     });
+
+    // Auto-reply confirmation to the submitter
+    const confirmationHtml = `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 8px; overflow: hidden;">
+        <div style="background: linear-gradient(135deg, #1a1a2e, #16213e); padding: 32px; text-align: center;">
+          <h1 style="color: #ffffff; margin: 0; font-size: 24px;">Cornerstone Media</h1>
+        </div>
+        <div style="padding: 32px;">
+          <h2 style="color: #1a1a2e; margin-top: 0;">Thanks for reaching out, ${name}!</h2>
+          <p style="color: #444; line-height: 1.6;">
+            We've received your message and one of our team will be in touch within <strong>24 hours</strong>.
+          </p>
+          <p style="color: #444; line-height: 1.6;">
+            In the meantime, if you need something urgently, feel free to call us on
+            <a href="tel:07846798534" style="color: #e63946; text-decoration: none; font-weight: bold;">07846 798 534</a>.
+          </p>
+          <hr style="border: none; border-top: 1px solid #eee; margin: 24px 0;" />
+          <p style="color: #888; font-size: 13px; margin-bottom: 0;">
+            Cornerstone Media Ltd &bull; Digital Marketing Agency<br />
+            <a href="https://cornerstonemedialtd.com" style="color: #e63946;">cornerstonemedialtd.com</a>
+          </p>
+        </div>
+      </div>
+    `;
+
+    const autoReplyRes = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${RESEND_API_KEY}`,
+      },
+      body: JSON.stringify({
+        from: "Cornerstone Media <noreply@cornerstonemedialtd.com>",
+        to: [email],
+        subject: "We've received your message — Cornerstone Media",
+        html: confirmationHtml,
+      }),
+    });
+
+    if (!autoReplyRes.ok) {
+      console.error("Auto-reply error:", await autoReplyRes.text());
+    }
 
     if (!resendRes.ok) {
       const err = await resendRes.text();
