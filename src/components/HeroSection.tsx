@@ -58,7 +58,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.6 }}
-            className="flex flex-wrap gap-4"
+            className="relative z-10 flex flex-wrap gap-4"
           >
             <Link to="/contact" className="gradient-btn text-base">
               Get a Free Strategy Call
