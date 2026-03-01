@@ -35,8 +35,7 @@ const Contact = () => {
         body: formData,
       });
       if (error) throw error;
-      toast({ title: "Message sent!", description: "We'll be in touch shortly." });
-      setFormData({ name: "", email: "", phone: "", company: "", message: "" });
+      navigate("/thank-you");
     } catch (err) {
       console.error(err);
       toast({ title: "Something went wrong", description: "Please try again or call us directly.", variant: "destructive" });
