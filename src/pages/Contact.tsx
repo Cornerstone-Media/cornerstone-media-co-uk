@@ -25,6 +25,26 @@ const Contact = () => {
   });
   const [submitting, setSubmitting] = useState(false);
 
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = `https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`;
+    script.async = true;
+    document.head.appendChild(script);
+    return () => { document.head.removeChild(script); };
+  }, []);
+
+  const getRecaptchaToken = useCallback((): Promise<string> => {
+    return new Promise((resolve, reject) => {
+      if (!(window as any).grecaptcha) return reject("reCAPTCHA not loaded");
+      (window as any).grecaptcha.ready(() => {
+        (window as any).grecaptcha
+          .execute(RECAPTCHA_SITE_KEY, { action: "contact_submit" })
+          .then(resolve)
+          .catch(reject);
+      });
+    });
+  }, []);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -33,14 +53,16 @@ const Contact = () => {
     e.preventDefault();
     setSubmitting(true);
     try {
+      const recaptchaToken = await getRecaptchaToken();
       const { data, error } = await supabase.functions.invoke("send-contact-email", {
-        body: formData,
+        body: { ...formData, recaptchaToken },
       });
       if (error) throw error;
+      if (data?.error) throw new Error(data.error);
       navigate("/thank-you");
-    } catch (err) {
+    } catch (err: any) {
       console.error(err);
-      toast({ title: "Something went wrong", description: "Please try again or call us directly.", variant: "destructive" });
+      toast({ title: "Something went wrong", description: err?.message || "Please try again or call us directly.", variant: "destructive" });
     } finally {
       setSubmitting(false);
     }
