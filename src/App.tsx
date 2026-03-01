@@ -12,6 +12,7 @@ import ContentWriting from "./pages/ContentWriting";
 import WebsiteDesign from "./pages/WebsiteDesign";
 import WebsiteMaintenance from "./pages/WebsiteMaintenance";
 import Contact from "./pages/Contact";
+import ThankYou from "./pages/ThankYou";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
