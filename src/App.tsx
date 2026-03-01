@@ -11,6 +11,7 @@ import SocialMedia from "./pages/SocialMedia";
 import ContentWriting from "./pages/ContentWriting";
 import WebsiteDesign from "./pages/WebsiteDesign";
 import WebsiteMaintenance from "./pages/WebsiteMaintenance";
+import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import ThankYou from "./pages/ThankYou";
 import NotFound from "./pages/NotFound";
@@ -27,6 +28,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/ppc" element={<PPC />} />
+          <Route path="/services" element={<Services />} />
           <Route path="/seo" element={<SEO />} />
           <Route path="/social-media" element={<SocialMedia />} />
           <Route path="/content-writing" element={<ContentWriting />} />

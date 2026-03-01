@@ -63,9 +63,9 @@ const HeroSection = () => {
             <Link to="/contact" className="gradient-btn text-base">
               Get a Free Strategy Call
             </Link>
-            <a href="#services" className="gradient-btn-outline text-base">
+            <Link to="/services" className="gradient-btn-outline text-base">
               Explore Our Services
-            </a>
+            </Link>
           </motion.div>
         </div>
       </div>
