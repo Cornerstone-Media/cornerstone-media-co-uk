@@ -12,6 +12,7 @@ import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
+  const navigate = useNavigate();
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
