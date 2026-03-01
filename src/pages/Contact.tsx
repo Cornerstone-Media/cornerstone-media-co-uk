@@ -71,7 +71,7 @@ const Contact = () => {
               >
                 {[
                   { icon: Phone, label: "Phone", value: "07846 798 534", href: "tel:07846798534" },
-                  { icon: Mail, label: "Email", value: "hello@cornerstonemedia.co.uk", href: "mailto:hello@cornerstonemedia.co.uk" },
+                  { icon: Mail, label: "Email", value: "info@cornerstonemedialtd.com", href: "mailto:info@cornerstonemedialtd.com" },
                   { icon: MapPin, label: "Location", value: "Birmingham, West Midlands", href: undefined },
                 ].map(({ icon: Icon, label, value, href }) => (
                   <div key={label} className="glass-card flex items-start gap-4 p-6">

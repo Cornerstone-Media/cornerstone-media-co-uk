@@ -83,7 +83,7 @@ const Footer = () => (
           © {new Date().getFullYear()} Cornerstone Media. Digital Marketing Agency, Birmingham, West Midlands. All rights reserved.
         </p>
         <p className="font-body text-xs text-muted-foreground">
-          <a href="mailto:hello@cornerstonemedia.co.uk" className="hover:text-secondary transition-colors">hello@cornerstonemedia.co.uk</a>
+          <a href="mailto:info@cornerstonemedialtd.com" className="hover:text-secondary transition-colors">info@cornerstonemedialtd.com</a>
         </p>
       </div>
     </div>
