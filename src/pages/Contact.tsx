@@ -25,14 +25,22 @@ const Contact = () => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
+    try {
+      const { data, error } = await supabase.functions.invoke("send-contact-email", {
+        body: formData,
+      });
+      if (error) throw error;
       toast({ title: "Message sent!", description: "We'll be in touch shortly." });
       setFormData({ name: "", email: "", phone: "", company: "", message: "" });
-    }, 1200);
+    } catch (err) {
+      console.error(err);
+      toast({ title: "Something went wrong", description: "Please try again or call us directly.", variant: "destructive" });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
