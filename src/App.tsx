@@ -28,6 +28,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/ppc" element={<PPC />} />
+          <Route path="/services" element={<Services />} />
           <Route path="/seo" element={<SEO />} />
           <Route path="/social-media" element={<SocialMedia />} />
           <Route path="/content-writing" element={<ContentWriting />} />
