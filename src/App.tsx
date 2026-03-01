@@ -11,6 +11,7 @@ import SocialMedia from "./pages/SocialMedia";
 import ContentWriting from "./pages/ContentWriting";
 import WebsiteDesign from "./pages/WebsiteDesign";
 import WebsiteMaintenance from "./pages/WebsiteMaintenance";
+import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import ThankYou from "./pages/ThankYou";
 import NotFound from "./pages/NotFound";
