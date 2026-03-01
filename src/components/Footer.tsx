@@ -85,6 +85,9 @@ const Footer = () => (
         <p className="font-body text-xs text-muted-foreground">
           <a href="mailto:info@cornerstonemedialtd.com" className="hover:text-secondary transition-colors">info@cornerstonemedialtd.com</a>
         </p>
+        <p className="font-body text-xs text-muted-foreground">
+          Website Created by <Link to="/" className="hover:text-secondary transition-colors">Cornerstone Media Ltd</Link>
+        </p>
       </div>
     </div>
   </footer>
