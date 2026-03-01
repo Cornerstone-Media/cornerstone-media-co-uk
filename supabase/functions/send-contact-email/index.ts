@@ -56,7 +56,7 @@ Deno.serve(async (req) => {
         Authorization: `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "Cornerstone Media <onboarding@resend.dev>",
+        from: "Cornerstone Media <noreply@cornerstonemedialtd.com>",
         to: ["info@cornerstonemedialtd.com", "cis.shafiq@gmail.com"],
         subject: `New Contact: ${name}`,
         html: emailHtml,
