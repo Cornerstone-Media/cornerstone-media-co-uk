@@ -40,7 +40,7 @@ const Footer = () => (
           <p className="mt-4 font-body text-sm text-muted-foreground">
             <a href="tel:07846798534" className="transition-colors hover:text-secondary">📞 07846 798 534</a>
             {" · "}
-            <a href="mailto:hello@cornerstonemedia.co.uk" className="transition-colors hover:text-secondary">hello@cornerstonemedia.co.uk</a>
+            <a href="mailto:info@cornerstonemedialtd.com" className="transition-colors hover:text-secondary">info@cornerstonemedialtd.com</a>
           </p>
           <div className="mt-6 flex gap-3">
             {["LinkedIn", "Twitter", "Instagram", "Facebook"].map((name) => (
