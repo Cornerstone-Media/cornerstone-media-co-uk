@@ -12,7 +12,7 @@ Deno.serve(async (req) => {
   }
 
   try {
-    const { name, email, phone, company, message } = await req.json();
+    const { name, email, phone, company, message, recaptchaToken } = await req.json();
 
     // Validate required fields
     if (!name || !email || !message) {
@@ -20,6 +20,25 @@ Deno.serve(async (req) => {
         JSON.stringify({ error: "Name, email, and message are required" }),
         { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
+    }
+
+    // Verify reCAPTCHA v3 token
+    const recaptchaSecret = Deno.env.get("RECAPTCHA_SECRET_KEY");
+    if (recaptchaToken && recaptchaSecret) {
+      const recaptchaRes = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: `secret=${recaptchaSecret}&response=${recaptchaToken}`,
+      });
+      const recaptchaData = await recaptchaRes.json();
+      console.log("reCAPTCHA score:", recaptchaData.score, "success:", recaptchaData.success);
+
+      if (!recaptchaData.success || recaptchaData.score < 0.5) {
+        return new Response(
+          JSON.stringify({ error: "reCAPTCHA verification failed. Please try again." }),
+          { status: 403, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+        );
+      }
     }
 
     // Store in database
