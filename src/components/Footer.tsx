@@ -78,17 +78,12 @@ const Footer = () => (
         ))}
       </div>
 
-      <div className="mt-16 flex flex-col items-center gap-4 border-t border-border pt-8">
-        <div className="flex w-full flex-col items-center justify-between gap-4 md:flex-row">
-          <p className="font-body text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Cornerstone Media. Digital Marketing Agency, Birmingham, West Midlands. All rights reserved.
-          </p>
-          <p className="font-body text-xs text-muted-foreground">
-            <a href="mailto:info@cornerstonemedialtd.com" className="hover:text-secondary transition-colors">info@cornerstonemedialtd.com</a>
-          </p>
-        </div>
-        <p className="font-body text-xs text-muted-foreground text-center">
-          Website Created by <Link to="/" className="hover:text-secondary transition-colors">Cornerstone Media Ltd</Link>
+      <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 md:flex-row">
+        <p className="font-body text-xs text-muted-foreground">
+          © {new Date().getFullYear()} Cornerstone Media. Digital Marketing Agency, Birmingham, West Midlands. All rights reserved. | Website Created by <Link to="/" className="hover:text-secondary transition-colors">Cornerstone Media Ltd</Link>
+        </p>
+        <p className="font-body text-xs text-muted-foreground">
+          <a href="mailto:info@cornerstonemedialtd.com" className="hover:text-secondary transition-colors">info@cornerstonemedialtd.com</a>
         </p>
       </div>
     </div>
