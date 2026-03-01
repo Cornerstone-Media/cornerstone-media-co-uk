@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Send, Phone, Mail, MapPin } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -11,6 +12,7 @@ import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
+  const navigate = useNavigate();
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
@@ -33,8 +35,7 @@ const Contact = () => {
         body: formData,
       });
       if (error) throw error;
-      toast({ title: "Message sent!", description: "We'll be in touch shortly." });
-      setFormData({ name: "", email: "", phone: "", company: "", message: "" });
+      navigate("/thank-you");
     } catch (err) {
       console.error(err);
       toast({ title: "Something went wrong", description: "Please try again or call us directly.", variant: "destructive" });

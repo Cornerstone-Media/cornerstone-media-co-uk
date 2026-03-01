@@ -12,6 +12,7 @@ import ContentWriting from "./pages/ContentWriting";
 import WebsiteDesign from "./pages/WebsiteDesign";
 import WebsiteMaintenance from "./pages/WebsiteMaintenance";
 import Contact from "./pages/Contact";
+import ThankYou from "./pages/ThankYou";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/website-design" element={<WebsiteDesign />} />
           <Route path="/website-maintenance" element={<WebsiteMaintenance />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/thank-you" element={<ThankYou />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
