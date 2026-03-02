@@ -164,6 +164,12 @@ const Contact = () => {
                 <Button type="submit" disabled={submitting} className="gradient-btn w-full border-0 text-base">
                   {submitting ? "Sending..." : <>Send Message <Send className="ml-2 h-4 w-4" /></>}
                 </Button>
+
+                <p className="text-center font-body text-xs text-muted-foreground">
+                  This site is protected by reCAPTCHA and the Google{" "}
+                  <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="underline hover:text-secondary">Privacy Policy</a> and{" "}
+                  <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="underline hover:text-secondary">Terms of Service</a> apply.
+                </p>
               </motion.form>
             </div>
           </div>
