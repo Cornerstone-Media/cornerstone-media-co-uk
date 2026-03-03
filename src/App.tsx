@@ -15,6 +15,7 @@ import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import ThankYou from "./pages/ThankYou";
 import NotFound from "./pages/NotFound";
+import OGImageGenerator from "./pages/OGImageGenerator";
 
 const queryClient = new QueryClient();
 
