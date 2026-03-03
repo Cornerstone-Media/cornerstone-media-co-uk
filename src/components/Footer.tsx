@@ -23,7 +23,7 @@ const footerLinks = [
 ];
 
 const Footer = () => (
-  <footer className="border-t border-border bg-card" aria-label="Footer">
+  <footer className="border-t border-border bg-card" role="contentinfo" aria-label="Site footer">
     <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
       <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
         {/* Brand */}

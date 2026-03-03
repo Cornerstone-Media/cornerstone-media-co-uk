@@ -18,9 +18,9 @@ const HeroSection = () => {
       </div>
 
       {/* Gradient orbs */}
-      <div className="absolute top-1/4 -left-32 h-[500px] w-[500px] rounded-full bg-primary/15 blur-[120px] animate-float" />
-      <div className="absolute bottom-1/4 -right-32 h-[400px] w-[400px] rounded-full bg-accent/10 blur-[100px] animate-float" style={{ animationDelay: "2s" }} />
-      <div className="absolute top-1/2 left-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-secondary/8 blur-[80px]" />
+      <div className="absolute top-1/4 -left-32 h-[500px] w-[500px] rounded-full bg-primary/15 blur-[120px] animate-float" aria-hidden="true" />
+      <div className="absolute bottom-1/4 -right-32 h-[400px] w-[400px] rounded-full bg-accent/10 blur-[100px] animate-float" style={{ animationDelay: "2s" }} aria-hidden="true" />
+      <div className="absolute top-1/2 left-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-secondary/8 blur-[80px]" aria-hidden="true" />
 
       <div className="relative mx-auto max-w-7xl px-6 pt-36 pb-20 lg:px-8">
         <div className="max-w-4xl">

@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 
 const CTASection = () => (
-  <section id="cta" className="section-padding relative overflow-hidden bg-card/50">
-    <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10" />
-    <div className="absolute top-1/2 left-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-secondary/5 blur-[120px]" />
+  <section id="cta" className="section-padding relative overflow-hidden bg-card/50" aria-label="Call to action">
+    <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10" aria-hidden="true" />
+    <div className="absolute top-1/2 left-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-secondary/5 blur-[120px]" aria-hidden="true" />
 
     <motion.div
       initial={{ opacity: 0, y: 30 }}

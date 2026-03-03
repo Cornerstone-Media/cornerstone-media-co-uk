@@ -18,8 +18,8 @@ const TestimonialsSection = () => {
   }, []);
 
   return (
-    <section className="section-padding relative overflow-hidden">
-      <div className="absolute inset-0" style={{ background: "var(--gradient-glow)" }} />
+    <section className="section-padding relative overflow-hidden" aria-label="Client testimonials">
+      <div className="absolute inset-0" style={{ background: "var(--gradient-glow)" }} aria-hidden="true" />
       <div className="relative mx-auto max-w-4xl text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -45,7 +45,7 @@ const TestimonialsSection = () => {
               transition={{ duration: 0.5 }}
               className="rounded-2xl border border-border bg-card p-10 md:p-14"
             >
-              <Quote className="mx-auto mb-6 h-8 w-8 text-secondary/40" />
+              <Quote className="mx-auto mb-6 h-8 w-8 text-secondary/40" aria-hidden="true" />
               <p className="mb-8 font-body text-lg leading-relaxed text-foreground/90 md:text-xl">
                 "{testimonials[current].quote}"
               </p>

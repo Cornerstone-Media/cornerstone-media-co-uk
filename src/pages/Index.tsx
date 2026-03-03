@@ -49,7 +49,7 @@ const Index = () => {
         schema={homepageFAQSchema}
       />
       <Navbar />
-      <main>
+      <main role="main">
         <HeroSection />
         <div id="services">
           <ServicesOverview />

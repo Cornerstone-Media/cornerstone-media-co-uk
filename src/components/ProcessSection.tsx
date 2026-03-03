@@ -8,7 +8,7 @@ const steps = [
 ];
 
 const ProcessSection = () => (
-  <section className="section-padding bg-card/50">
+  <section className="section-padding bg-card/50" aria-label="Our proven process">
     <div className="mx-auto max-w-7xl">
       <motion.div
         initial={{ opacity: 0, y: 20 }}

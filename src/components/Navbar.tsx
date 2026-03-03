@@ -31,6 +31,7 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
+      aria-label="Main navigation"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
           ? "bg-[#19A8CA]/95 backdrop-blur-xl border-b border-[#19A8CA]/40 shadow-lg shadow-background/20"
@@ -43,16 +44,17 @@ const Navbar = () => {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className={`relative z-50 lg:hidden ${scrolled ? "text-white" : "text-foreground"}`}
-            aria-label="Toggle menu"
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
 
           {/* Logo: left on desktop, centered on mobile */}
-          <Link to="/" className="flex-shrink-0 lg:mr-auto">
+          <Link to="/" className="flex-shrink-0 lg:mr-auto" aria-label="Cornerstone Media — Home">
             <img
               src={logo}
-              alt="Cornerstone Media"
+              alt="Cornerstone Media logo"
               className="h-28 w-auto"
             />
           </Link>

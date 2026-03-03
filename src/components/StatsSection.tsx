@@ -45,8 +45,8 @@ const stats = [
 ];
 
 const StatsSection = () => (
-  <section className="section-padding relative overflow-hidden">
-    <div className="absolute inset-0" style={{ background: "var(--gradient-glow)" }} />
+  <section className="section-padding relative overflow-hidden" aria-label="Performance statistics">
+    <div className="absolute inset-0" style={{ background: "var(--gradient-glow)" }} aria-hidden="true" />
     <div className="relative mx-auto max-w-7xl">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
