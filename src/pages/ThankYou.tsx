@@ -11,7 +11,7 @@ const ThankYou = () => {
       <SEOHead
         title="Thank You | Cornerstone Media"
         description="Thanks for getting in touch with Cornerstone Media. We'll respond within 24 hours."
-        canonical="https://cornerstonemedia.co.uk/thank-you"
+        canonical="https://cornerstonemedialtd.com/thank-you"
       />
       <Navbar />
 

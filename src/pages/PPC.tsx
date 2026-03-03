@@ -9,7 +9,7 @@ const PPC = () => (
     <SEOHead
       title="PPC Agency Birmingham | Google Ads Management | Cornerstone Media"
       description="Expert PPC management in Birmingham. Maximise ROI with targeted Google Ads campaigns, conversion tracking, and data-driven optimisation. Free audit available."
-      canonical="https://cornerstonemedia.co.uk/ppc"
+      canonical="https://cornerstonemedialtd.com/ppc"
     />
     <Navbar />
     <main>

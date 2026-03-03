@@ -108,7 +108,7 @@ const Services = () => {
       <SEOHead
         title="Our Services | PPC, SEO, Web Design & More | Cornerstone Media"
         description="Explore the full range of digital marketing services from Cornerstone Media in Birmingham. PPC, SEO, social media, content writing, web design & maintenance."
-        canonical="https://cornerstonemedia.co.uk/services"
+        canonical="https://cornerstonemedialtd.com/services"
       />
       <Navbar />
 

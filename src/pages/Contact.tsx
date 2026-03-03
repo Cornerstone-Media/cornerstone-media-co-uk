@@ -73,7 +73,7 @@ const Contact = () => {
       <SEOHead
         title="Contact Cornerstone Media | Digital Marketing Agency Birmingham"
         description="Get in touch with Cornerstone Media, Birmingham's digital marketing experts. Call 07846 798 534 or fill in our form for a free strategy consultation."
-        canonical="https://cornerstonemedia.co.uk/contact"
+        canonical="https://cornerstonemedialtd.com/contact"
       />
       <Navbar />
 
