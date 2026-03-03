@@ -25,7 +25,7 @@
     --secondary-foreground: 0 0% 100%;
 
     --muted: 220 25% 12%;
-    --muted-foreground: 215 15% 50%;
+    --muted-foreground: 215 15% 60%;
 
     --accent: 152 85% 50%;
     --accent-foreground: 220 45% 4%;
@@ -73,6 +73,18 @@
   ::selection {
     background: hsl(172 70% 45% / 0.3);
     color: hsl(180 15% 95%);
+  }
+
+  /* Accessible focus indicators */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 3px solid hsl(var(--ring));
+    outline-offset: 2px;
+    border-radius: 4px;
   }
 }
 

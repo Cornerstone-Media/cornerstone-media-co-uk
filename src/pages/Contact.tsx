@@ -136,29 +136,29 @@ const Contact = () => {
               >
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div className="space-y-2">
-                    <label className="font-heading text-sm font-medium text-foreground">Name *</label>
-                    <Input name="name" value={formData.name} onChange={handleChange} required maxLength={100} placeholder="Your name" className="border-border bg-muted/30" />
+                    <label htmlFor="contact-name" className="font-heading text-sm font-medium text-foreground">Name *</label>
+                    <Input id="contact-name" name="name" value={formData.name} onChange={handleChange} required maxLength={100} placeholder="Your name" className="border-border bg-muted/30" autoComplete="name" />
                   </div>
                   <div className="space-y-2">
-                    <label className="font-heading text-sm font-medium text-foreground">Email *</label>
-                    <Input name="email" type="email" value={formData.email} onChange={handleChange} required maxLength={255} placeholder="you@example.com" className="border-border bg-muted/30" />
+                    <label htmlFor="contact-email" className="font-heading text-sm font-medium text-foreground">Email *</label>
+                    <Input id="contact-email" name="email" type="email" value={formData.email} onChange={handleChange} required maxLength={255} placeholder="you@example.com" className="border-border bg-muted/30" autoComplete="email" />
                   </div>
                 </div>
 
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div className="space-y-2">
-                    <label className="font-heading text-sm font-medium text-foreground">Phone</label>
-                    <Input name="phone" type="tel" value={formData.phone} onChange={handleChange} maxLength={20} placeholder="Your phone number" className="border-border bg-muted/30" />
+                    <label htmlFor="contact-phone" className="font-heading text-sm font-medium text-foreground">Phone</label>
+                    <Input id="contact-phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} maxLength={20} placeholder="Your phone number" className="border-border bg-muted/30" autoComplete="tel" />
                   </div>
                   <div className="space-y-2">
-                    <label className="font-heading text-sm font-medium text-foreground">Company</label>
-                    <Input name="company" value={formData.company} onChange={handleChange} maxLength={100} placeholder="Your company" className="border-border bg-muted/30" />
+                    <label htmlFor="contact-company" className="font-heading text-sm font-medium text-foreground">Company</label>
+                    <Input id="contact-company" name="company" value={formData.company} onChange={handleChange} maxLength={100} placeholder="Your company" className="border-border bg-muted/30" autoComplete="organization" />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <label className="font-heading text-sm font-medium text-foreground">Message *</label>
-                  <Textarea name="message" value={formData.message} onChange={handleChange} required maxLength={1000} rows={5} placeholder="Tell us about your project and goals..." className="border-border bg-muted/30" />
+                  <label htmlFor="contact-message" className="font-heading text-sm font-medium text-foreground">Message *</label>
+                  <Textarea id="contact-message" name="message" value={formData.message} onChange={handleChange} required maxLength={1000} rows={5} placeholder="Tell us about your project and goals..." className="border-border bg-muted/30" />
                 </div>
 
                 <Button type="submit" disabled={submitting} className="gradient-btn w-full border-0 text-base">
