@@ -9,7 +9,7 @@ const SocialMedia = () => (
     <SEOHead
       title="Social Media Marketing Birmingham | Facebook & Instagram Ads | Cornerstone Media"
       description="Strategic social media marketing in Birmingham. Paid campaigns on Facebook, Instagram, LinkedIn & TikTok. Build your brand and drive conversions."
-      canonical="https://cornerstonemedia.co.uk/social-media"
+      canonical="https://cornerstonemedialtd.com/social-media"
     />
     <Navbar />
     <main>

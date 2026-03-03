@@ -9,7 +9,7 @@ const ContentWriting = () => (
     <SEOHead
       title="Content Writing Services Birmingham | SEO Copywriting | Cornerstone Media"
       description="Professional content writing services in Birmingham. SEO-optimised blog posts, website copy, and content strategy to boost your rankings and engage your audience."
-      canonical="https://cornerstonemedia.co.uk/content-writing"
+      canonical="https://cornerstonemedialtd.com/content-writing"
     />
     <Navbar />
     <main>

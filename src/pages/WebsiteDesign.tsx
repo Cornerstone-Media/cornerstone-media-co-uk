@@ -9,7 +9,7 @@ const WebsiteDesign = () => (
     <SEOHead
       title="Website Design Birmingham | Web Design & Development | Cornerstone Media"
       description="Professional website design in Birmingham. Conversion-focused, mobile-responsive websites built for speed and SEO. Get a free quote from Cornerstone Media."
-      canonical="https://cornerstonemedia.co.uk/website-design"
+      canonical="https://cornerstonemedialtd.com/website-design"
     />
     <Navbar />
     <main>

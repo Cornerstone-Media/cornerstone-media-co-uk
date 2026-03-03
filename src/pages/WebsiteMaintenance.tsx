@@ -9,7 +9,7 @@ const WebsiteMaintenance = () => (
     <SEOHead
       title="Website Maintenance Birmingham | Ongoing Support & Care | Cornerstone Media"
       description="Professional website maintenance in Birmingham. Security updates, backups, performance monitoring & content updates. Keep your site secure and fast."
-      canonical="https://cornerstonemedia.co.uk/website-maintenance"
+      canonical="https://cornerstonemedialtd.com/website-maintenance"
     />
     <Navbar />
     <main>

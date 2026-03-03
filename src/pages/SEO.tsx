@@ -9,7 +9,7 @@ const SEO = () => (
     <SEOHead
       title="SEO Agency Birmingham | Search Engine Optimisation | Cornerstone Media"
       description="Birmingham SEO services that drive organic traffic and rankings. Technical SEO, content strategy, and link building from Cornerstone Media. Free SEO audit."
-      canonical="https://cornerstonemedia.co.uk/seo"
+      canonical="https://cornerstonemedialtd.com/seo"
     />
     <Navbar />
     <main>
