@@ -37,6 +37,7 @@ const App = () => (
           <Route path="/website-maintenance" element={<WebsiteMaintenance />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/thank-you" element={<ThankYou />} />
+          <Route path="/og-generator" element={<OGImageGenerator />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
