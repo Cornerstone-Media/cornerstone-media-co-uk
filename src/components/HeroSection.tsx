@@ -39,10 +39,9 @@ const HeroSection = () => {
             transition={{ delay: 0.4, duration: 0.7 }}
             className="mb-8 font-heading text-5xl font-extrabold leading-[1.05] tracking-tight text-foreground sm:text-6xl lg:text-8xl"
           >
-            Turning Digital
+            Cornerstone Media
             <br />
-            Strategy Into{" "}
-            <span className="gradient-text">Measurable Growth</span>
+            <span className="gradient-text">Digital Marketing Agency in Birmingham</span>
           </motion.h1>
 
           <motion.p
