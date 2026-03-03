@@ -43,7 +43,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Digital Marketing Agency Birmingham | PPC, SEO & Web Design | Cornerstone Media"
+        title="Cornerstone Media | Digital Marketing Agency Birmingham | PPC, SEO & Web Design"
         description="Cornerstone Media is Birmingham's leading digital marketing agency. Expert PPC, SEO, social media, website design & maintenance. Get your free strategy call today."
         canonical="https://cornerstonemedia.co.uk/"
         schema={homepageFAQSchema}
