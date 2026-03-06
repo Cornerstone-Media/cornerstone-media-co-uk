@@ -367,9 +367,14 @@ const ServicePageLayout = ({
           <p className="mb-10 font-body text-lg text-muted-foreground">
             Book a free strategy session and discover how we can accelerate your growth in Birmingham.
           </p>
-          <Link to="/contact" className="gradient-btn text-base">
-            Request a Free Strategy Session
-          </Link>
+          <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            <Link to="/contact" className="gradient-btn text-base">
+              Request a Free Strategy Session
+            </Link>
+            <Link to="/services" className="gradient-btn-outline text-base">
+              View All Services
+            </Link>
+          </div>
         </motion.div>
       </section>
     </div>
