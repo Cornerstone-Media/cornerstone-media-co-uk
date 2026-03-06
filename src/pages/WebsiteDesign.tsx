@@ -67,7 +67,7 @@ const WebsiteDesign = () => (
     <SEOHead
       title="Website Design Birmingham | Web Design Agency Birmingham | Cornerstone Media"
       description="Professional website design in Birmingham. Conversion-focused, mobile-responsive websites built for speed and SEO. Free consultation from Cornerstone Media. Call 07846 798 534."
-      canonical="https://cornerstonemedialtd.com/website-design"
+      canonical="https://cornerstonemedialtd.com/website-design-birmingham"
       schema={webDesignFAQSchema}
     />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webDesignSchema) }} />
@@ -146,9 +146,12 @@ const WebsiteDesign = () => (
           { question: "Can I update the website content myself?", answer: "Yes. We build websites with user-friendly content management systems and provide training so you can update text, images, blog posts, and pages independently. If you'd prefer us to handle updates, our maintenance packages include content change requests." },
         ]}
         relatedServices={[
-          { name: "SEO Birmingham", path: "/seo", description: "Maximise your new website's visibility with ongoing search engine optimisation. Our SEO Birmingham services ensure your website ranks for the keywords that matter to your business." },
-          { name: "PPC Birmingham", path: "/ppc", description: "Drive immediate traffic to your new website with targeted Google Ads campaigns managed by our PPC Birmingham specialists." },
+          { name: "SEO Birmingham", path: "/seo-birmingham", description: "Maximise your new website's visibility with ongoing search engine optimisation. Our SEO Birmingham services ensure your website ranks for the keywords that matter to your business." },
+          { name: "PPC Birmingham", path: "/ppc-birmingham", description: "Drive immediate traffic to your new website with targeted Google Ads campaigns managed by our PPC Birmingham specialists." },
           { name: "Website Maintenance Birmingham", path: "/website-maintenance", description: "Keep your website secure, fast, and up-to-date with our ongoing maintenance and support packages for Birmingham businesses." },
+          { name: "WordPress Web Design Birmingham", path: "/wordpress-web-design-birmingham", description: "Custom WordPress websites built for Birmingham businesses with intuitive content management and SEO-friendly architecture." },
+          { name: "E-commerce Website Design Birmingham", path: "/ecommerce-website-design-birmingham", description: "Online stores built for conversion with secure checkout, inventory management, and payment gateway integration." },
+          { name: "Small Business Web Design Birmingham", path: "/small-business-web-design-birmingham", description: "Affordable, professional website design packages tailored for small businesses and startups in Birmingham." },
         ]}
       />
     </main>

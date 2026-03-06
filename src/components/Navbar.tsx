@@ -6,11 +6,12 @@ import logo from "@/assets/logo.png";
 
 const navLinks = [
   { label: "Home", path: "/" },
-  { label: "PPC", path: "/ppc" },
-  { label: "SEO", path: "/seo" },
-  { label: "Social", path: "/social-media" },
-  { label: "Website", path: "/website-design" },
-  { label: "Maintenance", path: "/website-maintenance" },
+  { label: "Services", path: "/services" },
+  { label: "PPC", path: "/ppc-birmingham" },
+  { label: "SEO", path: "/seo-birmingham" },
+  { label: "Social", path: "/social-media-marketing-birmingham" },
+  { label: "Web Design", path: "/website-design-birmingham" },
+  { label: "About", path: "/about" },
 ];
 
 const Navbar = () => {

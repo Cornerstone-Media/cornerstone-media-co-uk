@@ -70,7 +70,7 @@ const SEO = () => (
     <SEOHead
       title="SEO Birmingham | SEO Agency Birmingham | Cornerstone Media"
       description="Birmingham SEO agency that drives organic traffic and rankings. Technical SEO, local SEO, content strategy, and link building. Free SEO audit — call 07846 798 534."
-      canonical="https://cornerstonemedialtd.com/seo"
+      canonical="https://cornerstonemedialtd.com/seo-birmingham"
       schema={seoFAQSchema}
     />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(seoServiceSchema) }} />
@@ -149,9 +149,12 @@ const SEO = () => (
           { question: "How do you report on SEO performance?", answer: "We provide detailed monthly reports covering keyword rankings, organic traffic trends, conversion data, technical health scores, and link building progress. Reports are presented in plain language with clear recommendations for the month ahead." },
         ]}
         relatedServices={[
-          { name: "PPC Birmingham", path: "/ppc", description: "Combine organic search with paid advertising for maximum search visibility. Our PPC Birmingham campaigns deliver immediate traffic while SEO builds long-term presence." },
+          { name: "PPC Birmingham", path: "/ppc-birmingham", description: "Combine organic search with paid advertising for maximum search visibility. Our PPC Birmingham campaigns deliver immediate traffic while SEO builds long-term presence." },
           { name: "Content Writing Birmingham", path: "/content-writing", description: "High-quality, SEO-optimised content creation that supports your organic search strategy and establishes your brand as an industry authority." },
-          { name: "Website Design Birmingham", path: "/website-design", description: "A well-designed website is the foundation of effective SEO. Our website design Birmingham team builds fast, accessible sites optimised for search engines." },
+          { name: "Website Design Birmingham", path: "/website-design-birmingham", description: "A well-designed website is the foundation of effective SEO. Our website design Birmingham team builds fast, accessible sites optimised for search engines." },
+          { name: "Local SEO Birmingham", path: "/local-seo-birmingham", description: "Dominate Birmingham's local search results and Google Maps with our specialist local SEO services." },
+          { name: "Technical SEO Birmingham", path: "/technical-seo-birmingham", description: "Fix crawlability, indexation, and performance issues that prevent your website from ranking." },
+          { name: "SEO Audit Birmingham", path: "/seo-audit-birmingham", description: "Comprehensive SEO audit identifying every opportunity to improve your search visibility in Birmingham." },
         ]}
       />
     </main>

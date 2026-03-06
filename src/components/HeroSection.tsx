@@ -50,10 +50,10 @@ const HeroSection = () => {
             className="mb-12 max-w-xl font-body text-lg leading-relaxed text-muted-foreground md:text-xl"
           >
             Cornerstone Media helps Birmingham businesses grow through expert{" "}
-            <Link to="/ppc" className="text-secondary hover:underline">PPC advertising</Link>,{" "}
-            <Link to="/seo" className="text-secondary hover:underline">SEO</Link>,{" "}
-            <Link to="/social-media" className="text-secondary hover:underline">social media marketing</Link>, and{" "}
-            <Link to="/website-design" className="text-secondary hover:underline">website design</Link>.
+            <Link to="/ppc-birmingham" className="text-secondary hover:underline">PPC advertising</Link>,{" "}
+            <Link to="/seo-birmingham" className="text-secondary hover:underline">SEO</Link>,{" "}
+            <Link to="/social-media-marketing-birmingham" className="text-secondary hover:underline">social media marketing</Link>, and{" "}
+            <Link to="/website-design-birmingham" className="text-secondary hover:underline">website design</Link>.
             We deliver measurable results that drive real revenue.
           </motion.p>
 
