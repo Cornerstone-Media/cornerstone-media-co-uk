@@ -1,6 +1,29 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { type LucideIcon, CheckCircle2 } from "lucide-react";
+import { type LucideIcon, CheckCircle2, ChevronDown } from "lucide-react";
+import { useState } from "react";
+
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+interface RelatedService {
+  name: string;
+  path: string;
+  description: string;
+}
+
+interface DetailSection {
+  heading: string;
+  paragraphs: string[];
+}
+
+interface CaseStudy {
+  title: string;
+  result: string;
+  description: string;
+}
 
 interface ServicePageLayoutProps {
   title: string;
@@ -10,7 +33,40 @@ interface ServicePageLayoutProps {
   processSteps: { title: string; description: string }[];
   icon: LucideIcon;
   topics: { title: string; description: string }[];
+  detailedSections?: DetailSection[];
+  whyBirmingham?: DetailSection;
+  toolsAndPlatforms?: { heading: string; tools: string[] };
+  caseStudies?: CaseStudy[];
+  faqs?: FAQ[];
+  relatedServices?: RelatedService[];
 }
+
+const FAQItem = ({ faq, index }: { faq: FAQ; index: number }) => {
+  const [open, setOpen] = useState(false);
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 15 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.05 }}
+      className="rounded-2xl border border-border bg-card overflow-hidden"
+    >
+      <button
+        onClick={() => setOpen(!open)}
+        className="flex w-full items-center justify-between p-6 text-left font-heading font-semibold text-foreground hover:text-secondary transition-colors"
+        aria-expanded={open}
+      >
+        <span>{faq.question}</span>
+        <ChevronDown className={`h-5 w-5 flex-shrink-0 text-muted-foreground transition-transform duration-300 ${open ? "rotate-180" : ""}`} />
+      </button>
+      {open && (
+        <div className="px-6 pb-6 pt-0">
+          <p className="font-body text-sm leading-relaxed text-muted-foreground">{faq.answer}</p>
+        </div>
+      )}
+    </motion.div>
+  );
+};
 
 const ServicePageLayout = ({
   title,
@@ -20,6 +76,12 @@ const ServicePageLayout = ({
   processSteps,
   icon: Icon,
   topics,
+  detailedSections,
+  whyBirmingham,
+  toolsAndPlatforms,
+  caseStudies,
+  faqs,
+  relatedServices,
 }: ServicePageLayoutProps) => {
   return (
     <div className="pt-36">
@@ -55,9 +117,7 @@ const ServicePageLayout = ({
       <section className="section-padding">
         <div className="mx-auto max-w-7xl">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <p className="mb-3 font-heading text-sm font-semibold uppercase tracking-[0.2em] text-secondary">
-              Advantages
-            </p>
+            <p className="mb-3 font-heading text-sm font-semibold uppercase tracking-[0.2em] text-secondary">Advantages</p>
             <h2 className="mb-12 font-heading text-3xl font-bold text-foreground md:text-4xl">
               Why Choose Our <span className="gradient-text">Service</span>
             </h2>
@@ -80,13 +140,37 @@ const ServicePageLayout = ({
         </div>
       </section>
 
+      {/* Detailed Sections */}
+      {detailedSections && detailedSections.length > 0 && (
+        <section className="section-padding bg-card/50">
+          <div className="mx-auto max-w-7xl">
+            {detailedSections.map((section, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className={i > 0 ? "mt-16" : ""}
+              >
+                <h2 className="mb-6 font-heading text-3xl font-bold text-foreground md:text-4xl">
+                  {section.heading}
+                </h2>
+                {section.paragraphs.map((p, j) => (
+                  <p key={j} className="mb-4 font-body text-base leading-relaxed text-muted-foreground max-w-4xl">
+                    {p}
+                  </p>
+                ))}
+              </motion.div>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* Topics */}
-      <section className="section-padding bg-card/50">
+      <section className={`section-padding ${detailedSections ? "" : "bg-card/50"}`}>
         <div className="mx-auto max-w-7xl">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <p className="mb-3 font-heading text-sm font-semibold uppercase tracking-[0.2em] text-secondary">
-              Deep Dive
-            </p>
+            <p className="mb-3 font-heading text-sm font-semibold uppercase tracking-[0.2em] text-secondary">Deep Dive</p>
             <h2 className="mb-12 font-heading text-3xl font-bold text-foreground md:text-4xl">
               What's <span className="gradient-text">Included</span>
             </h2>
@@ -109,13 +193,30 @@ const ServicePageLayout = ({
         </div>
       </section>
 
+      {/* Why Birmingham */}
+      {whyBirmingham && (
+        <section className="section-padding bg-card/50">
+          <div className="mx-auto max-w-7xl">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+              <p className="mb-3 font-heading text-sm font-semibold uppercase tracking-[0.2em] text-secondary">Local Expertise</p>
+              <h2 className="mb-8 font-heading text-3xl font-bold text-foreground md:text-4xl">
+                {whyBirmingham.heading}
+              </h2>
+              {whyBirmingham.paragraphs.map((p, i) => (
+                <p key={i} className="mb-4 font-body text-base leading-relaxed text-muted-foreground max-w-4xl">
+                  {p}
+                </p>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+      )}
+
       {/* Process */}
       <section className="section-padding">
         <div className="mx-auto max-w-7xl">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <p className="mb-3 font-heading text-sm font-semibold uppercase tracking-[0.2em] text-secondary">
-              Workflow
-            </p>
+            <p className="mb-3 font-heading text-sm font-semibold uppercase tracking-[0.2em] text-secondary">Workflow</p>
             <h2 className="mb-12 font-heading text-3xl font-bold text-foreground md:text-4xl">
               How It <span className="gradient-text">Works</span>
             </h2>
@@ -141,6 +242,116 @@ const ServicePageLayout = ({
         </div>
       </section>
 
+      {/* Tools & Platforms */}
+      {toolsAndPlatforms && (
+        <section className="section-padding bg-card/50">
+          <div className="mx-auto max-w-7xl">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+              <p className="mb-3 font-heading text-sm font-semibold uppercase tracking-[0.2em] text-secondary">Technology</p>
+              <h2 className="mb-12 font-heading text-3xl font-bold text-foreground md:text-4xl">
+                {toolsAndPlatforms.heading}
+              </h2>
+            </motion.div>
+            <div className="flex flex-wrap gap-3">
+              {toolsAndPlatforms.tools.map((tool, i) => (
+                <motion.span
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.03 }}
+                  className="rounded-xl border border-border bg-muted/50 px-5 py-3 font-heading text-sm font-medium text-foreground/80"
+                >
+                  {tool}
+                </motion.span>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Case Studies */}
+      {caseStudies && caseStudies.length > 0 && (
+        <section className="section-padding">
+          <div className="mx-auto max-w-7xl">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+              <p className="mb-3 font-heading text-sm font-semibold uppercase tracking-[0.2em] text-secondary">Results</p>
+              <h2 className="mb-12 font-heading text-3xl font-bold text-foreground md:text-4xl">
+                Real <span className="gradient-text">Results</span> for Birmingham Businesses
+              </h2>
+            </motion.div>
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {caseStudies.map((cs, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.08 }}
+                  className="rounded-2xl border border-border bg-card p-8 card-hover"
+                >
+                  <p className="mb-2 font-heading text-2xl font-extrabold gradient-text">{cs.result}</p>
+                  <h3 className="mb-3 font-heading text-lg font-bold text-foreground">{cs.title}</h3>
+                  <p className="font-body text-sm leading-relaxed text-muted-foreground">{cs.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* FAQs */}
+      {faqs && faqs.length > 0 && (
+        <section className="section-padding bg-card/50">
+          <div className="mx-auto max-w-7xl">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+              <p className="mb-3 font-heading text-sm font-semibold uppercase tracking-[0.2em] text-secondary">FAQ</p>
+              <h2 className="mb-12 font-heading text-3xl font-bold text-foreground md:text-4xl">
+                Frequently Asked <span className="gradient-text">Questions</span>
+              </h2>
+            </motion.div>
+            <div className="mx-auto max-w-3xl space-y-4">
+              {faqs.map((faq, i) => (
+                <FAQItem key={i} faq={faq} index={i} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Related Services */}
+      {relatedServices && relatedServices.length > 0 && (
+        <section className="section-padding">
+          <div className="mx-auto max-w-7xl">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+              <p className="mb-3 font-heading text-sm font-semibold uppercase tracking-[0.2em] text-secondary">Explore More</p>
+              <h2 className="mb-12 font-heading text-3xl font-bold text-foreground md:text-4xl">
+                Related <span className="gradient-text">Services</span>
+              </h2>
+            </motion.div>
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {relatedServices.map((rs, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.08 }}
+                >
+                  <Link
+                    to={rs.path}
+                    className="group block rounded-2xl border border-border bg-card p-8 transition-all duration-500 hover:border-secondary/30 card-hover"
+                  >
+                    <h3 className="mb-3 font-heading text-lg font-bold text-foreground group-hover:text-secondary transition-colors">{rs.name}</h3>
+                    <p className="font-body text-sm leading-relaxed text-muted-foreground">{rs.description}</p>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* CTA */}
       <section className="section-padding relative overflow-hidden bg-card/50">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10" />
@@ -154,10 +365,10 @@ const ServicePageLayout = ({
             Ready to Get <span className="gradient-text">Started?</span>
           </h2>
           <p className="mb-10 font-body text-lg text-muted-foreground">
-            Book a free strategy session and discover how we can accelerate your growth.
+            Book a free strategy session and discover how we can accelerate your growth in Birmingham.
           </p>
           <Link to="/contact" className="gradient-btn text-base">
-            Request a Strategy Session
+            Request a Free Strategy Session
           </Link>
         </motion.div>
       </section>

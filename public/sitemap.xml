@@ -8,17 +8,22 @@
   <url>
     <loc>https://cornerstonemedialtd.com/ppc</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://cornerstonemedialtd.com/seo</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://cornerstonemedialtd.com/social-media</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://cornerstonemedialtd.com/website-design</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://cornerstonemedialtd.com/content-writing</loc>
@@ -26,12 +31,12 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://cornerstonemedialtd.com/website-design</loc>
+    <loc>https://cornerstonemedialtd.com/website-maintenance</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://cornerstonemedialtd.com/website-maintenance</loc>
+    <loc>https://cornerstonemedialtd.com/services</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
