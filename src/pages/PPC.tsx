@@ -70,7 +70,7 @@ const PPC = () => (
     <SEOHead
       title="PPC Birmingham | Google Ads Agency Birmingham | Cornerstone Media"
       description="Expert PPC agency in Birmingham. We manage Google Ads campaigns that deliver measurable ROI for Birmingham businesses. Free PPC audit available. Call 07846 798 534."
-      canonical="https://cornerstonemedialtd.com/ppc"
+      canonical="https://cornerstonemedialtd.com/ppc-birmingham"
       schema={ppcFAQSchema}
     />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ppcSchema) }} />
@@ -149,9 +149,12 @@ const PPC = () => (
           { question: "Will I be locked into a long-term contract?", answer: "No. We believe in earning your business every month through results. We offer flexible rolling agreements with no long-term lock-in. Our clients stay because of performance, not contracts." },
         ]}
         relatedServices={[
-          { name: "SEO Birmingham", path: "/seo", description: "Complement your PPC campaigns with organic search optimisation. Our SEO Birmingham services build long-term visibility while PPC delivers immediate results." },
-          { name: "Social Media Marketing Birmingham", path: "/social-media", description: "Extend your reach beyond search with targeted paid social campaigns on Facebook, Instagram, and LinkedIn for Birmingham audiences." },
-          { name: "Website Design Birmingham", path: "/website-design", description: "Ensure your PPC traffic converts with a professionally designed, conversion-optimised website built for Birmingham businesses." },
+          { name: "SEO Birmingham", path: "/seo-birmingham", description: "Complement your PPC campaigns with organic search optimisation. Our SEO Birmingham services build long-term visibility while PPC delivers immediate results." },
+          { name: "Social Media Marketing Birmingham", path: "/social-media-marketing-birmingham", description: "Extend your reach beyond search with targeted paid social campaigns on Facebook, Instagram, and LinkedIn for Birmingham audiences." },
+          { name: "Website Design Birmingham", path: "/website-design-birmingham", description: "Ensure your PPC traffic converts with a professionally designed, conversion-optimised website built for Birmingham businesses." },
+          { name: "Google Ads Management Birmingham", path: "/google-ads-management-birmingham", description: "Expert Google Ads account management with advanced bidding strategies and conversion tracking for Birmingham businesses." },
+          { name: "PPC Management Birmingham", path: "/ppc-management-birmingham", description: "Full-service PPC management across Google, Bing, and paid social platforms for Birmingham companies." },
+          { name: "Remarketing Ads Birmingham", path: "/remarketing-ads-birmingham", description: "Re-engage previous website visitors with targeted remarketing campaigns that bring them back to convert." },
         ]}
       />
     </main>

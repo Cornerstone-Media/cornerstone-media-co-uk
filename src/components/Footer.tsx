@@ -5,18 +5,19 @@ const footerLinks = [
   {
     title: "Services",
     links: [
-      { label: "PPC Advertising Birmingham", path: "/ppc" },
-      { label: "SEO Birmingham", path: "/seo" },
-      { label: "Social Media Marketing", path: "/social-media" },
+      { label: "PPC Advertising Birmingham", path: "/ppc-birmingham" },
+      { label: "SEO Birmingham", path: "/seo-birmingham" },
+      { label: "Social Media Marketing", path: "/social-media-marketing-birmingham" },
       { label: "Content Writing Birmingham", path: "/content-writing" },
-      { label: "Website Design Birmingham", path: "/website-design" },
+      { label: "Website Design Birmingham", path: "/website-design-birmingham" },
       { label: "Website Maintenance", path: "/website-maintenance" },
     ],
   },
   {
     title: "Company",
     links: [
-      { label: "About Us", path: "/" },
+      { label: "About Us", path: "/about" },
+      { label: "All Services", path: "/services" },
       { label: "Contact Us", path: "/contact" },
     ],
   },

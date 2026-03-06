@@ -59,7 +59,7 @@ const SocialMedia = () => (
     <SEOHead
       title="Social Media Marketing Birmingham | Social Media Agency | Cornerstone Media"
       description="Social media marketing agency in Birmingham. Paid social campaigns on Facebook, Instagram, LinkedIn & TikTok. Content creation and community management. Free consultation."
-      canonical="https://cornerstonemedialtd.com/social-media"
+      canonical="https://cornerstonemedialtd.com/social-media-marketing-birmingham"
       schema={socialFAQSchema}
     />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(socialSchema) }} />
@@ -138,9 +138,12 @@ const SocialMedia = () => (
           { question: "How often will you post on my social media accounts?", answer: "Posting frequency depends on the platform and your package. Typically, we recommend 3-5 posts per week on primary platforms, with additional Stories and Reels content. Everything is planned in advance with your approval." },
         ]}
         relatedServices={[
-          { name: "PPC Birmingham", path: "/ppc", description: "Combine social media advertising with Google Ads to reach your Birmingham audience across both search and social channels for maximum visibility." },
+          { name: "PPC Birmingham", path: "/ppc-birmingham", description: "Combine social media advertising with Google Ads to reach your Birmingham audience across both search and social channels for maximum visibility." },
           { name: "Content Writing Birmingham", path: "/content-writing", description: "Professional content creation that fuels your social media calendar with blog posts, articles, and long-form content your audience wants to share." },
-          { name: "Website Design Birmingham", path: "/website-design", description: "Drive social media traffic to a beautifully designed, conversion-optimised website that turns followers into customers." },
+          { name: "Website Design Birmingham", path: "/website-design-birmingham", description: "Drive social media traffic to a beautifully designed, conversion-optimised website that turns followers into customers." },
+          { name: "Facebook Ads Birmingham", path: "/facebook-ads-birmingham", description: "Targeted Facebook advertising campaigns for Birmingham businesses with advanced audience targeting and conversion tracking." },
+          { name: "Instagram Marketing Birmingham", path: "/instagram-marketing-birmingham", description: "Grow your brand on Instagram with Reels, Stories, and targeted advertising reaching Birmingham audiences." },
+          { name: "LinkedIn Ads Birmingham", path: "/linkedin-ads-birmingham", description: "Reach B2B decision-makers in Birmingham with LinkedIn Sponsored Content, InMail, and lead generation campaigns." },
         ]}
       />
     </main>

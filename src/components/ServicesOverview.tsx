@@ -7,19 +7,19 @@ const services = [
     icon: MousePointerClick,
     title: "PPC Birmingham",
     description: "Drive targeted traffic to your Birmingham business with expertly managed Google Ads and pay-per-click campaigns that maximise ROI and generate high-quality leads.",
-    path: "/ppc",
+    path: "/ppc-birmingham",
   },
   {
     icon: Search,
     title: "SEO Birmingham",
     description: "Climb Google rankings with technical SEO, content strategy, and authoritative link building from our specialist SEO Birmingham team.",
-    path: "/seo",
+    path: "/seo-birmingham",
   },
   {
     icon: Share2,
     title: "Social Media Marketing Birmingham",
     description: "Build brand awareness and drive conversions through strategic social media campaigns across Facebook, Instagram, LinkedIn, and TikTok.",
-    path: "/social-media",
+    path: "/social-media-marketing-birmingham",
   },
   {
     icon: PenLine,
@@ -31,7 +31,7 @@ const services = [
     icon: Palette,
     title: "Website Design Birmingham",
     description: "Conversion-focused website design for Birmingham businesses — beautifully crafted, lightning-fast, and optimised for every device and search engine.",
-    path: "/website-design",
+    path: "/website-design-birmingham",
   },
   {
     icon: Wrench,
@@ -59,10 +59,10 @@ const ServicesOverview = () => {
             <span className="gradient-text">Digital Marketing</span> in Birmingham
           </h2>
           <p className="mt-6 max-w-2xl font-body text-base leading-relaxed text-muted-foreground">
-            From <Link to="/ppc" className="text-secondary hover:underline">PPC advertising</Link> and{" "}
-            <Link to="/seo" className="text-secondary hover:underline">search engine optimisation</Link> to{" "}
-            <Link to="/social-media" className="text-secondary hover:underline">social media marketing</Link> and{" "}
-            <Link to="/website-design" className="text-secondary hover:underline">website design</Link>,
+            From <Link to="/ppc-birmingham" className="text-secondary hover:underline">PPC advertising</Link> and{" "}
+            <Link to="/seo-birmingham" className="text-secondary hover:underline">search engine optimisation</Link> to{" "}
+            <Link to="/social-media-marketing-birmingham" className="text-secondary hover:underline">social media marketing</Link> and{" "}
+            <Link to="/website-design-birmingham" className="text-secondary hover:underline">website design</Link>,
             Cornerstone Media provides everything your Birmingham business needs to grow online.
           </p>
         </motion.div>
