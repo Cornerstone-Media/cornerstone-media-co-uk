@@ -30,7 +30,7 @@ const HeroSection = () => {
             transition={{ delay: 0.2, duration: 0.5 }}
             className="mb-4 font-heading text-sm font-semibold uppercase tracking-[0.2em] text-secondary"
           >
-            Birmingham's Data-Driven Digital Marketing Agency
+            Cornerstone Media — Birmingham's Data-Driven Marketing Agency
           </motion.p>
 
           <motion.h1
@@ -39,9 +39,8 @@ const HeroSection = () => {
             transition={{ delay: 0.4, duration: 0.7 }}
             className="mb-8 font-heading text-5xl font-extrabold leading-[1.05] tracking-tight text-foreground sm:text-6xl lg:text-8xl"
           >
-            Cornerstone Media
-            <br />
-            <span className="gradient-text">Digital Marketing Agency in Birmingham</span>
+            Digital Marketing Agency{" "}
+            <span className="gradient-text">Birmingham</span>
           </motion.h1>
 
           <motion.p
@@ -50,7 +49,12 @@ const HeroSection = () => {
             transition={{ delay: 0.6, duration: 0.6 }}
             className="mb-12 max-w-xl font-body text-lg leading-relaxed text-muted-foreground md:text-xl"
           >
-            Cornerstone Media helps Birmingham businesses scale through expert PPC management, SEO, social media marketing, high-converting website design, and ongoing maintenance.
+            Cornerstone Media helps Birmingham businesses grow through expert{" "}
+            <Link to="/ppc" className="text-secondary hover:underline">PPC advertising</Link>,{" "}
+            <Link to="/seo" className="text-secondary hover:underline">SEO</Link>,{" "}
+            <Link to="/social-media" className="text-secondary hover:underline">social media marketing</Link>, and{" "}
+            <Link to="/website-design" className="text-secondary hover:underline">website design</Link>.
+            We deliver measurable results that drive real revenue.
           </motion.p>
 
           <motion.div

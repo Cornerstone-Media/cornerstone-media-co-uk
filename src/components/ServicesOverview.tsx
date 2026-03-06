@@ -5,38 +5,38 @@ import { Search, MousePointerClick, Share2, PenLine, Palette, Wrench, ArrowUpRig
 const services = [
   {
     icon: MousePointerClick,
-    title: "PPC Advertising",
-    description: "Drive targeted traffic to your Birmingham business with expertly managed Google Ads and pay-per-click campaigns that maximise ROI.",
+    title: "PPC Birmingham",
+    description: "Drive targeted traffic to your Birmingham business with expertly managed Google Ads and pay-per-click campaigns that maximise ROI and generate high-quality leads.",
     path: "/ppc",
   },
   {
     icon: Search,
-    title: "SEO Services",
-    description: "Climb Google rankings in Birmingham and beyond with technical SEO, content strategy, and authoritative link building.",
+    title: "SEO Birmingham",
+    description: "Climb Google rankings with technical SEO, content strategy, and authoritative link building from our specialist SEO Birmingham team.",
     path: "/seo",
   },
   {
     icon: Share2,
-    title: "Social Media Marketing",
-    description: "Build brand awareness and drive conversions for your Birmingham business through strategic social media campaigns.",
+    title: "Social Media Marketing Birmingham",
+    description: "Build brand awareness and drive conversions through strategic social media campaigns across Facebook, Instagram, LinkedIn, and TikTok.",
     path: "/social-media",
   },
   {
     icon: PenLine,
     title: "Content Writing",
-    description: "Engage your Birmingham audience with SEO-optimised blog posts, website copy, and content strategy that drives traffic and conversions.",
+    description: "Engage your Birmingham audience with SEO-optimised blog posts, website copy, and content strategy that drives organic traffic and conversions.",
     path: "/content-writing",
   },
   {
     icon: Palette,
-    title: "Website Design",
-    description: "Conversion-focused website design for Birmingham businesses — beautifully crafted, fast, and optimised for every device.",
+    title: "Website Design Birmingham",
+    description: "Conversion-focused website design for Birmingham businesses — beautifully crafted, lightning-fast, and optimised for every device and search engine.",
     path: "/website-design",
   },
   {
     icon: Wrench,
     title: "Website Maintenance",
-    description: "Keep your website secure, fast, and up-to-date with our ongoing maintenance, monitoring, and performance optimisation plans.",
+    description: "Keep your website secure, fast, and up-to-date with our ongoing maintenance, monitoring, and performance optimisation plans for Birmingham businesses.",
     path: "/website-maintenance",
   },
 ];
@@ -56,8 +56,15 @@ const ServicesOverview = () => {
           </p>
           <h2 className="max-w-lg font-heading text-4xl font-bold leading-tight text-foreground md:text-5xl">
             Full-Spectrum{" "}
-            <span className="gradient-text">Digital Marketing Services</span> in Birmingham
+            <span className="gradient-text">Digital Marketing</span> in Birmingham
           </h2>
+          <p className="mt-6 max-w-2xl font-body text-base leading-relaxed text-muted-foreground">
+            From <Link to="/ppc" className="text-secondary hover:underline">PPC advertising</Link> and{" "}
+            <Link to="/seo" className="text-secondary hover:underline">search engine optimisation</Link> to{" "}
+            <Link to="/social-media" className="text-secondary hover:underline">social media marketing</Link> and{" "}
+            <Link to="/website-design" className="text-secondary hover:underline">website design</Link>,
+            Cornerstone Media provides everything your Birmingham business needs to grow online.
+          </p>
         </motion.div>
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
