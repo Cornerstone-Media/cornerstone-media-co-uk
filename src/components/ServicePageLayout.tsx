@@ -41,6 +41,42 @@ interface ServicePageLayoutProps {
   relatedServices?: RelatedService[];
 }
 
+const AccordionDetail = ({ section, index }: { section: DetailSection; index: number }) => {
+  const [open, setOpen] = useState(false);
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 15 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.05 }}
+      className="rounded-2xl border border-border bg-card overflow-hidden"
+    >
+      <button
+        onClick={() => setOpen(!open)}
+        className="flex w-full items-center justify-between p-6 text-left font-heading text-lg font-semibold text-foreground hover:text-secondary transition-colors"
+        aria-expanded={open}
+      >
+        <span>{section.heading}</span>
+        <ChevronDown className={`h-5 w-5 flex-shrink-0 text-muted-foreground transition-transform duration-300 ${open ? "rotate-180" : ""}`} />
+      </button>
+      {/* Content always in DOM for SEO crawlability */}
+      <div className={`${open ? "block" : "hidden"} px-6 pb-6 pt-0 space-y-3`}>
+        {section.paragraphs.map((p, j) => (
+          <p key={j} className="font-body text-sm leading-relaxed text-muted-foreground">{p}</p>
+        ))}
+      </div>
+      {/* Hidden SEO fallback for crawlers */}
+      {!open && (
+        <div className="sr-only" aria-hidden="false">
+          {section.paragraphs.map((p, j) => (
+            <p key={j}>{p}</p>
+          ))}
+        </div>
+      )}
+    </motion.div>
+  );
+};
+
 const FAQItem = ({ faq, index }: { faq: FAQ; index: number }) => {
   const [open, setOpen] = useState(false);
   return (
@@ -59,9 +95,12 @@ const FAQItem = ({ faq, index }: { faq: FAQ; index: number }) => {
         <span>{faq.question}</span>
         <ChevronDown className={`h-5 w-5 flex-shrink-0 text-muted-foreground transition-transform duration-300 ${open ? "rotate-180" : ""}`} />
       </button>
-      {open && (
-        <div className="px-6 pb-6 pt-0">
-          <p className="font-body text-sm leading-relaxed text-muted-foreground">{faq.answer}</p>
+      <div className={`${open ? "block" : "hidden"} px-6 pb-6 pt-0`}>
+        <p className="font-body text-sm leading-relaxed text-muted-foreground">{faq.answer}</p>
+      </div>
+      {!open && (
+        <div className="sr-only" aria-hidden="false">
+          <p>{faq.answer}</p>
         </div>
       )}
     </motion.div>
@@ -113,7 +152,7 @@ const ServicePageLayout = ({
         </div>
       </section>
 
-      {/* Benefits */}
+      {/* Benefits – visual grid */}
       <section className="section-padding">
         <div className="mx-auto max-w-7xl">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
@@ -140,33 +179,26 @@ const ServicePageLayout = ({
         </div>
       </section>
 
-      {/* Detailed Sections */}
+      {/* Detailed Sections – now in accordions */}
       {detailedSections && detailedSections.length > 0 && (
         <section className="section-padding bg-card/50">
-          <div className="mx-auto max-w-7xl">
-            {detailedSections.map((section, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className={i > 0 ? "mt-16" : ""}
-              >
-                <h2 className="mb-6 font-heading text-3xl font-bold text-foreground md:text-4xl">
-                  {section.heading}
-                </h2>
-                {section.paragraphs.map((p, j) => (
-                  <p key={j} className="mb-4 font-body text-base leading-relaxed text-muted-foreground max-w-4xl">
-                    {p}
-                  </p>
-                ))}
-              </motion.div>
-            ))}
+          <div className="mx-auto max-w-4xl">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+              <p className="mb-3 font-heading text-sm font-semibold uppercase tracking-[0.2em] text-secondary">In Depth</p>
+              <h2 className="mb-8 font-heading text-3xl font-bold text-foreground md:text-4xl">
+                Learn <span className="gradient-text">More</span>
+              </h2>
+            </motion.div>
+            <div className="space-y-4">
+              {detailedSections.map((section, i) => (
+                <AccordionDetail key={i} section={section} index={i} />
+              ))}
+            </div>
           </div>
         </section>
       )}
 
-      {/* Topics */}
+      {/* Topics – feature grid */}
       <section className={`section-padding ${detailedSections ? "" : "bg-card/50"}`}>
         <div className="mx-auto max-w-7xl">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
@@ -175,7 +207,7 @@ const ServicePageLayout = ({
               What's <span className="gradient-text">Included</span>
             </h2>
           </motion.div>
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {topics.map((topic, i) => (
               <motion.div
                 key={i}
@@ -202,11 +234,13 @@ const ServicePageLayout = ({
               <h2 className="mb-8 font-heading text-3xl font-bold text-foreground md:text-4xl">
                 {whyBirmingham.heading}
               </h2>
-              {whyBirmingham.paragraphs.map((p, i) => (
-                <p key={i} className="mb-4 font-body text-base leading-relaxed text-muted-foreground max-w-4xl">
-                  {p}
-                </p>
-              ))}
+              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                {whyBirmingham.paragraphs.map((p, i) => (
+                  <div key={i} className="rounded-2xl border border-border bg-card p-6">
+                    <p className="font-body text-sm leading-relaxed text-muted-foreground">{p}</p>
+                  </div>
+                ))}
+              </div>
             </motion.div>
           </div>
         </section>
