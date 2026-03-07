@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Users, Target, BarChart3, Award, MapPin, Phone } from "lucide-react";
+import { Users, Target, BarChart3, Award, MapPin } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
@@ -28,11 +28,13 @@ const aboutSchema = {
 };
 
 const values = [
-  { icon: Target, title: "Results-Driven", description: "Every strategy we create is built around measurable KPIs. We focus on conversions, revenue, and ROI — not vanity metrics. Your growth is our benchmark." },
-  { icon: Users, title: "Client-First Partnership", description: "We work as an extension of your team. Open communication, transparent reporting, and genuine care about your business success define every client relationship." },
-  { icon: BarChart3, title: "Data-Led Decisions", description: "We base every recommendation on real data and analytics. From keyword research to campaign optimisation, evidence drives our strategy — never guesswork." },
-  { icon: Award, title: "Continuous Improvement", description: "Digital marketing never stands still, and neither do we. We constantly test, learn, and refine our approaches to stay ahead of industry changes and algorithm updates." },
+  { icon: Target, title: "Results-Driven", description: "Every campaign is built around measurable KPIs. We focus on conversions, revenue, and return on investment — not vanity metrics that look good in meetings but don't grow your business. Your growth is our benchmark." },
+  { icon: Users, title: "Client-First Partnership", description: "We work as an extension of your team, not an external supplier. Open communication, clear reporting, and genuine investment in your success define every relationship we build." },
+  { icon: BarChart3, title: "Data-Led Decisions", description: "Every recommendation we make is backed by real data and analytics. From keyword research and SEO strategy to PPC campaign optimisation, our decisions are based on evidence — never guesswork." },
+  { icon: Award, title: "Continuous Improvement", description: "Digital marketing evolves constantly. Search algorithms change. Platforms update. Consumer behaviour shifts. We continuously test, learn, and refine our strategies to stay ahead of the curve and keep your campaigns performing." },
 ];
+
+const locations = ["Birmingham", "Solihull", "Sutton Coldfield", "Wolverhampton", "Walsall", "Dudley", "West Bromwich"];
 
 const About = () => (
   <div className="min-h-screen bg-background">
@@ -57,8 +59,17 @@ const About = () => (
             <h1 className="font-heading text-4xl font-extrabold text-foreground sm:text-5xl lg:text-7xl mb-6">
               About <span className="gradient-text">Cornerstone Media</span>
             </h1>
-            <p className="font-body text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+            <p className="font-body text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-4">
               We are a Birmingham-based digital marketing agency helping businesses across the West Midlands grow through strategic, data-driven marketing that delivers real, measurable results.
+            </p>
+            <p className="font-body text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto italic">
+              Or, to put it more honestly… we're a group of experienced agency staff and freelancers who got slightly tired (okay… <strong>very</strong> tired) of being told to hit impossible targets dreamed up by agency directors and business development managers waving around Google Keyword Planner screenshots like they were the Ten Commandments.
+            </p>
+            <p className="font-body text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto mt-4">
+              So we did the logical thing. We left. And Cornerstone Media was born.
+            </p>
+            <p className="font-body text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto mt-4">
+              Think of us as the A-Team of digital marketing — a group of specialists who joined forces to deliver honest advice, real expertise, and results that actually matter, without the inflated agency fees that usually go towards boardroom chairs and BDM commissions.
             </p>
           </motion.div>
         </div>
@@ -71,52 +82,113 @@ const About = () => (
             <h2 className="font-heading text-3xl font-bold text-foreground mb-6 sm:text-4xl">Our Story</h2>
             <div className="space-y-4 font-body text-base leading-relaxed text-muted-foreground">
               <p>
-                Cornerstone Media was founded with a clear mission: to provide Birmingham businesses with genuinely effective digital marketing without the inflated agency fees and jargon that plague the industry. We saw too many local businesses struggling with marketing agencies that delivered impressive-sounding reports but no tangible business growth.
+                Cornerstone Media was founded with a simple mission: to provide Birmingham businesses with genuinely effective digital marketing without the inflated agency costs, jargon-heavy presentations, and wildly optimistic forecasts that unfortunately plague the industry.
+              </p>
+              <p>Between us, we've spent years working inside agencies where the process often looked something like this:</p>
+              <ol className="list-decimal list-inside space-y-2 pl-4">
+                <li>A business development manager promises the moon.</li>
+                <li>The strategy gets built around optimistic keyword estimates.</li>
+                <li>The delivery team quietly panics.</li>
+                <li>The client receives a beautifully formatted report that says a lot… but somehow doesn't translate into actual business growth.</li>
+              </ol>
+              <p>Sound familiar?</p>
+              <p>We knew there had to be a better way.</p>
+              <p>
+                So a handful of <Link to="/seo-birmingham" className="text-secondary hover:underline">SEO specialists</Link>, <Link to="/ppc-birmingham" className="text-secondary hover:underline">PPC managers</Link>, <Link to="/social-media-marketing-birmingham" className="text-secondary hover:underline">social media strategists</Link>, content marketers, and <Link to="/website-design-birmingham" className="text-secondary hover:underline">web designers</Link> decided to do things differently. We joined forces as a flexible team of agency professionals and independent specialists who actually deliver the work — not just pitch it.
               </p>
               <p>
-                From our roots in Birmingham, we have built a team of specialists covering every discipline of digital marketing — from <Link to="/seo-birmingham" className="text-secondary hover:underline">search engine optimisation</Link> and <Link to="/ppc-birmingham" className="text-secondary hover:underline">pay-per-click advertising</Link> to <Link to="/social-media-marketing-birmingham" className="text-secondary hover:underline">social media marketing</Link> and <Link to="/website-design-birmingham" className="text-secondary hover:underline">website design</Link>. Each team member brings deep expertise in their area, combined with a shared commitment to transparency and results.
+                Because we operate as a lean team without layers of management or expensive business development departments, we can focus our time and budget where it actually matters: getting results for our clients.
               </p>
-              <p>
-                We chose to base ourselves in Birmingham because we believe passionately in the potential of this city and its business community. Birmingham is experiencing a period of extraordinary growth and investment, and we want to help local businesses capitalise on the opportunities that come with being part of one of Europe's most dynamic cities. Our local presence means we understand the market, the competition, and the unique challenges that Birmingham businesses face.
-              </p>
-              <p>
-                Today, we work with businesses of all sizes across Birmingham, Solihull, Sutton Coldfield, Wolverhampton, and the wider West Midlands region. From sole traders launching their first website to established companies scaling their digital presence, we tailor our approach to match each client's specific needs, goals, and budget.
-              </p>
+              <p>And yes, it also means we don't have to fund anyone's third "strategy lunch" of the week.</p>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Our Approach */}
+      {/* How We Work */}
       <section className="section-padding">
         <div className="mx-auto max-w-4xl">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="font-heading text-3xl font-bold text-foreground mb-6 sm:text-4xl">How We Work</h2>
             <div className="space-y-4 font-body text-base leading-relaxed text-muted-foreground">
               <p>
-                At Cornerstone Media, we take an integrated approach to digital marketing. Rather than treating each channel in isolation, we build unified strategies where <Link to="/seo-birmingham" className="text-secondary hover:underline">SEO</Link>, <Link to="/ppc-birmingham" className="text-secondary hover:underline">PPC</Link>, <Link to="/social-media-marketing-birmingham" className="text-secondary hover:underline">social media</Link>, and <Link to="/website-design-birmingham" className="text-secondary hover:underline">web design</Link> work together to amplify results. The keyword data from your PPC campaigns informs your SEO strategy. Your content marketing fuels social media engagement. Your website design maximises conversion from every traffic source.
+                At Cornerstone Media, we take an integrated approach to digital marketing. Instead of treating channels as separate silos, we build strategies where <Link to="/seo-birmingham" className="text-secondary hover:underline">SEO</Link>, <Link to="/ppc-birmingham" className="text-secondary hover:underline">PPC</Link>, <Link to="/social-media-marketing-birmingham" className="text-secondary hover:underline">social media marketing</Link>, and <Link to="/website-design-birmingham" className="text-secondary hover:underline">website design</Link> work together to maximise results.
               </p>
+              <p>For example:</p>
+              <ul className="list-disc list-inside space-y-2 pl-4">
+                <li><Link to="/ppc-birmingham" className="text-secondary hover:underline">Pay-per-click advertising (PPC)</Link> provides real-time keyword data that strengthens your <Link to="/seo-birmingham" className="text-secondary hover:underline">SEO strategy</Link>.</li>
+                <li>Content marketing fuels engagement across <Link to="/social-media-marketing-birmingham" className="text-secondary hover:underline">social media marketing</Link> platforms.</li>
+                <li><Link to="/website-design-birmingham" className="text-secondary hover:underline">Website design</Link> and optimisation ensure every visitor has the best chance of converting into a customer.</li>
+              </ul>
+              <p>In other words, everything works together — not in separate spreadsheets owned by different departments.</p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Discovery First */}
+      <section className="section-padding bg-card/50">
+        <div className="mx-auto max-w-4xl">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <h2 className="font-heading text-3xl font-bold text-foreground mb-6 sm:text-4xl">Discovery First (Always)</h2>
+            <div className="space-y-4 font-body text-base leading-relaxed text-muted-foreground">
+              <p>Every project begins with a proper discovery phase. Before recommending anything, we take time to understand:</p>
+              <ul className="list-disc list-inside space-y-2 pl-4">
+                <li>Your business model</li>
+                <li>Your competitive landscape</li>
+                <li>Your target audience</li>
+                <li>Your growth goals</li>
+              </ul>
               <p>
-                Every engagement begins with a thorough discovery phase. We take time to understand your business model, competitive landscape, target audience, and growth ambitions before recommending any strategy. This research-first approach ensures we invest your marketing budget in the channels and tactics that will generate the strongest return.
-              </p>
-              <p>
-                Transparency is non-negotiable. We provide detailed monthly reports that go beyond surface-level metrics. You will see exactly how your campaigns are performing, what we are doing to improve them, and how our work is contributing to your bottom line. No smoke and mirrors — just clear data and honest analysis.
-              </p>
-              <p>
-                We believe in earning your business every month through results, not locking you into long-term contracts. Our clients stay with us because our work delivers genuine growth, not because of contractual obligation. That accountability keeps us focused, motivated, and consistently delivering the quality of work your Birmingham business deserves.
+                Only then do we recommend a strategy. This research-first approach ensures your marketing budget is invested in the channels most likely to generate real ROI — not just the ones that look impressive in a proposal document.
               </p>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Our Values */}
+      {/* Transparency */}
+      <section className="section-padding">
+        <div className="mx-auto max-w-4xl">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <h2 className="font-heading text-3xl font-bold text-foreground mb-6 sm:text-4xl">Transparency (No Smoke and Mirrors)</h2>
+            <div className="space-y-4 font-body text-base leading-relaxed text-muted-foreground">
+              <p>Transparency is non-negotiable for us.</p>
+              <p>You'll receive detailed monthly reports that go beyond vanity metrics like impressions and "potential reach". Instead, we focus on what actually matters:</p>
+              <ul className="list-disc list-inside space-y-2 pl-4">
+                <li>Leads generated</li>
+                <li>Sales and enquiries</li>
+                <li>Conversion rates</li>
+                <li>Return on investment</li>
+              </ul>
+              <p>You'll see exactly what we're doing, why we're doing it, and how it impacts your business.</p>
+              <p>No smoke. No mirrors. And definitely no 45-page reports designed purely to look busy.</p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* No Long Contracts */}
       <section className="section-padding bg-card/50">
+        <div className="mx-auto max-w-4xl">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <h2 className="font-heading text-3xl font-bold text-foreground mb-6 sm:text-4xl">No Long Contracts. Just Results.</h2>
+            <div className="space-y-4 font-body text-base leading-relaxed text-muted-foreground">
+              <p>We believe marketing agencies should earn your business every month, not trap you in long contracts.</p>
+              <p>Our clients stay with us because our work produces real growth, not because they're locked into a 12-month agreement signed during an enthusiastic sales pitch.</p>
+              <p>That accountability keeps us focused, motivated, and constantly improving the results we deliver.</p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Our Values */}
+      <section className="section-padding">
         <div className="mx-auto max-w-7xl">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
             <h2 className="font-heading text-3xl font-bold text-foreground sm:text-4xl mb-4">Our Values</h2>
             <p className="font-body text-base text-muted-foreground max-w-2xl mx-auto">
-              These principles guide everything we do — from how we build strategies to how we communicate with our clients.
+              These principles guide everything we do — from strategy to client relationships.
             </p>
           </motion.div>
           <div className="grid gap-6 sm:grid-cols-2">
@@ -142,18 +214,46 @@ const About = () => (
         </div>
       </section>
 
-      {/* Birmingham Focus */}
-      <section className="section-padding">
+      {/* Proudly Based in Birmingham */}
+      <section className="section-padding bg-card/50">
         <div className="mx-auto max-w-4xl">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="font-heading text-3xl font-bold text-foreground mb-6 sm:text-4xl">Proudly Based in Birmingham</h2>
             <div className="space-y-4 font-body text-base leading-relaxed text-muted-foreground">
               <p>
-                Birmingham is more than just our office location — it is the heart of our business. We are deeply connected to the city's thriving business community, from the tech startups emerging in Digbeth to the established firms along Colmore Row. Our understanding of Birmingham's diverse economy, its neighbourhoods, and its people gives us a competitive advantage that remote agencies cannot replicate.
+                We chose to build Cornerstone Media in Birmingham because we believe strongly in the potential of this city and its thriving business community. From the fast-growing tech scene in Digbeth to the established firms around Colmore Row, the city is full of businesses doing exciting things.
               </p>
               <p>
-                We serve businesses across the entire West Midlands region, including <Link to="/digital-marketing-solihull" className="text-secondary hover:underline">Solihull</Link>, <Link to="/digital-marketing-sutton-coldfield" className="text-secondary hover:underline">Sutton Coldfield</Link>, <Link to="/digital-marketing-wolverhampton" className="text-secondary hover:underline">Wolverhampton</Link>, <Link to="/digital-marketing-walsall" className="text-secondary hover:underline">Walsall</Link>, <Link to="/digital-marketing-dudley" className="text-secondary hover:underline">Dudley</Link>, and <Link to="/digital-marketing-west-bromwich" className="text-secondary hover:underline">West Bromwich</Link>. Whether your customers are local, national, or international, our Birmingham-based team combines local knowledge with digital expertise to help your business reach its full potential.
+                As a digital marketing agency Birmingham businesses can rely on, we understand the local market, the competition, and the challenges companies face when trying to grow online.
               </p>
+              <div className="flex flex-wrap gap-2 my-4">
+                {locations.map((loc) => (
+                  <span key={loc} className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1 text-sm font-medium text-foreground">
+                    <MapPin className="h-3.5 w-3.5 text-secondary" />
+                    {loc}
+                  </span>
+                ))}
+              </div>
+              <p>
+                We serve businesses across the entire West Midlands region, including <Link to="/digital-marketing-solihull" className="text-secondary hover:underline">Solihull</Link>, <Link to="/digital-marketing-sutton-coldfield" className="text-secondary hover:underline">Sutton Coldfield</Link>, <Link to="/digital-marketing-wolverhampton" className="text-secondary hover:underline">Wolverhampton</Link>, <Link to="/digital-marketing-walsall" className="text-secondary hover:underline">Walsall</Link>, <Link to="/digital-marketing-dudley" className="text-secondary hover:underline">Dudley</Link>, and <Link to="/digital-marketing-west-bromwich" className="text-secondary hover:underline">West Bromwich</Link>. From sole traders launching their first website to established companies scaling their digital presence, we tailor our approach to match each client's goals, budget, and stage of growth.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* A Birmingham Agency That Delivers */}
+      <section className="section-padding">
+        <div className="mx-auto max-w-4xl">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <h2 className="font-heading text-3xl font-bold text-foreground mb-6 sm:text-4xl">A Birmingham Digital Marketing Agency That Actually Delivers</h2>
+            <div className="space-y-4 font-body text-base leading-relaxed text-muted-foreground">
+              <p>
+                Cornerstone Media combines local knowledge of Birmingham and the West Midlands with the experience of specialists who have spent years working across <Link to="/seo-birmingham" className="text-secondary hover:underline">SEO</Link>, <Link to="/ppc-birmingham" className="text-secondary hover:underline">PPC</Link>, <Link to="/social-media-marketing-birmingham" className="text-secondary hover:underline">social media marketing</Link>, and <Link to="/website-design-birmingham" className="text-secondary hover:underline">website design</Link>.
+              </p>
+              <p>We're not a huge corporate agency with layers of management.</p>
+              <p>We're a tight-knit team of digital marketing professionals who care about doing the job properly.</p>
+              <p>And occasionally having a laugh along the way.</p>
             </div>
           </motion.div>
         </div>
@@ -164,10 +264,10 @@ const About = () => (
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10" />
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="relative mx-auto max-w-2xl text-center">
           <h2 className="mb-6 font-heading text-3xl font-extrabold text-foreground md:text-5xl">
-            Ready to Work <span className="gradient-text">Together?</span>
+            Let's <span className="gradient-text">Talk</span>
           </h2>
           <p className="mb-10 font-body text-lg text-muted-foreground">
-            Get in touch for a free strategy consultation and discover how Cornerstone Media can help your Birmingham business grow.
+            If you're looking for a digital marketing agency in Birmingham that offers honest advice, experienced specialists, and transparent results, we'd love to help. Get in touch for a free strategy consultation and discover how Cornerstone Media can help your Birmingham business grow.
           </p>
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link to="/contact" className="gradient-btn text-base">Book a Free Strategy Call</Link>
