@@ -1,135 +1,205 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Search, MousePointerClick, Share2, Code, Users, MapPin, TrendingUp, Target, BarChart3, Lightbulb } from "lucide-react";
+import {
+  Search, MousePointerClick, Share2, Code, Users, Shield, Eye, Zap,
+  BarChart3, Target, Layers, TrendingUp, ArrowRight,
+} from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 
+import shafiqImg from "@/assets/team-shafiq.jpg";
+import chloeImg from "@/assets/team-chloe.jpg";
+import mohsinImg from "@/assets/team-mohsin.jpg";
+import abdullahImg from "@/assets/team-abdullah.jpg";
+
+/* ------------------------------------------------------------------ */
+/*  JSON-LD Schema                                                     */
+/* ------------------------------------------------------------------ */
 const teamSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Organization",
       "@id": "https://cornerstonemedialtd.com/#organization",
-      "name": "Cornerstone Media",
-      "url": "https://cornerstonemedialtd.com",
-      "logo": "https://cornerstonemedialtd.com/og-logo.png",
-      "description": "Birmingham-based digital marketing agency specialising in SEO, PPC, social media marketing, and website design for businesses across the West Midlands.",
-      "areaServed": [
-        { "@type": "City", "name": "Birmingham" },
-        { "@type": "AdministrativeArea", "name": "West Midlands" }
+      name: "Cornerstone Media",
+      url: "https://cornerstonemedialtd.com",
+      logo: "https://cornerstonemedialtd.com/og-logo.png",
+      description:
+        "Birmingham-based digital marketing agency specialising in SEO, PPC, social media marketing, and website design for businesses across the West Midlands.",
+      areaServed: [
+        { "@type": "City", name: "Birmingham" },
+        { "@type": "AdministrativeArea", name: "West Midlands" },
       ],
-      "address": {
+      address: {
         "@type": "PostalAddress",
-        "addressLocality": "Birmingham",
-        "addressRegion": "West Midlands",
-        "addressCountry": "GB"
-      }
+        addressLocality: "Birmingham",
+        addressRegion: "West Midlands",
+        addressCountry: "GB",
+      },
     },
-    {
+    ...[
+      {
+        name: "Shafiq",
+        jobTitle: "Paid Media Director",
+        description:
+          "Experienced paid media director managing Google Ads, PPC and paid social campaigns for businesses across Birmingham and the West Midlands.",
+        knowsAbout: [
+          "Google Ads", "PPC Advertising", "Paid Social", "Search Engine Marketing",
+          "Remarketing", "Performance Marketing", "Digital Marketing Strategy",
+        ],
+      },
+      {
+        name: "Chloe",
+        jobTitle: "Content Creator & Organic Social Lead",
+        description:
+          "Creative content specialist and organic social media lead helping Birmingham businesses build engaged audiences across social platforms.",
+        knowsAbout: [
+          "Content Creation", "Organic Social Media", "Social Media Marketing",
+          "Brand Content", "Content Strategy", "Instagram Marketing", "Facebook Marketing",
+        ],
+      },
+      {
+        name: "Mohsin",
+        jobTitle: "Head of SEO",
+        description:
+          "Technical and strategic SEO specialist leading a team of 37 SEO experts, helping businesses improve search visibility and organic traffic.",
+        knowsAbout: [
+          "SEO", "Search Engine Optimisation", "Technical SEO", "Local SEO",
+          "Keyword Research", "On-Page SEO", "Content Optimisation", "Link Development",
+        ],
+      },
+      {
+        name: "Abdullah",
+        jobTitle: "Head of Web Development",
+        description:
+          "Skilled web developer building high-performing, conversion-focused websites for businesses across Birmingham and beyond.",
+        knowsAbout: [
+          "Website Development", "Web Design", "WordPress", "Ecommerce",
+          "Conversion Optimisation", "Website Performance", "Technical SEO",
+        ],
+      },
+    ].map((p) => ({
       "@type": "Person",
-      "name": "Shafiq",
-      "jobTitle": "Paid Media Specialist",
-      "description": "Experienced paid media specialist managing Google Ads and PPC campaigns for businesses across Birmingham and the West Midlands.",
-      "worksFor": { "@id": "https://cornerstonemedialtd.com/#organization" },
-      "image": "https://cornerstonemedialtd.com/og-logo.png",
-      "knowsAbout": ["Google Ads", "PPC Advertising", "Paid Media", "Search Engine Marketing", "Remarketing", "Digital Marketing Strategy"]
-    },
-    {
-      "@type": "Person",
-      "name": "Chloe",
-      "jobTitle": "Social Media & Content Specialist",
-      "description": "Creative social media and content specialist helping Birmingham businesses build engaged audiences across social platforms.",
-      "worksFor": { "@id": "https://cornerstonemedialtd.com/#organization" },
-      "image": "https://cornerstonemedialtd.com/og-logo.png",
-      "knowsAbout": ["Social Media Marketing", "Content Marketing", "Content Creation", "Facebook Ads", "Instagram Marketing", "LinkedIn Advertising"]
-    },
-    {
-      "@type": "Person",
-      "name": "Mohsin",
-      "jobTitle": "SEO Specialist",
-      "description": "Technical and strategic SEO specialist helping Birmingham businesses improve search visibility and organic traffic.",
-      "worksFor": { "@id": "https://cornerstonemedialtd.com/#organization" },
-      "image": "https://cornerstonemedialtd.com/og-logo.png",
-      "knowsAbout": ["SEO", "Search Engine Optimisation", "Technical SEO", "Local SEO", "Content Strategy", "Digital Marketing Strategy"]
-    },
-    {
-      "@type": "Person",
-      "name": "Abdullah",
-      "jobTitle": "Web Developer",
-      "description": "Skilled web developer building high-performing websites for Birmingham businesses, focused on conversion optimisation and technical performance.",
-      "worksFor": { "@id": "https://cornerstonemedialtd.com/#organization" },
-      "image": "https://cornerstonemedialtd.com/og-logo.png",
-      "knowsAbout": ["Website Development", "Web Design", "WordPress", "Ecommerce", "Conversion Optimisation", "Technical SEO"]
-    }
-  ]
+      ...p,
+      worksFor: { "@id": "https://cornerstonemedialtd.com/#organization" },
+      image: "https://cornerstonemedialtd.com/og-logo.png",
+    })),
+  ],
 };
+
+/* ------------------------------------------------------------------ */
+/*  Data                                                               */
+/* ------------------------------------------------------------------ */
+
+const trustItems = [
+  { icon: Users, text: "Specialists across SEO, PPC, social media and websites" },
+  { icon: Zap, text: "Lean team structure with real experts doing the work" },
+  { icon: Eye, text: "Transparent reporting and honest advice" },
+  { icon: Shield, text: "UK strategy with international delivery support" },
+];
 
 const teamMembers = [
   {
     name: "Shafiq",
-    role: "Paid Media Specialist",
-    description: "Shafiq manages paid advertising campaigns across Google Ads and social platforms, turning ad spend into measurable business growth for clients across Birmingham.",
+    nickname: "The Geek",
+    role: "Paid Media Director",
+    image: shafiqImg,
     alt: "Shafiq paid media specialist at Birmingham digital marketing agency",
+    bio: [
+      "Shafiq manages everything paid at Cornerstone Media, from Google Ads and search campaigns to paid social advertising across major platforms.",
+      'Nicknamed "The Geek", he is constantly researching platform updates, campaign tactics and new advertising features.',
+      "If there is a new experiment to run or a campaign to optimise, Shafiq is already halfway through testing it.",
+      "The only downside is when he finds something interesting, the rest of the team usually hears about it… often on a Sunday.",
+    ],
+    tags: ["Google Ads", "Paid Social", "PPC Strategy", "Performance Marketing"],
   },
   {
     name: "Chloe",
-    role: "Social Media & Content Specialist",
-    description: "Chloe creates engaging content strategies and manages social media campaigns that build brand awareness and drive real engagement for Birmingham businesses.",
-    alt: "Chloe social media content creator at Birmingham digital marketing agency",
+    nickname: "The Pocket Rocket",
+    role: "Content Creator & Organic Social Lead",
+    image: chloeImg,
+    alt: "Chloe content creator and social media specialist at Birmingham digital marketing agency",
+    bio: [
+      "Chloe leads on content creation and organic social media, helping brands show up consistently and creatively across their channels.",
+      'Nicknamed "The Pocket Rocket", she approaches projects with serious speed and energy.',
+      "From planning content calendars to producing social media campaigns, Chloe keeps brands active, visible and engaging online.",
+      "Small in stature, big in momentum.",
+    ],
+    tags: ["Content Creation", "Organic Social", "Social Strategy", "Brand Content"],
   },
   {
     name: "Mohsin",
-    role: "SEO Specialist",
-    description: "Mohsin leads SEO strategy and technical optimisation, helping businesses across Birmingham and the West Midlands climb search rankings and attract organic traffic.",
-    alt: "Mohsin SEO expert supporting Birmingham digital marketing campaigns",
+    nickname: "The Ninja",
+    role: "Head of SEO",
+    image: mohsinImg,
+    alt: "Mohsin SEO expert at Birmingham digital marketing agency",
+    bio: [
+      'Mohsin is our SEO expert, known internally as "The Ninja" because many high-end clients benefit from his work without ever actually seeing him.',
+      "Based in Lahore, Pakistan, he leads a team of 37 SEO specialists covering technical SEO, keyword research, content optimisation and link development.",
+      "While the UK team might present the results, Mohsin and his team are quietly making sure rankings climb behind the scenes.",
+    ],
+    tags: ["Technical SEO", "Keyword Research", "SEO Strategy", "On-Page SEO"],
   },
   {
     name: "Abdullah",
-    role: "Web Developer",
-    description: "Abdullah builds fast, conversion-focused websites that turn visitors into customers. From WordPress to custom builds, he ensures every site performs at its best.",
-    alt: "Abdullah web developer for Birmingham digital marketing agency",
+    nickname: "The Machine",
+    role: "Head of Web Development",
+    image: abdullahImg,
+    alt: "Abdullah web developer at Birmingham digital marketing agency",
+    bio: [
+      "Abdullah runs website development at Cornerstone Media.",
+      'Nicknamed "The Machine", he has been building websites since he was 15.',
+      "Now only 24, he already has years of real-world development experience creating fast, technically solid websites designed to convert.",
+      "Based in Islamabad, Pakistan, Abdullah makes sure the websites actually work beautifully once everyone else has finished talking about them.",
+    ],
+    tags: ["Web Development", "Website Performance", "Technical Fixes", "Conversion Optimisation"],
   },
 ];
 
-const expertiseCards = [
+const structureItems = [
   {
-    icon: Search,
-    title: "SEO Strategy & Technical SEO",
-    description: "From keyword research and on-page optimisation to technical audits and local SEO, our specialists help Birmingham businesses rank higher in search results.",
-    link: "/seo-birmingham",
-    linkText: "SEO services",
+    icon: Layers,
+    title: "Lean by Design",
+    text: "We operate without layers of unnecessary management, which means clients get direct access to the people doing the work.",
   },
   {
-    icon: MousePointerClick,
-    title: "Paid Advertising & PPC Campaigns",
-    description: "Strategic Google Ads management and paid media campaigns that generate leads and deliver measurable return on investment.",
-    link: "/ppc-birmingham",
-    linkText: "PPC management",
+    icon: Users,
+    title: "Direct Access to Specialists",
+    text: "The people planning the strategy are the same people implementing it.",
   },
   {
-    icon: Share2,
-    title: "Content Creation & Social Media Marketing",
-    description: "Engaging content strategies and social media campaigns across Facebook, Instagram, and LinkedIn that build audiences and drive business growth.",
-    link: "/social-media-marketing-birmingham",
-    linkText: "social media marketing services",
+    icon: BarChart3,
+    title: "Better Value for Clients",
+    text: "Without inflated agency overheads, more of your budget goes into actual marketing work.",
   },
   {
-    icon: Code,
-    title: "Website Design & Development",
-    description: "High-performing websites built to convert visitors into customers, with SEO best practices baked in from the start.",
-    link: "/website-design-birmingham",
-    linkText: "website design and development",
+    icon: Target,
+    title: "Integrated Expertise",
+    text: "SEO, PPC, social media marketing and website development all work together.",
   },
 ];
 
-const crossChannelBenefits = [
-  "SEO research helps inform paid advertising campaigns",
-  "Paid campaign data reveals high-converting search terms for SEO",
-  "Content creation supports both organic search visibility and social media engagement",
-  "Website development ensures traffic converts into enquiries and leads",
+const expertiseAreas = [
+  "SEO strategy and technical audits",
+  "Google Ads and paid social campaigns",
+  "Content strategy and social media growth",
+  "Website design and development",
+  "Conversion optimisation",
+  "Performance analytics and reporting",
 ];
 
+const serviceLinks = [
+  { icon: Search, label: "SEO Services", path: "/seo-birmingham" },
+  { icon: MousePointerClick, label: "PPC Management", path: "/ppc-birmingham" },
+  { icon: Share2, label: "Social Media Marketing", path: "/social-media-marketing-birmingham" },
+  { icon: Code, label: "Website Design", path: "/website-design-birmingham" },
+  { icon: ArrowRight, label: "Contact Us", path: "/contact" },
+];
+
+/* ------------------------------------------------------------------ */
+/*  Component                                                          */
+/* ------------------------------------------------------------------ */
 const MeetTheTeam = () => (
   <div className="min-h-screen bg-background">
     <SEOHead
@@ -141,7 +211,9 @@ const MeetTheTeam = () => (
     <Navbar />
 
     <main>
-      {/* Hero */}
+      {/* ============================================================ */}
+      {/* SECTION 1 — HERO                                              */}
+      {/* ============================================================ */}
       <section className="relative overflow-hidden pt-40 pb-20 section-padding">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 left-1/3 h-[500px] w-[500px] rounded-full bg-primary/8 blur-[140px]" />
@@ -149,81 +221,175 @@ const MeetTheTeam = () => (
         </div>
         <div className="relative mx-auto max-w-4xl text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
-            <p className="mb-4 font-heading text-sm font-semibold uppercase tracking-[0.2em] text-secondary">Our Team</p>
-            <h1 className="font-heading text-4xl font-extrabold text-foreground sm:text-5xl lg:text-7xl mb-6">
-              Meet the <span className="gradient-text">Team</span>
-            </h1>
-            <p className="font-body text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              The experienced digital marketing specialists behind Cornerstone Media. Our Birmingham-based team brings together deep expertise across SEO, PPC, social media, and web design to help your business grow.
+            <p className="mb-4 font-heading text-sm font-semibold uppercase tracking-[0.2em] text-secondary">
+              Our Team
             </p>
+            <h1 className="font-heading text-4xl font-extrabold text-foreground sm:text-5xl lg:text-7xl mb-6">
+              Meet the Team Behind{" "}
+              <span className="gradient-text">Cornerstone Media</span>
+            </h1>
+            <p className="font-body text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-4">
+              Cornerstone Media is a Birmingham-based digital marketing agency built around a lean team of specialists
+              in paid media, SEO, social media marketing, content creation, and website development.
+            </p>
+            <p className="font-body text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-4">
+              Instead of a traditional agency structure full of account managers and sales layers, we keep things
+              simple — real specialists doing the work that actually drives results.
+            </p>
+            <p className="font-body text-sm text-muted-foreground italic max-w-xl mx-auto mb-10">
+              No bloated agency structure. No mystery account handling. Just a team that genuinely knows digital marketing.
+            </p>
+            <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+              <Link to="/contact" className="gradient-btn text-base">
+                Book a Free Strategy Consultation
+              </Link>
+              <Link to="/services" className="gradient-btn-outline text-base">
+                Explore Our Services
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Team Grid */}
+      {/* ============================================================ */}
+      {/* SECTION 2 — TRUST BAR                                         */}
+      {/* ============================================================ */}
       <section className="section-padding bg-card/50">
         <div className="mx-auto max-w-7xl">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="font-heading text-2xl font-bold text-foreground text-center mb-10 sm:text-3xl"
+          >
+            Why Clients Work With Us
+          </motion.h2>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {trustItems.map((item, i) => (
+              <motion.div
+                key={item.text}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="flex items-start gap-4 rounded-2xl border border-border bg-card p-5"
+              >
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-secondary/10">
+                  <item.icon className="h-5 w-5 text-secondary" />
+                </div>
+                <p className="font-body text-sm leading-relaxed text-muted-foreground">{item.text}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================================ */}
+      {/* SECTION 3 — TEAM GRID                                         */}
+      {/* ============================================================ */}
+      <section className="section-padding">
+        <div className="mx-auto max-w-7xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-14"
+          >
+            <h2 className="font-heading text-3xl font-bold text-foreground sm:text-4xl mb-4">
+              The Specialists Behind the Strategy
+            </h2>
+            <p className="font-body text-base text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Cornerstone Media combines Birmingham agency expertise with specialist support across the UK and
+              internationally, giving clients access to a focused team of experts across every major digital
+              marketing channel.
+            </p>
+          </motion.div>
+
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {teamMembers.map((member, i) => (
               <motion.div
                 key={member.name}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="group rounded-2xl border border-border bg-card p-6 text-center transition-all duration-300 hover:border-secondary/30 hover:shadow-lg hover:shadow-secondary/5"
+                className="group rounded-2xl border border-border bg-card overflow-hidden transition-all duration-300 hover:border-secondary/30 hover:shadow-xl hover:shadow-secondary/5 hover:-translate-y-1"
               >
-                <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-secondary/10">
-                  <Users className="h-8 w-8 text-secondary" />
+                {/* Image */}
+                <div className="aspect-square overflow-hidden">
+                  <img
+                    src={member.image}
+                    alt={member.alt}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
                 </div>
-                <h3 className="font-heading text-xl font-bold text-foreground mb-1">{member.name}</h3>
-                <p className="font-heading text-sm font-semibold text-secondary mb-3">{member.role}</p>
-                <p className="font-body text-sm leading-relaxed text-muted-foreground">{member.description}</p>
-                <img src="" alt={member.alt} className="sr-only" aria-hidden="true" />
+
+                {/* Content */}
+                <div className="p-6">
+                  <h3 className="font-heading text-xl font-bold text-foreground mb-0.5">
+                    {member.name}{" "}
+                    <span className="text-secondary font-medium text-base">"{member.nickname}"</span>
+                  </h3>
+                  <p className="font-heading text-sm font-semibold text-secondary mb-4">{member.role}</p>
+
+                  <div className="space-y-2 mb-5">
+                    {member.bio.map((line, j) => (
+                      <p key={j} className="font-body text-sm leading-relaxed text-muted-foreground">
+                        {line}
+                      </p>
+                    ))}
+                  </div>
+
+                  <div className="flex flex-wrap gap-1.5">
+                    {member.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full border border-border bg-muted/40 px-2.5 py-0.5 font-body text-xs text-muted-foreground"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Expertise Callouts */}
-      <section className="section-padding">
+      {/* ============================================================ */}
+      {/* SECTION 4 — WHY OUR TEAM STRUCTURE WORKS                      */}
+      {/* ============================================================ */}
+      <section className="section-padding bg-card/50">
         <div className="mx-auto max-w-7xl">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-            <h2 className="font-heading text-3xl font-bold text-foreground sm:text-4xl mb-4">
-              Digital Marketing Specialists in Birmingham
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="font-heading text-3xl font-bold text-foreground sm:text-4xl">
+              Why Our Team Structure Works
             </h2>
-            <p className="font-body text-base text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              The Cornerstone Media team combines hands-on experience across every major digital marketing channel. From{" "}
-              <Link to="/seo-birmingham" className="text-secondary hover:underline">SEO strategy</Link> and technical optimisation to{" "}
-              <Link to="/ppc-birmingham" className="text-secondary hover:underline">paid advertising campaigns</Link>,{" "}
-              <Link to="/social-media-marketing-birmingham" className="text-secondary hover:underline">social media marketing</Link> and high-performing{" "}
-              <Link to="/website-design-birmingham" className="text-secondary hover:underline">website development</Link>, our specialists work together to help businesses grow online.
-            </p>
-            <p className="font-body text-base text-muted-foreground max-w-3xl mx-auto leading-relaxed mt-4">
-              Each member of the team focuses on their area of expertise, ensuring every campaign benefits from deep specialist knowledge rather than a generalist approach.
-            </p>
           </motion.div>
 
           <div className="grid gap-6 sm:grid-cols-2">
-            {expertiseCards.map((card, i) => (
+            {structureItems.map((item, i) => (
               <motion.div
-                key={card.title}
+                key={item.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="flex gap-4 rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:border-secondary/30"
+                transition={{ delay: i * 0.08 }}
+                className="flex gap-4 rounded-2xl border border-border bg-card p-6"
               >
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-secondary/10">
-                  <card.icon className="h-6 w-6 text-secondary" />
+                  <item.icon className="h-6 w-6 text-secondary" />
                 </div>
                 <div>
-                  <h3 className="font-heading text-lg font-bold text-foreground mb-2">{card.title}</h3>
-                  <p className="font-body text-sm leading-relaxed text-muted-foreground mb-3">{card.description}</p>
-                  <Link to={card.link} className="font-body text-sm font-medium text-secondary hover:underline">
-                    Learn about our {card.linkText} →
-                  </Link>
+                  <h3 className="font-heading text-lg font-bold text-foreground mb-2">{item.title}</h3>
+                  <p className="font-body text-sm leading-relaxed text-muted-foreground">{item.text}</p>
                 </div>
               </motion.div>
             ))}
@@ -231,136 +397,130 @@ const MeetTheTeam = () => (
         </div>
       </section>
 
-      {/* Experience Signal (E-E-A-T) */}
-      <section className="section-padding bg-card/50">
+      {/* ============================================================ */}
+      {/* SECTION 5 — EXPERIENCE & EXPERTISE                            */}
+      {/* ============================================================ */}
+      <section className="section-padding">
         <div className="mx-auto max-w-4xl">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <div className="flex gap-4 items-start mb-6">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-accent/10">
                 <TrendingUp className="h-6 w-6 text-accent" />
               </div>
-              <div>
-                <h2 className="font-heading text-3xl font-bold text-foreground sm:text-4xl">
-                  Experience Across Digital Marketing Campaigns
-                </h2>
-              </div>
+              <h2 className="font-heading text-3xl font-bold text-foreground sm:text-4xl">
+                Built on Real Digital Marketing Experience
+              </h2>
             </div>
             <div className="space-y-4 font-body text-base leading-relaxed text-muted-foreground">
               <p>
-                The specialists behind Cornerstone Media have worked across a wide range of digital marketing projects, helping businesses improve search visibility, generate leads through{" "}
-                <Link to="/ppc-birmingham" className="text-secondary hover:underline">paid campaigns</Link>, grow{" "}
-                <Link to="/social-media-marketing-birmingham" className="text-secondary hover:underline">social media audiences</Link> and build{" "}
-                <Link to="/website-design-birmingham" className="text-secondary hover:underline">websites designed to convert</Link>.
+                The team behind Cornerstone Media has worked across agency environments, client campaigns and real
+                digital marketing projects for years.
               </p>
               <p>
-                Our team brings together technical expertise, creative thinking and practical experience from real-world campaigns across multiple industries.
+                Cornerstone Media was created to offer a more transparent and results-focused alternative to
+                traditional agency models.
               </p>
-              <p>
-                Rather than relying on theoretical strategies, we focus on practical digital marketing work that produces measurable results.
+              <p className="font-heading text-sm font-semibold uppercase tracking-wider text-foreground pt-2">
+                Expertise areas
               </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* How Our Team Supports Your Business */}
-      <section className="section-padding">
-        <div className="mx-auto max-w-4xl">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <div className="flex gap-4 items-start mb-6">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10">
-                <Lightbulb className="h-6 w-6 text-primary" />
-              </div>
-              <div>
-                <h2 className="font-heading text-3xl font-bold text-foreground sm:text-4xl">
-                  How Our Specialists Work Together
-                </h2>
-              </div>
-            </div>
-            <div className="space-y-4 font-body text-base leading-relaxed text-muted-foreground">
-              <p>
-                Successful digital marketing rarely comes from a single channel.
-              </p>
-              <p>
-                At Cornerstone Media, our team combines expertise across{" "}
-                <Link to="/seo-birmingham" className="text-secondary hover:underline">SEO</Link>,{" "}
-                <Link to="/ppc-birmingham" className="text-secondary hover:underline">PPC advertising</Link>,{" "}
-                <Link to="/social-media-marketing-birmingham" className="text-secondary hover:underline">social media marketing</Link> and{" "}
-                <Link to="/website-design-birmingham" className="text-secondary hover:underline">website development</Link> to create joined-up strategies that support real business growth.
-              </p>
-              <p>For example:</p>
-              <ul className="space-y-3 pl-1">
-                {crossChannelBenefits.map((benefit) => (
-                  <li key={benefit} className="flex items-start gap-3">
+              <ul className="space-y-2 pl-1">
+                {expertiseAreas.map((area) => (
+                  <li key={area} className="flex items-start gap-3">
                     <Target className="h-5 w-5 shrink-0 text-secondary mt-0.5" />
-                    <span>{benefit}</span>
+                    <span>{area}</span>
                   </li>
                 ))}
               </ul>
-              <p>
-                By combining these disciplines, we help businesses across Birmingham and the West Midlands get more value from their digital marketing investment.
-              </p>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Local SEO Relevance */}
+      {/* ============================================================ */}
+      {/* SECTION 6 — SERVICE LINKS                                     */}
+      {/* ============================================================ */}
       <section className="section-padding bg-card/50">
+        <div className="mx-auto max-w-7xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="font-heading text-3xl font-bold text-foreground sm:text-4xl">
+              Explore Our Digital Marketing Services
+            </h2>
+          </motion.div>
+
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            {serviceLinks.map((svc, i) => (
+              <motion.div
+                key={svc.label}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.06 }}
+              >
+                <Link
+                  to={svc.path}
+                  className="flex flex-col items-center gap-3 rounded-2xl border border-border bg-card p-6 text-center transition-all duration-300 hover:border-secondary/40 hover:shadow-lg hover:shadow-secondary/5 hover:-translate-y-1"
+                >
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/10">
+                    <svc.icon className="h-6 w-6 text-secondary" />
+                  </div>
+                  <span className="font-heading text-sm font-bold text-foreground">{svc.label}</span>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================================ */}
+      {/* BANNER LINE                                                   */}
+      {/* ============================================================ */}
+      <section className="section-padding">
         <div className="mx-auto max-w-4xl">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <div className="flex gap-4 items-start mb-6">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-secondary/10">
-                <MapPin className="h-6 w-6 text-secondary" />
-              </div>
-              <div>
-                <h2 className="font-heading text-3xl font-bold text-foreground sm:text-4xl">
-                  Supporting Businesses Across Birmingham and the West Midlands
-                </h2>
-              </div>
-            </div>
-            <div className="space-y-4 font-body text-base leading-relaxed text-muted-foreground">
-              <p>
-                Cornerstone Media works with businesses across Birmingham,{" "}
-                <Link to="/digital-marketing-solihull" className="text-secondary hover:underline">Solihull</Link>,{" "}
-                <Link to="/digital-marketing-sutton-coldfield" className="text-secondary hover:underline">Sutton Coldfield</Link>,{" "}
-                <Link to="/digital-marketing-wolverhampton" className="text-secondary hover:underline">Wolverhampton</Link> and the wider West Midlands.
-              </p>
-              <p>
-                Our team understands the challenges local businesses face when trying to compete online, whether that involves improving search visibility, generating leads through{" "}
-                <Link to="/ppc-birmingham" className="text-secondary hover:underline">paid advertising</Link>, building a stronger{" "}
-                <Link to="/social-media-marketing-birmingham" className="text-secondary hover:underline">social media presence</Link> or launching a new{" "}
-                <Link to="/website-design-birmingham" className="text-secondary hover:underline">website</Link>.
-              </p>
-              <p>
-                By combining local knowledge with specialist digital marketing expertise, we help businesses across the region grow their online presence and attract more customers.
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-2 mt-6">
-              {["Birmingham", "Solihull", "Sutton Coldfield", "Wolverhampton", "Walsall", "Dudley", "West Bromwich"].map((loc) => (
-                <span key={loc} className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1 text-sm font-medium text-foreground">
-                  <MapPin className="h-3.5 w-3.5 text-secondary" />
-                  {loc}
-                </span>
-              ))}
-            </div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="rounded-2xl border border-secondary/20 bg-secondary/5 px-8 py-6 text-center"
+          >
+            <p className="font-heading text-lg font-bold text-foreground sm:text-xl">
+              Real people. Real specialists.{" "}
+              <span className="gradient-text">No bloated agency nonsense.</span>
+            </p>
           </motion.div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section-padding relative overflow-hidden">
+      {/* ============================================================ */}
+      {/* SECTION 7 — FINAL CTA                                         */}
+      {/* ============================================================ */}
+      <section className="section-padding relative overflow-hidden bg-card/50">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10" />
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="relative mx-auto max-w-2xl text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="relative mx-auto max-w-2xl text-center"
+        >
           <h2 className="mb-6 font-heading text-3xl font-extrabold text-foreground md:text-5xl">
-            Ready to <span className="gradient-text">Work With Us</span>?
+            Want to Work With a Team That{" "}
+            <span className="gradient-text">Actually Knows the Work</span>?
           </h2>
           <p className="mb-10 font-body text-lg text-muted-foreground">
-            Get in touch with our team of digital marketing specialists for a free strategy consultation. Let's discuss how we can help your Birmingham business grow.
+            If you're looking for a digital marketing agency in Birmingham that combines specialist expertise,
+            honest advice and a hands-on way of working, Cornerstone Media would love to help.
           </p>
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link to="/contact" className="gradient-btn text-base">Book a Free Strategy Call</Link>
-            <Link to="/services" className="gradient-btn-outline text-base">View Our Services</Link>
+            <Link to="/contact" className="gradient-btn text-base">
+              Book a Free Strategy Consultation
+            </Link>
+            <Link to="/contact" className="gradient-btn-outline text-base">
+              Contact the Team
+            </Link>
           </div>
         </motion.div>
       </section>
