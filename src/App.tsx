@@ -15,6 +15,7 @@ import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import ThankYou from "./pages/ThankYou";
 import About from "./pages/About";
+import MeetTheTeam from "./pages/MeetTheTeam";
 import NotFound from "./pages/NotFound";
 import OGImageGenerator from "./pages/OGImageGenerator";
 
@@ -60,6 +61,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
+          <Route path="/meet-the-team" element={<MeetTheTeam />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/thank-you" element={<ThankYou />} />
 

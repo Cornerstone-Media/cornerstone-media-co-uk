@@ -12,6 +12,7 @@ const navLinks = [
   { label: "Social", path: "/social-media-marketing-birmingham" },
   { label: "Web Design", path: "/website-design-birmingham" },
   { label: "About", path: "/about" },
+  { label: "Team", path: "/meet-the-team" },
 ];
 
 const Navbar = () => {

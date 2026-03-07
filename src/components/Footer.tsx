@@ -17,6 +17,7 @@ const footerLinks = [
     title: "Company",
     links: [
       { label: "About Us", path: "/about" },
+      { label: "Meet the Team", path: "/meet-the-team" },
       { label: "All Services", path: "/services" },
       { label: "Contact Us", path: "/contact" },
     ],
