@@ -10,7 +10,7 @@ const navLinks = [
   { label: "PPC", path: "/ppc-birmingham" },
   { label: "SEO", path: "/seo-birmingham" },
   { label: "Social", path: "/social-media-marketing-birmingham" },
-  { label: "Web Design", path: "/website-design-birmingham" },
+  { label: "Websites", path: "/website-design-birmingham" },
   { label: "About", path: "/about" },
   { label: "Team", path: "/meet-the-team" },
 ];
