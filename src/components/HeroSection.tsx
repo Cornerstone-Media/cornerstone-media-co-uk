@@ -64,11 +64,35 @@ const HeroSection = () => {
             className="relative z-10 flex flex-wrap gap-4"
           >
             <Link to="/contact" className="gradient-btn text-base">
-              Get a Free Strategy Call
+              Get a Free Quote
             </Link>
-            <Link to="/services" className="gradient-btn-outline text-base">
-              Explore Our Services
-            </Link>
+            <a
+              href="tel:+447846798534"
+              className="gradient-btn-outline text-base flex items-center gap-2"
+              onClick={() => {
+                (window as any).dataLayer = (window as any).dataLayer || [];
+                (window as any).dataLayer.push({ event: "phone_click", click_location: "hero" });
+              }}
+            >
+              <Phone className="h-4 w-4" />
+              Call Us: 07846 798 534
+            </a>
+          </motion.div>
+
+          {/* Trust signals */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1, duration: 0.5 }}
+            className="relative z-10 mt-8 flex flex-wrap items-center gap-4 text-sm font-body text-muted-foreground"
+          >
+            <span className="flex items-center gap-1.5"><span className="text-accent">★★★★★</span> 5-Star Rated</span>
+            <span className="hidden sm:inline text-border">|</span>
+            <span>100+ Clients</span>
+            <span className="hidden sm:inline text-border">|</span>
+            <span>Based in Birmingham</span>
+            <span className="hidden sm:inline text-border">|</span>
+            <span>No Long-Term Contracts</span>
           </motion.div>
         </div>
       </div>
