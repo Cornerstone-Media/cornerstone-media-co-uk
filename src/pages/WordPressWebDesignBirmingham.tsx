@@ -9,7 +9,7 @@ const WordPressWebDesignBirmingham = () => (
     <SEOHead
       title="WordPress Web Design Birmingham | Custom WordPress Sites | Cornerstone Media"
       description="WordPress web design agency in Birmingham. Custom WordPress websites built for speed, SEO, and easy content management. Professional WordPress development for Birmingham businesses."
-      canonical="https://cornerstonemedialtd.com/wordpress-web-design-birmingham"
+      canonical="https://cornerstone-media.co.uk/wordpress-web-design-birmingham"
     />
     <Navbar />
     <main>

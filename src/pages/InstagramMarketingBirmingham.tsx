@@ -9,7 +9,7 @@ const InstagramMarketingBirmingham = () => (
     <SEOHead
       title="Instagram Marketing Birmingham | Instagram Ads & Content | Cornerstone Media"
       description="Instagram marketing agency in Birmingham. Grow your brand with Reels, Stories, and targeted Instagram advertising. Content creation and strategy for Birmingham businesses."
-      canonical="https://cornerstonemedialtd.com/instagram-marketing-birmingham"
+      canonical="https://cornerstone-media.co.uk/instagram-marketing-birmingham"
     />
     <Navbar />
     <main>

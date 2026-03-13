@@ -76,8 +76,8 @@ Deno.serve(async (req) => {
         Authorization: `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "Cornerstone Media <noreply@cornerstonemedialtd.com>",
-        to: ["info@cornerstonemedialtd.com", "cis.shafiq@gmail.com"],
+        from: "Cornerstone Media <noreply@cornerstone-media.co.uk>",
+        to: ["info@cornerstone-media.co.uk", "cis.shafiq@gmail.com"],
         subject: `New Contact: ${name}`,
         html: emailHtml,
         reply_to: email,
@@ -97,12 +97,12 @@ Deno.serve(async (req) => {
           </p>
           <p style="color: #444; line-height: 1.6;">
             In the meantime, if you need something urgently, feel free to call us on
-            <a href="tel:07846798534" style="color: #e63946; text-decoration: none; font-weight: bold;">07846 798 534</a>.
+             <a href="tel:07846798534" style="color: #e63946; text-decoration: none; font-weight: bold;">07846 798 534</a>.
           </p>
           <hr style="border: none; border-top: 1px solid #eee; margin: 24px 0;" />
           <p style="color: #888; font-size: 13px; margin-bottom: 0;">
             Cornerstone Media Ltd &bull; Digital Marketing Agency<br />
-            <a href="https://cornerstonemedialtd.com" style="color: #e63946;">cornerstonemedialtd.com</a>
+            <a href="https://cornerstone-media.co.uk" style="color: #e63946;">cornerstone-media.co.uk</a>
           </p>
         </div>
       </div>
@@ -115,7 +115,7 @@ Deno.serve(async (req) => {
         Authorization: `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "Cornerstone Media <noreply@cornerstonemedialtd.com>",
+        from: "Cornerstone Media <noreply@cornerstone-media.co.uk>",
         to: [email],
         subject: "We've received your message — Cornerstone Media",
         html: confirmationHtml,

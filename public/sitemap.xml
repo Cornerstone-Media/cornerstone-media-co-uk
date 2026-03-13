@@ -2,159 +2,167 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Main Pages -->
   <url>
-    <loc>https://cornerstonemedialtd.com/</loc>
+    <loc>https://cornerstone-media.co.uk/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://cornerstonemedialtd.com/services</loc>
+    <loc>https://cornerstone-media.co.uk/services</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://cornerstonemedialtd.com/about</loc>
+    <loc>https://cornerstone-media.co.uk/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://cornerstonemedialtd.com/meet-the-team</loc>
+    <loc>https://cornerstone-media.co.uk/meet-the-team</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
   <url>
-    <loc>https://cornerstonemedialtd.com/contact</loc>
+    <loc>https://cornerstone-media.co.uk/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- Service Pillar Pages -->
   <url>
-    <loc>https://cornerstonemedialtd.com/ppc-birmingham</loc>
+    <loc>https://cornerstone-media.co.uk/ppc-birmingham</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://cornerstonemedialtd.com/seo-birmingham</loc>
+    <loc>https://cornerstone-media.co.uk/seo-birmingham</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://cornerstonemedialtd.com/social-media-marketing-birmingham</loc>
+    <loc>https://cornerstone-media.co.uk/social-media-marketing-birmingham</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://cornerstonemedialtd.com/website-design-birmingham</loc>
+    <loc>https://cornerstone-media.co.uk/website-design-birmingham</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://cornerstonemedialtd.com/content-writing</loc>
+    <loc>https://cornerstone-media.co.uk/content-writing</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://cornerstonemedialtd.com/website-maintenance</loc>
+    <loc>https://cornerstone-media.co.uk/website-maintenance</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- SEO Supporting Pages -->
   <url>
-    <loc>https://cornerstonemedialtd.com/local-seo-birmingham</loc>
+    <loc>https://cornerstone-media.co.uk/local-seo-birmingham</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://cornerstonemedialtd.com/technical-seo-birmingham</loc>
+    <loc>https://cornerstone-media.co.uk/technical-seo-birmingham</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://cornerstonemedialtd.com/seo-audit-birmingham</loc>
+    <loc>https://cornerstone-media.co.uk/seo-audit-birmingham</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- PPC Supporting Pages -->
   <url>
-    <loc>https://cornerstonemedialtd.com/google-ads-management-birmingham</loc>
+    <loc>https://cornerstone-media.co.uk/google-ads-management-birmingham</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://cornerstonemedialtd.com/ppc-management-birmingham</loc>
+    <loc>https://cornerstone-media.co.uk/ppc-management-birmingham</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://cornerstonemedialtd.com/remarketing-ads-birmingham</loc>
+    <loc>https://cornerstone-media.co.uk/remarketing-ads-birmingham</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Social Media Supporting Pages -->
   <url>
-    <loc>https://cornerstonemedialtd.com/facebook-ads-birmingham</loc>
+    <loc>https://cornerstone-media.co.uk/facebook-ads-birmingham</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://cornerstonemedialtd.com/instagram-marketing-birmingham</loc>
+    <loc>https://cornerstone-media.co.uk/instagram-marketing-birmingham</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://cornerstonemedialtd.com/linkedin-ads-birmingham</loc>
+    <loc>https://cornerstone-media.co.uk/linkedin-ads-birmingham</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Website Design Supporting Pages -->
   <url>
-    <loc>https://cornerstonemedialtd.com/wordpress-web-design-birmingham</loc>
+    <loc>https://cornerstone-media.co.uk/wordpress-web-design-birmingham</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://cornerstonemedialtd.com/ecommerce-website-design-birmingham</loc>
+    <loc>https://cornerstone-media.co.uk/ecommerce-website-design-birmingham</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://cornerstonemedialtd.com/small-business-web-design-birmingham</loc>
+    <loc>https://cornerstone-media.co.uk/small-business-web-design-birmingham</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Location Pages -->
   <url>
-    <loc>https://cornerstonemedialtd.com/digital-marketing-solihull</loc>
+    <loc>https://cornerstone-media.co.uk/digital-marketing-solihull</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://cornerstonemedialtd.com/digital-marketing-sutton-coldfield</loc>
+    <loc>https://cornerstone-media.co.uk/digital-marketing-sutton-coldfield</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://cornerstonemedialtd.com/digital-marketing-wolverhampton</loc>
+    <loc>https://cornerstone-media.co.uk/digital-marketing-wolverhampton</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://cornerstonemedialtd.com/digital-marketing-walsall</loc>
+    <loc>https://cornerstone-media.co.uk/digital-marketing-walsall</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://cornerstonemedialtd.com/digital-marketing-dudley</loc>
+    <loc>https://cornerstone-media.co.uk/digital-marketing-dudley</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://cornerstonemedialtd.com/digital-marketing-west-bromwich</loc>
+    <loc>https://cornerstone-media.co.uk/digital-marketing-west-bromwich</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+
+  <!-- Blog -->
+  <url>
+    <loc>https://cornerstone-media.co.uk/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

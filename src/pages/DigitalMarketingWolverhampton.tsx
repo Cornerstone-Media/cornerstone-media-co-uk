@@ -6,7 +6,7 @@ import SEOHead from "@/components/SEOHead";
 
 const DigitalMarketingWolverhampton = () => (
   <div className="min-h-screen bg-background">
-    <SEOHead title="Digital Marketing Wolverhampton | Marketing Agency | Cornerstone Media" description="Digital marketing services for Wolverhampton businesses. Expert SEO, PPC, social media, and web design from Cornerstone Media, your West Midlands marketing partner." canonical="https://cornerstonemedialtd.com/digital-marketing-wolverhampton" />
+    <SEOHead title="Digital Marketing Wolverhampton | Marketing Agency | Cornerstone Media" description="Digital marketing services for Wolverhampton businesses. Expert SEO, PPC, social media, and web design from Cornerstone Media, your West Midlands marketing partner." canonical="https://cornerstone-media.co.uk/digital-marketing-wolverhampton" />
     <Navbar />
     <main>
       <ServicePageLayout icon={MapPin} title="Digital Marketing Wolverhampton" subtitle="Marketing Services for Wolverhampton" description="Cornerstone Media brings expert digital marketing services to Wolverhampton businesses. From our Birmingham base, we serve companies across Wolverhampton with data-driven SEO, PPC advertising, social media marketing, and website design strategies that generate measurable leads, sales, and growth."

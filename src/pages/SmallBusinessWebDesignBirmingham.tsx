@@ -9,7 +9,7 @@ const SmallBusinessWebDesignBirmingham = () => (
     <SEOHead
       title="Small Business Web Design Birmingham | Affordable Websites | Cornerstone Media"
       description="Affordable small business web design in Birmingham. Professional websites for startups, sole traders, and small businesses. Fast, SEO-friendly, and built to generate leads."
-      canonical="https://cornerstonemedialtd.com/small-business-web-design-birmingham"
+      canonical="https://cornerstone-media.co.uk/small-business-web-design-birmingham"
     />
     <Navbar />
     <main>
