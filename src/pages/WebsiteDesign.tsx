@@ -67,7 +67,7 @@ const WebsiteDesign = () => (
     <SEOHead
       title="Website Design Birmingham | Web Design Agency Birmingham | Cornerstone Media"
       description="Professional website design in Birmingham. Conversion-focused, mobile-responsive websites built for speed and SEO. Free consultation from Cornerstone Media. Call 07846 798 534."
-      canonical="https://cornerstonemedialtd.com/website-design-birmingham"
+      canonical="https://cornerstone-media.co.uk/website-design-birmingham"
       schema={webDesignFAQSchema}
     />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webDesignSchema) }} />
