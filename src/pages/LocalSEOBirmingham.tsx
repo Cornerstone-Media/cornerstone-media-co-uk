@@ -8,7 +8,7 @@ const schema = {
   "@context": "https://schema.org",
   "@type": "Service",
   "serviceType": "Local SEO",
-  "provider": { "@type": "ProfessionalService", "name": "Cornerstone Media", "url": "https://cornerstonemedialtd.com", "address": { "@type": "PostalAddress", "addressLocality": "Birmingham", "addressRegion": "West Midlands", "addressCountry": "GB" } },
+  "provider": { "@type": "ProfessionalService", "name": "Cornerstone Media", "url": "https://cornerstone-media.co.uk", "address": { "@type": "PostalAddress", "addressLocality": "Birmingham", "addressRegion": "West Midlands", "addressCountry": "GB" } },
   "areaServed": { "@type": "City", "name": "Birmingham" },
   "description": "Local SEO services for Birmingham businesses. Google Business Profile optimisation, local citations, map pack rankings, and geo-targeted content strategies."
 };
