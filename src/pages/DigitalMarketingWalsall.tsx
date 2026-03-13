@@ -6,7 +6,7 @@ import SEOHead from "@/components/SEOHead";
 
 const DigitalMarketingWalsall = () => (
   <div className="min-h-screen bg-background">
-    <SEOHead title="Digital Marketing Walsall | Marketing Agency Near Walsall | Cornerstone Media" description="Digital marketing services for Walsall businesses. SEO, PPC, social media, and web design from Cornerstone Media. Grow your Walsall business online." canonical="https://cornerstone-media.co.uk/digital-marketing-walsall" />
+    <SEOHead title="Digital Marketing Walsall | Marketing Agency Near Walsall | Cornerstone Media" description="Digital marketing services for Walsall businesses. SEO, PPC, social media, and web design from Cornerstone Media. Grow your Walsall business online." canonical="https://cornerstonemedialtd.com/digital-marketing-walsall" />
     <Navbar />
     <main>
       <ServicePageLayout icon={MapPin} title="Digital Marketing Walsall" subtitle="Marketing Services for Walsall Businesses" description="Cornerstone Media provides comprehensive digital marketing services for businesses in Walsall. From our Birmingham office, we deliver expert SEO, PPC advertising, social media campaigns, and professional website design that help Walsall businesses attract more customers, generate more leads, and grow their revenue online."

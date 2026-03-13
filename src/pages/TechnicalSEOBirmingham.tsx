@@ -9,7 +9,7 @@ const TechnicalSEOBirmingham = () => (
     <SEOHead
       title="Technical SEO Birmingham | Site Speed & Crawlability | Cornerstone Media"
       description="Technical SEO services in Birmingham. We fix crawlability, indexation, Core Web Vitals, and site architecture issues that prevent your website from ranking in Google."
-      canonical="https://cornerstone-media.co.uk/technical-seo-birmingham"
+      canonical="https://cornerstonemedialtd.com/technical-seo-birmingham"
     />
     <Navbar />
     <main>

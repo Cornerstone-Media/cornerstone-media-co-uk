@@ -88,18 +88,14 @@ const Navbar = () => {
               </Link>
             ))}
             <a
-              href="tel:+447846798534"
+              href="tel:07846798534"
               className="gradient-btn-outline ml-4 flex items-center gap-2 text-sm"
-              onClick={() => {
-                (window as any).dataLayer = (window as any).dataLayer || [];
-                (window as any).dataLayer.push({ event: "phone_click", click_location: "header" });
-              }}
             >
               <Phone className="h-4 w-4" />
-              07846 798 534
+              Free Strategy Call
             </a>
             <Link to="/contact" className="gradient-btn ml-2 text-sm">
-              Get a Free Quote
+              Get My Free Audit
             </Link>
           </div>
 
@@ -139,14 +135,14 @@ const Navbar = () => {
                 </motion.div>
               ))}
               <a
-                href="tel:+447846798534"
+                href="tel:07846798534"
                 className="gradient-btn-outline flex items-center justify-center gap-2 text-sm"
               >
                 <Phone className="h-4 w-4" />
-                07846 798 534
+                Free Strategy Call
               </a>
               <Link to="/contact" className="gradient-btn mt-2 text-center text-sm">
-                Get a Free Quote
+                Get My Free Audit
               </Link>
             </div>
           </motion.div>

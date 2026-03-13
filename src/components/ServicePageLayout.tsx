@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { type LucideIcon, CheckCircle2, ChevronDown, Phone } from "lucide-react";
+import { type LucideIcon, CheckCircle2, ChevronDown } from "lucide-react";
 import { useState } from "react";
-import ServiceEnquiryForm from "@/components/ServiceEnquiryForm";
 
 interface FAQ {
   question: string;
@@ -149,42 +148,6 @@ const ServicePageLayout = ({
             <p className="max-w-2xl font-body text-lg leading-relaxed text-muted-foreground md:text-xl">
               {description}
             </p>
-
-            {/* Dual CTAs */}
-            <div className="mt-8 flex flex-wrap gap-4">
-              <a
-                href="#enquiry-form"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById("enquiry-form")?.scrollIntoView({ behavior: "smooth" });
-                }}
-                className="gradient-btn text-base"
-              >
-                Get a Free Quote
-              </a>
-              <a
-                href="tel:+447846798534"
-                className="gradient-btn-outline text-base flex items-center gap-2"
-                onClick={() => {
-                  (window as any).dataLayer = (window as any).dataLayer || [];
-                  (window as any).dataLayer.push({ event: "phone_click", click_location: "hero" });
-                }}
-              >
-                <Phone className="h-4 w-4" />
-                Call Us: 07846 798 534
-              </a>
-            </div>
-
-            {/* Trust signals */}
-            <div className="mt-6 flex flex-wrap items-center gap-4 text-sm font-body text-muted-foreground">
-              <span className="flex items-center gap-1.5"><span className="text-accent">★★★★★</span> 5-Star Rated</span>
-              <span className="hidden sm:inline text-border">|</span>
-              <span>100+ Clients</span>
-              <span className="hidden sm:inline text-border">|</span>
-              <span>Based in Birmingham</span>
-              <span className="hidden sm:inline text-border">|</span>
-              <span>No Long-Term Contracts</span>
-            </div>
           </motion.div>
         </div>
       </section>
@@ -423,12 +386,6 @@ const ServicePageLayout = ({
         </section>
       )}
 
-      {/* Enquiry Form */}
-      <ServiceEnquiryForm
-        serviceName={title}
-        heading={`Get Your Free ${title.replace(" Birmingham", "")} Consultation`}
-      />
-
       {/* CTA */}
       <section className="section-padding relative overflow-hidden bg-card/50">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10" />
@@ -445,9 +402,9 @@ const ServicePageLayout = ({
             Book a free strategy session and discover how we can accelerate your growth in Birmingham.
           </p>
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <a href="tel:+447846798534" className="gradient-btn text-base">
-              Call Us Now: 07846 798 534
-            </a>
+            <Link to="/contact" className="gradient-btn text-base">
+              Request a Free Strategy Session
+            </Link>
             <Link to="/services" className="gradient-btn-outline text-base">
               View All Services
             </Link>

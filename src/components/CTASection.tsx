@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
-import { Phone } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
 
 const CTASection = () => (
   <section id="cta" className="section-padding relative overflow-hidden bg-card/50" aria-label="Call to action">
@@ -14,28 +13,16 @@ const CTASection = () => (
       className="relative mx-auto max-w-3xl text-center"
     >
       <h2 className="mb-6 font-heading text-4xl font-extrabold text-foreground md:text-6xl">
-        Ready to Grow Your{" "}
-        <span className="gradient-text">Business Online?</span>
+        Ready to Grow{" "}
+        <span className="gradient-text">Your Business?</span>
       </h2>
       <p className="mb-10 font-body text-lg text-muted-foreground md:text-xl">
-        Get a free, no-obligation consultation with our Birmingham digital marketing experts.
+        Let's discuss how our team can help you achieve your digital marketing
+        goals. Book a free, no-obligation strategy consultation today.
       </p>
-      <div className="flex flex-wrap items-center justify-center gap-4">
-        <Link to="/contact" className="gradient-btn text-lg">
-          Start Your Journey
-        </Link>
-        <a
-          href="tel:+447846798534"
-          className="gradient-btn-outline text-lg flex items-center gap-2"
-          onClick={() => {
-            (window as any).dataLayer = (window as any).dataLayer || [];
-            (window as any).dataLayer.push({ event: "phone_click", click_location: "cta_section" });
-          }}
-        >
-          <Phone className="h-4 w-4" />
-          07846 798 534
-        </a>
-      </div>
+      <Link to="/contact" className="gradient-btn text-lg">
+        Book a Free Consultation
+      </Link>
     </motion.div>
   </section>
 );

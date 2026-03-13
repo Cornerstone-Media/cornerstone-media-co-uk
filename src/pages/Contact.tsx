@@ -73,7 +73,7 @@ const Contact = () => {
       <SEOHead
         title="Contact Cornerstone Media | Digital Marketing Agency Birmingham"
         description="Get in touch with Cornerstone Media, Birmingham's digital marketing experts. Call 07846 798 534 or fill in our form for a free strategy consultation."
-        canonical="https://cornerstone-media.co.uk/contact"
+        canonical="https://cornerstonemedialtd.com/contact"
       />
       <Navbar />
 
@@ -105,7 +105,7 @@ const Contact = () => {
               >
                 {[
                   { icon: Phone, label: "Phone", value: "07846 798 534", href: "tel:07846798534" },
-                  { icon: Mail, label: "Email", value: "info@cornerstone-media.co.uk", href: "mailto:info@cornerstone-media.co.uk" },
+                  { icon: Mail, label: "Email", value: "info@cornerstonemedialtd.com", href: "mailto:info@cornerstonemedialtd.com" },
                   { icon: MapPin, label: "Location", value: "Birmingham, West Midlands", href: undefined },
                 ].map(({ icon: Icon, label, value, href }) => (
                   <div key={label} className="glass-card flex items-start gap-4 p-6">

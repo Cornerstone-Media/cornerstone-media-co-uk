@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-Disallow: /admin
-Sitemap: https://cornerstone-media.co.uk/sitemap.xml
+Sitemap: https://cornerstonemedialtd.com/sitemap.xml

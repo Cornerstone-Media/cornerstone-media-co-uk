@@ -10,9 +10,9 @@ const aboutSchema = {
   "@type": "MarketingAgency",
   "name": "Cornerstone Media",
   "description": "Birmingham-based digital marketing agency specialising in SEO, PPC, social media marketing, and website design for businesses across the West Midlands.",
-  "url": "https://cornerstone-media.co.uk/about",
+  "url": "https://cornerstonemedialtd.com/about",
   "telephone": "+447846798534",
-  "email": "info@cornerstone-media.co.uk",
+  "email": "info@cornerstonemedialtd.com",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Birmingham",
@@ -41,7 +41,7 @@ const About = () => (
     <SEOHead
       title="About Cornerstone Media | Digital Marketing Agency Birmingham"
       description="Learn about Cornerstone Media, Birmingham's trusted digital marketing agency. We deliver expert SEO, PPC, social media, and web design services to businesses across the West Midlands."
-      canonical="https://cornerstone-media.co.uk/about"
+      canonical="https://cornerstonemedialtd.com/about"
       schema={aboutSchema}
     />
     <Navbar />

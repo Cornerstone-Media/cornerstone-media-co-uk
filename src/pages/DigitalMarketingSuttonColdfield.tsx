@@ -6,7 +6,7 @@ import SEOHead from "@/components/SEOHead";
 
 const DigitalMarketingSuttonColdfield = () => (
   <div className="min-h-screen bg-background">
-    <SEOHead title="Digital Marketing Sutton Coldfield | Marketing Agency | Cornerstone Media" description="Digital marketing services for Sutton Coldfield businesses. SEO, PPC, social media marketing, and web design from Birmingham's trusted agency Cornerstone Media." canonical="https://cornerstone-media.co.uk/digital-marketing-sutton-coldfield" />
+    <SEOHead title="Digital Marketing Sutton Coldfield | Marketing Agency | Cornerstone Media" description="Digital marketing services for Sutton Coldfield businesses. SEO, PPC, social media marketing, and web design from Birmingham's trusted agency Cornerstone Media." canonical="https://cornerstonemedialtd.com/digital-marketing-sutton-coldfield" />
     <Navbar />
     <main>
       <ServicePageLayout icon={MapPin} title="Digital Marketing Sutton Coldfield" subtitle="Marketing Services for Sutton Coldfield" description="Cornerstone Media delivers expert digital marketing services to businesses in Sutton Coldfield. Located in neighbouring Birmingham, we provide Sutton Coldfield businesses with the same calibre of SEO, PPC, social media, and website design services that drive growth for companies across the West Midlands."

@@ -12,12 +12,12 @@ Deno.serve(async (req) => {
   }
 
   try {
-    const { name, email, phone, company, message, recaptchaToken, source_page, service } = await req.json();
+    const { name, email, phone, company, message, recaptchaToken } = await req.json();
 
     // Validate required fields
-    if (!name || !email) {
+    if (!name || !email || !message) {
       return new Response(
-        JSON.stringify({ error: "Name and email are required" }),
+        JSON.stringify({ error: "Name, email, and message are required" }),
         { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
@@ -52,7 +52,7 @@ Deno.serve(async (req) => {
       email,
       phone: phone || null,
       company: company || null,
-      message: message || `Service: ${service || 'Not specified'}`,
+      message,
     });
 
     // Send email via Resend
@@ -64,10 +64,8 @@ Deno.serve(async (req) => {
       <p><strong>Email:</strong> ${email}</p>
       <p><strong>Phone:</strong> ${phone || "Not provided"}</p>
       <p><strong>Company:</strong> ${company || "Not provided"}</p>
-      <p><strong>Service Interest:</strong> ${service || "Not specified"}</p>
-      <p><strong>Source Page:</strong> ${source_page || "Not specified"}</p>
       <p><strong>Message:</strong></p>
-      <p>${message || "No message provided"}</p>
+      <p>${message}</p>
     `;
 
     // Notify the team
@@ -78,8 +76,8 @@ Deno.serve(async (req) => {
         Authorization: `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "Cornerstone Media <noreply@cornerstone-media.co.uk>",
-        to: ["info@cornerstone-media.co.uk", "cis.shafiq@gmail.com"],
+        from: "Cornerstone Media <noreply@cornerstonemedialtd.com>",
+        to: ["info@cornerstonemedialtd.com", "cis.shafiq@gmail.com"],
         subject: `New Contact: ${name}`,
         html: emailHtml,
         reply_to: email,
@@ -103,8 +101,8 @@ Deno.serve(async (req) => {
           </p>
           <hr style="border: none; border-top: 1px solid #eee; margin: 24px 0;" />
           <p style="color: #888; font-size: 13px; margin-bottom: 0;">
-            Cornerstone Media &bull; Digital Marketing Agency<br />
-            <a href="https://cornerstone-media.co.uk" style="color: #e63946;">cornerstone-media.co.uk</a>
+            Cornerstone Media Ltd &bull; Digital Marketing Agency<br />
+            <a href="https://cornerstonemedialtd.com" style="color: #e63946;">cornerstonemedialtd.com</a>
           </p>
         </div>
       </div>
@@ -117,7 +115,7 @@ Deno.serve(async (req) => {
         Authorization: `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "Cornerstone Media <noreply@cornerstone-media.co.uk>",
+        from: "Cornerstone Media <noreply@cornerstonemedialtd.com>",
         to: [email],
         subject: "We've received your message — Cornerstone Media",
         html: confirmationHtml,
@@ -131,6 +129,7 @@ Deno.serve(async (req) => {
     if (!resendRes.ok) {
       const err = await resendRes.text();
       console.error("Resend error:", err);
+      // Still return success since we saved to DB
       return new Response(
         JSON.stringify({ success: true, emailSent: false }),
         { headers: { ...corsHeaders, "Content-Type": "application/json" } }

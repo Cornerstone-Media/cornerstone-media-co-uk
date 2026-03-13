@@ -11,7 +11,7 @@ const webDesignSchema = {
   "provider": {
     "@type": "ProfessionalService",
     "name": "Cornerstone Media",
-    "url": "https://cornerstone-media.co.uk",
+    "url": "https://cornerstonemedialtd.com",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Birmingham",
@@ -67,7 +67,7 @@ const WebsiteDesign = () => (
     <SEOHead
       title="Website Design Birmingham | Web Design Agency Birmingham | Cornerstone Media"
       description="Professional website design in Birmingham. Conversion-focused, mobile-responsive websites built for speed and SEO. Free consultation from Cornerstone Media. Call 07846 798 534."
-      canonical="https://cornerstone-media.co.uk/website-design-birmingham"
+      canonical="https://cornerstonemedialtd.com/website-design-birmingham"
       schema={webDesignFAQSchema}
     />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webDesignSchema) }} />

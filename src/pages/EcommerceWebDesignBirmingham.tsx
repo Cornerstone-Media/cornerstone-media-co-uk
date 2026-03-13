@@ -9,7 +9,7 @@ const EcommerceWebDesignBirmingham = () => (
     <SEOHead
       title="E-commerce Website Design Birmingham | Online Store Development | Cornerstone Media"
       description="E-commerce website design in Birmingham. Custom online stores with secure checkout, payment integration, and conversion-optimised design. WooCommerce and Shopify specialists."
-      canonical="https://cornerstone-media.co.uk/ecommerce-website-design-birmingham"
+      canonical="https://cornerstonemedialtd.com/ecommerce-website-design-birmingham"
     />
     <Navbar />
     <main>

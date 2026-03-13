@@ -9,7 +9,7 @@ const LinkedInAdsBirmingham = () => (
     <SEOHead
       title="LinkedIn Ads Birmingham | B2B LinkedIn Advertising | Cornerstone Media"
       description="LinkedIn advertising agency in Birmingham. Target B2B decision-makers with Sponsored Content, InMail, and lead generation campaigns. Expert LinkedIn Ads management."
-      canonical="https://cornerstone-media.co.uk/linkedin-ads-birmingham"
+      canonical="https://cornerstonemedialtd.com/linkedin-ads-birmingham"
     />
     <Navbar />
     <main>

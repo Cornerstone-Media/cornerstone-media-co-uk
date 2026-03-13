@@ -55,7 +55,7 @@ const OGImageGenerator = () => {
       // Website URL
       ctx.fillStyle = "rgba(255,255,255,0.5)";
       ctx.font = "400 20px 'Inter', 'Segoe UI', sans-serif";
-      ctx.fillText("cornerstone-media.co.uk", 600, 490);
+      ctx.fillText("cornerstonemedialtd.com", 600, 490);
     };
     img.src = logo;
   }, []);

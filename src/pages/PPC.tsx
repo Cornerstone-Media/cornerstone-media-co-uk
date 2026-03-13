@@ -11,7 +11,7 @@ const ppcSchema = {
   "provider": {
     "@type": "ProfessionalService",
     "name": "Cornerstone Media",
-    "url": "https://cornerstone-media.co.uk",
+    "url": "https://cornerstonemedialtd.com",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Birmingham",
@@ -70,7 +70,7 @@ const PPC = () => (
     <SEOHead
       title="PPC Birmingham | Google Ads Agency Birmingham | Cornerstone Media"
       description="Expert PPC agency in Birmingham. We manage Google Ads campaigns that deliver measurable ROI for Birmingham businesses. Free PPC audit available. Call 07846 798 534."
-      canonical="https://cornerstone-media.co.uk/ppc-birmingham"
+      canonical="https://cornerstonemedialtd.com/ppc-birmingham"
       schema={ppcFAQSchema}
     />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ppcSchema) }} />

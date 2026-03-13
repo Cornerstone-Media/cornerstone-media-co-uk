@@ -21,10 +21,10 @@ const teamSchema = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://cornerstone-media.co.uk/#organization",
+      "@id": "https://cornerstonemedialtd.com/#organization",
       name: "Cornerstone Media",
-      url: "https://cornerstone-media.co.uk",
-      logo: "https://cornerstone-media.co.uk/og-logo.png",
+      url: "https://cornerstonemedialtd.com",
+      logo: "https://cornerstonemedialtd.com/og-logo.png",
       description:
         "Birmingham-based digital marketing agency specialising in SEO, PPC, social media marketing, and website design for businesses across the West Midlands.",
       areaServed: [
@@ -82,8 +82,8 @@ const teamSchema = {
     ].map((p) => ({
       "@type": "Person",
       ...p,
-      worksFor: { "@id": "https://cornerstone-media.co.uk/#organization" },
-      image: "https://cornerstone-media.co.uk/og-logo.png",
+      worksFor: { "@id": "https://cornerstonemedialtd.com/#organization" },
+      image: "https://cornerstonemedialtd.com/og-logo.png",
     })),
   ],
 };
@@ -205,7 +205,7 @@ const MeetTheTeam = () => (
     <SEOHead
       title="Meet the Team | Digital Marketing Specialists Birmingham | Cornerstone Media"
       description="Meet the experienced digital marketing specialists behind Cornerstone Media. Our Birmingham-based team includes SEO, PPC, social media, and web design experts helping businesses grow across the West Midlands."
-      canonical="https://cornerstone-media.co.uk/meet-the-team"
+      canonical="https://cornerstonemedialtd.com/meet-the-team"
       schema={teamSchema}
     />
     <Navbar />

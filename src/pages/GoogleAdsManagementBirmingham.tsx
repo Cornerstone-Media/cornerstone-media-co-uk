@@ -9,7 +9,7 @@ const GoogleAdsManagementBirmingham = () => (
     <SEOHead
       title="Google Ads Management Birmingham | Certified PPC Experts | Cornerstone Media"
       description="Expert Google Ads management for Birmingham businesses. Certified Google Ads specialists managing Search, Shopping, Display, and YouTube campaigns. Free account audit available."
-      canonical="https://cornerstone-media.co.uk/google-ads-management-birmingham"
+      canonical="https://cornerstonemedialtd.com/google-ads-management-birmingham"
     />
     <Navbar />
     <main>

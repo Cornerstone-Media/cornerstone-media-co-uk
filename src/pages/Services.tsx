@@ -143,21 +143,21 @@ const servicesSchema = [
     "@type": "MarketingAgency",
     "name": "Cornerstone Media",
     "description": "Full-service digital marketing agency in Birmingham offering SEO, PPC, social media marketing, website design, content writing, and website maintenance services.",
-    "url": "https://cornerstone-media.co.uk/services",
+    "url": "https://cornerstonemedialtd.com/services",
     "telephone": "+447846798534",
-    "email": "info@cornerstone-media.co.uk",
+    "email": "info@cornerstonemedialtd.com",
     "address": { "@type": "PostalAddress", "addressLocality": "Birmingham", "addressRegion": "West Midlands", "addressCountry": "GB" },
     "areaServed": [{ "@type": "City", "name": "Birmingham" }, { "@type": "AdministrativeArea", "name": "West Midlands" }],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Digital Marketing Services Birmingham",
       "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO Birmingham", "url": "https://cornerstone-media.co.uk/seo-birmingham" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "PPC Advertising Birmingham", "url": "https://cornerstone-media.co.uk/ppc-birmingham" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Social Media Marketing Birmingham", "url": "https://cornerstone-media.co.uk/social-media-marketing-birmingham" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Design Birmingham", "url": "https://cornerstone-media.co.uk/website-design-birmingham" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Content Writing", "url": "https://cornerstone-media.co.uk/content-writing" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Maintenance", "url": "https://cornerstone-media.co.uk/website-maintenance" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO Birmingham", "url": "https://cornerstonemedialtd.com/seo" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "PPC Advertising Birmingham", "url": "https://cornerstonemedialtd.com/ppc" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Social Media Marketing Birmingham", "url": "https://cornerstonemedialtd.com/social-media" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Design Birmingham", "url": "https://cornerstonemedialtd.com/website-design" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Content Writing", "url": "https://cornerstonemedialtd.com/content-writing" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Maintenance", "url": "https://cornerstonemedialtd.com/website-maintenance" } },
       ],
     },
   },
@@ -288,7 +288,7 @@ const Services = () => {
       <SEOHead
         title="Digital Marketing Services Birmingham | Cornerstone Media"
         description="Digital marketing services in Birmingham including SEO, PPC, social media marketing and website design from Cornerstone Media. Free strategy consultation available."
-        canonical="https://cornerstone-media.co.uk/services"
+        canonical="https://cornerstonemedialtd.com/services"
         schema={servicesSchema}
       />
       <Navbar />

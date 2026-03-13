@@ -44,10 +44,9 @@ const homepageSchema = [
     "@type": "MarketingAgency",
     "name": "Cornerstone Media",
     "description": "Digital marketing agency in Birmingham specialising in PPC, SEO, social media marketing, website design, and website maintenance.",
-    "url": "https://cornerstone-media.co.uk",
-    "logo": "https://cornerstone-media.co.uk/og-logo.png",
+    "url": "https://cornerstonemedialtd.com",
     "telephone": "+447846798534",
-    "email": "info@cornerstone-media.co.uk",
+    "email": "info@cornerstonemedialtd.com",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Birmingham",
@@ -73,9 +72,9 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Digital Marketing Agency Birmingham | Cornerstone Media"
+        title="Digital Marketing Birmingham | Cornerstone Media"
         description="Cornerstone Media is Birmingham's leading digital marketing agency. Expert PPC, SEO, social media marketing, website design & maintenance. Get your free strategy call today."
-        canonical="https://cornerstone-media.co.uk/"
+        canonical="https://cornerstonemedialtd.com/"
         schema={homepageSchema}
       />
       <Navbar />
