@@ -39,11 +39,16 @@ const Footer = () => (
             Birmingham's trusted digital marketing agency. We help local and national businesses
             grow through data-driven PPC, SEO, social media, website design, and ongoing maintenance.
           </p>
-          <p className="mt-4 font-body text-sm text-muted-foreground">
-            <a href="tel:07846798534" className="transition-colors hover:text-secondary">📞 07846 798 534</a>
-            {" · "}
-            <a href="mailto:info@cornerstone-media.co.uk" className="transition-colors hover:text-secondary">info@cornerstone-media.co.uk</a>
-          </p>
+          <address className="mt-4 not-italic font-body text-sm text-muted-foreground space-y-1">
+            <p className="font-heading font-semibold text-foreground">Cornerstone Media</p>
+            <p>Birmingham, West Midlands, UK</p>
+            <p>
+              <a href="tel:+447846798534" className="transition-colors hover:text-secondary">📞 07846 798 534</a>
+            </p>
+            <p>
+              <a href="mailto:info@cornerstone-media.co.uk" className="transition-colors hover:text-secondary">✉ info@cornerstone-media.co.uk</a>
+            </p>
+          </address>
           <div className="mt-6 flex gap-3">
             {["LinkedIn", "Twitter", "Instagram", "Facebook"].map((name) => (
               <a

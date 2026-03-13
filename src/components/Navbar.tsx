@@ -139,14 +139,14 @@ const Navbar = () => {
                 </motion.div>
               ))}
               <a
-                href="tel:07846798534"
+                href="tel:+447846798534"
                 className="gradient-btn-outline flex items-center justify-center gap-2 text-sm"
               >
                 <Phone className="h-4 w-4" />
-                Free Strategy Call
+                07846 798 534
               </a>
               <Link to="/contact" className="gradient-btn mt-2 text-center text-sm">
-                Get My Free Audit
+                Get a Free Quote
               </Link>
             </div>
           </motion.div>
