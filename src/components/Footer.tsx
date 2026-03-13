@@ -42,7 +42,7 @@ const Footer = () => (
           <p className="mt-4 font-body text-sm text-muted-foreground">
             <a href="tel:07846798534" className="transition-colors hover:text-secondary">📞 07846 798 534</a>
             {" · "}
-            <a href="mailto:info@cornerstonemedialtd.com" className="transition-colors hover:text-secondary">info@cornerstonemedialtd.com</a>
+            <a href="mailto:info@cornerstone-media.co.uk" className="transition-colors hover:text-secondary">info@cornerstone-media.co.uk</a>
           </p>
           <div className="mt-6 flex gap-3">
             {["LinkedIn", "Twitter", "Instagram", "Facebook"].map((name) => (
@@ -85,7 +85,7 @@ const Footer = () => (
           © {new Date().getFullYear()} Cornerstone Media. Digital Marketing Agency, Birmingham, West Midlands. All rights reserved. | Website Created by <Link to="/" className="hover:text-secondary transition-colors">Cornerstone Media Ltd</Link>
         </p>
         <p className="font-body text-xs text-muted-foreground">
-          <a href="mailto:info@cornerstonemedialtd.com" className="hover:text-secondary transition-colors">info@cornerstonemedialtd.com</a>
+          <a href="mailto:info@cornerstone-media.co.uk" className="hover:text-secondary transition-colors">info@cornerstone-media.co.uk</a>
         </p>
       </div>
     </div>
