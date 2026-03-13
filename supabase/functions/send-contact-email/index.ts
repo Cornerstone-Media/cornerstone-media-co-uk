@@ -102,7 +102,7 @@ Deno.serve(async (req) => {
           <hr style="border: none; border-top: 1px solid #eee; margin: 24px 0;" />
           <p style="color: #888; font-size: 13px; margin-bottom: 0;">
             Cornerstone Media Ltd &bull; Digital Marketing Agency<br />
-            <a href="https://cornerstonemedialtd.com" style="color: #e63946;">cornerstonemedialtd.com</a>
+            <a href="https://cornerstone-media.co.uk" style="color: #e63946;">cornerstone-media.co.uk</a>
           </p>
         </div>
       </div>
