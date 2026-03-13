@@ -10,9 +10,9 @@ const aboutSchema = {
   "@type": "MarketingAgency",
   "name": "Cornerstone Media",
   "description": "Birmingham-based digital marketing agency specialising in SEO, PPC, social media marketing, and website design for businesses across the West Midlands.",
-  "url": "https://cornerstonemedialtd.com/about",
+  "url": "https://cornerstone-media.co.uk/about",
   "telephone": "+447846798534",
-  "email": "info@cornerstonemedialtd.com",
+  "email": "info@cornerstone-media.co.uk",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Birmingham",
