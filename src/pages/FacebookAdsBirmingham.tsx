@@ -9,7 +9,7 @@ const FacebookAdsBirmingham = () => (
     <SEOHead
       title="Facebook Ads Birmingham | Facebook Advertising Agency | Cornerstone Media"
       description="Facebook advertising agency in Birmingham. Expert Meta Ads management with advanced targeting, creative development, and conversion optimisation for Birmingham businesses."
-      canonical="https://cornerstonemedialtd.com/facebook-ads-birmingham"
+      canonical="https://cornerstone-media.co.uk/facebook-ads-birmingham"
     />
     <Navbar />
     <main>

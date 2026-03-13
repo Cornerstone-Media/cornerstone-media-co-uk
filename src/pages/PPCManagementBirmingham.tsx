@@ -9,7 +9,7 @@ const PPCManagementBirmingham = () => (
     <SEOHead
       title="PPC Management Birmingham | Paid Search & Social | Cornerstone Media"
       description="Professional PPC management in Birmingham covering Google Ads, Microsoft Ads, and paid social. Data-driven campaign management that delivers leads and sales for your business."
-      canonical="https://cornerstonemedialtd.com/ppc-management-birmingham"
+      canonical="https://cornerstone-media.co.uk/ppc-management-birmingham"
     />
     <Navbar />
     <main>

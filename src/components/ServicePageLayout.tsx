@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { type LucideIcon, CheckCircle2, ChevronDown } from "lucide-react";
 import { useState } from "react";
+import ServiceEnquiryForm from "@/components/ServiceEnquiryForm";
 
 interface FAQ {
   question: string;
@@ -386,6 +387,12 @@ const ServicePageLayout = ({
         </section>
       )}
 
+      {/* Enquiry Form */}
+      <ServiceEnquiryForm
+        serviceName={title}
+        heading={`Get Your Free ${title.replace(" Birmingham", "")} Consultation`}
+      />
+
       {/* CTA */}
       <section className="section-padding relative overflow-hidden bg-card/50">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10" />
@@ -402,9 +409,9 @@ const ServicePageLayout = ({
             Book a free strategy session and discover how we can accelerate your growth in Birmingham.
           </p>
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link to="/contact" className="gradient-btn text-base">
-              Request a Free Strategy Session
-            </Link>
+            <a href="tel:+447846798534" className="gradient-btn text-base">
+              Call Us Now: 07846 798 534
+            </a>
             <Link to="/services" className="gradient-btn-outline text-base">
               View All Services
             </Link>

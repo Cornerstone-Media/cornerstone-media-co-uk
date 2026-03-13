@@ -9,7 +9,7 @@ const RemarketingAdsBirmingham = () => (
     <SEOHead
       title="Remarketing Ads Birmingham | Retargeting Campaigns | Cornerstone Media"
       description="Remarketing and retargeting ad services in Birmingham. Re-engage website visitors with targeted display, video, and social ads that bring them back to convert."
-      canonical="https://cornerstonemedialtd.com/remarketing-ads-birmingham"
+      canonical="https://cornerstone-media.co.uk/remarketing-ads-birmingham"
     />
     <Navbar />
     <main>
