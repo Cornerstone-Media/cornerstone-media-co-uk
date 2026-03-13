@@ -205,7 +205,7 @@ const MeetTheTeam = () => (
     <SEOHead
       title="Meet the Team | Digital Marketing Specialists Birmingham | Cornerstone Media"
       description="Meet the experienced digital marketing specialists behind Cornerstone Media. Our Birmingham-based team includes SEO, PPC, social media, and web design experts helping businesses grow across the West Midlands."
-      canonical="https://cornerstonemedialtd.com/meet-the-team"
+      canonical="https://cornerstone-media.co.uk/meet-the-team"
       schema={teamSchema}
     />
     <Navbar />
