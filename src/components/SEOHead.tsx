@@ -5,17 +5,21 @@ interface SEOHeadProps {
   description: string;
   canonical?: string;
   schema?: object;
-  breadcrumb?: { name: string; slug: string };
+  breadcrumbName?: string;
 }
 
-const SEOHead = ({ title, description, canonical, schema, breadcrumb }: SEOHeadProps) => {
-  const breadcrumbSchema = breadcrumb
+const SEOHead = ({ title, description, canonical, schema, breadcrumbName }: SEOHeadProps) => {
+  // Auto-generate BreadcrumbList for non-homepage pages
+  const isInnerPage = canonical && canonical !== "https://cornerstone-media.co.uk/";
+  const pageName = breadcrumbName || title.split("|")[0]?.trim() || title;
+
+  const breadcrumbSchema = isInnerPage
     ? {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: "https://cornerstone-media.co.uk/" },
-          { "@type": "ListItem", position: 2, name: breadcrumb.name, item: `https://cornerstone-media.co.uk/${breadcrumb.slug}` },
+          { "@type": "ListItem", position: 2, name: pageName, item: canonical },
         ],
       }
     : null;
