@@ -59,7 +59,7 @@ const SocialMedia = () => (
     <SEOHead
       title="Social Media Marketing Birmingham | Social Media Agency | Cornerstone Media"
       description="Social media marketing agency in Birmingham. Paid social campaigns on Facebook, Instagram, LinkedIn & TikTok. Content creation and community management. Free consultation."
-      canonical="https://cornerstonemedialtd.com/social-media-marketing-birmingham"
+      canonical="https://cornerstone-media.co.uk/social-media-marketing-birmingham"
       schema={socialFAQSchema}
     />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(socialSchema) }} />

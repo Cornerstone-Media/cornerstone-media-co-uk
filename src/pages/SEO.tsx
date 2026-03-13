@@ -70,7 +70,7 @@ const SEO = () => (
     <SEOHead
       title="SEO Birmingham | SEO Agency Birmingham | Cornerstone Media"
       description="Birmingham SEO agency that drives organic traffic and rankings. Technical SEO, local SEO, content strategy, and link building. Free SEO audit — call 07846 798 534."
-      canonical="https://cornerstonemedialtd.com/seo-birmingham"
+      canonical="https://cornerstone-media.co.uk/seo-birmingham"
       schema={seoFAQSchema}
     />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(seoServiceSchema) }} />

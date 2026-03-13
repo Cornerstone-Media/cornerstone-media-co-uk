@@ -41,7 +41,7 @@ const About = () => (
     <SEOHead
       title="About Cornerstone Media | Digital Marketing Agency Birmingham"
       description="Learn about Cornerstone Media, Birmingham's trusted digital marketing agency. We deliver expert SEO, PPC, social media, and web design services to businesses across the West Midlands."
-      canonical="https://cornerstonemedialtd.com/about"
+      canonical="https://cornerstone-media.co.uk/about"
       schema={aboutSchema}
     />
     <Navbar />
