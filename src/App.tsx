@@ -112,6 +112,7 @@ const App = () => (
           <Route path="/og-generator" element={<OGImageGenerator />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <MobileCTABar />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
