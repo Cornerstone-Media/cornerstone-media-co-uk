@@ -6,7 +6,7 @@ import SEOHead from "@/components/SEOHead";
 
 const DigitalMarketingDudley = () => (
   <div className="min-h-screen bg-background">
-    <SEOHead title="Digital Marketing Dudley | Marketing Agency Near Dudley | Cornerstone Media" description="Digital marketing services for Dudley businesses. SEO, PPC, social media, and website design from Cornerstone Media. Expert marketing for Black Country businesses." canonical="https://cornerstonemedialtd.com/digital-marketing-dudley" />
+    <SEOHead title="Digital Marketing Dudley | Marketing Agency Near Dudley | Cornerstone Media" description="Digital marketing services for Dudley businesses. SEO, PPC, social media, and website design from Cornerstone Media. Expert marketing for Black Country businesses." canonical="https://cornerstone-media.co.uk/digital-marketing-dudley" />
     <Navbar />
     <main>
       <ServicePageLayout icon={MapPin} title="Digital Marketing Dudley" subtitle="Marketing Services for Dudley Businesses" description="Cornerstone Media delivers results-driven digital marketing services to businesses in Dudley and across the Black Country. Our SEO, PPC, social media, and website design services help Dudley businesses increase their online visibility, generate qualified leads, and grow revenue through strategic, data-driven digital marketing."

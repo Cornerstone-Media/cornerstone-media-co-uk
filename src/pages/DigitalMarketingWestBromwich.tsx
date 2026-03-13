@@ -6,7 +6,7 @@ import SEOHead from "@/components/SEOHead";
 
 const DigitalMarketingWestBromwich = () => (
   <div className="min-h-screen bg-background">
-    <SEOHead title="Digital Marketing West Bromwich | Marketing Agency | Cornerstone Media" description="Digital marketing services for West Bromwich businesses. SEO, PPC, social media, and web design from Cornerstone Media. Grow your West Bromwich business online." canonical="https://cornerstonemedialtd.com/digital-marketing-west-bromwich" />
+    <SEOHead title="Digital Marketing West Bromwich | Marketing Agency | Cornerstone Media" description="Digital marketing services for West Bromwich businesses. SEO, PPC, social media, and web design from Cornerstone Media. Grow your West Bromwich business online." canonical="https://cornerstone-media.co.uk/digital-marketing-west-bromwich" />
     <Navbar />
     <main>
       <ServicePageLayout icon={MapPin} title="Digital Marketing West Bromwich" subtitle="Marketing Services for West Bromwich" description="Cornerstone Media provides expert digital marketing services for businesses in West Bromwich. From our Birmingham office just minutes away, we deliver SEO, PPC advertising, social media marketing, and website design strategies that help West Bromwich businesses compete effectively online and generate consistent growth."
