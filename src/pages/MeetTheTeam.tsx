@@ -21,10 +21,10 @@ const teamSchema = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://cornerstonemedialtd.com/#organization",
+      "@id": "https://cornerstone-media.co.uk/#organization",
       name: "Cornerstone Media",
-      url: "https://cornerstonemedialtd.com",
-      logo: "https://cornerstonemedialtd.com/og-logo.png",
+      url: "https://cornerstone-media.co.uk",
+      logo: "https://cornerstone-media.co.uk/og-logo.png",
       description:
         "Birmingham-based digital marketing agency specialising in SEO, PPC, social media marketing, and website design for businesses across the West Midlands.",
       areaServed: [
