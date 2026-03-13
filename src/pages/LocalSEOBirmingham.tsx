@@ -18,7 +18,7 @@ const LocalSEOBirmingham = () => (
     <SEOHead
       title="Local SEO Birmingham | Google Maps & Local Search | Cornerstone Media"
       description="Local SEO services in Birmingham. Dominate Google Maps, local search results, and the map pack. Google Business Profile optimisation, citations, and local content strategy."
-      canonical="https://cornerstonemedialtd.com/local-seo-birmingham"
+      canonical="https://cornerstone-media.co.uk/local-seo-birmingham"
       schema={schema}
     />
     <Navbar />
