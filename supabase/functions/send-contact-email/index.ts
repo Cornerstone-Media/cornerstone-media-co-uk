@@ -115,7 +115,7 @@ Deno.serve(async (req) => {
         Authorization: `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "Cornerstone Media <noreply@cornerstonemedialtd.com>",
+        from: "Cornerstone Media <noreply@cornerstone-media.co.uk>",
         to: [email],
         subject: "We've received your message — Cornerstone Media",
         html: confirmationHtml,
