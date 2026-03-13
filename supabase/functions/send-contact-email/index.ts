@@ -97,7 +97,7 @@ Deno.serve(async (req) => {
           </p>
           <p style="color: #444; line-height: 1.6;">
             In the meantime, if you need something urgently, feel free to call us on
-            <a href="tel:07846798534" style="color: #e63946; text-decoration: none; font-weight: bold;">07846 798 534</a>.
+             <a href="tel:07846798534" style="color: #e63946; text-decoration: none; font-weight: bold;">07846 798 534</a>.
           </p>
           <hr style="border: none; border-top: 1px solid #eee; margin: 24px 0;" />
           <p style="color: #888; font-size: 13px; margin-bottom: 0;">
