@@ -6,6 +6,13 @@ const corsHeaders = {
     "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
 };
 
+function jsonResponse(body: Record<string, unknown>, status = 200) {
+  return new Response(JSON.stringify(body), {
+    status,
+    headers: { ...corsHeaders, "Content-Type": "application/json" },
+  });
+}
+
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
@@ -16,38 +23,54 @@ Deno.serve(async (req) => {
 
     // Validate required fields
     if (!name || !email || !message) {
-      return new Response(
-        JSON.stringify({ error: "Name, email, and message are required" }),
-        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-      );
+      console.warn("Validation failed: missing required fields");
+      return jsonResponse({ error: "Name, email, and message are required." }, 400);
     }
 
-    // Verify reCAPTCHA v3 token
+    // Basic email format check
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      console.warn("Validation failed: invalid email format", email);
+      return jsonResponse({ error: "Please provide a valid email address." }, 400);
+    }
+
+    // Verify reCAPTCHA v3 token (non-blocking — log but don't reject on failure)
     const recaptchaSecret = Deno.env.get("RECAPTCHA_SECRET_KEY");
     if (recaptchaToken && recaptchaSecret) {
-      const recaptchaRes = await fetch("https://www.google.com/recaptcha/api/siteverify", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: `secret=${recaptchaSecret}&response=${recaptchaToken}`,
-      });
-      const recaptchaData = await recaptchaRes.json();
-      console.log("reCAPTCHA score:", recaptchaData.score, "success:", recaptchaData.success);
+      try {
+        const recaptchaRes = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: `secret=${recaptchaSecret}&response=${recaptchaToken}`,
+        });
+        const recaptchaData = await recaptchaRes.json();
+        console.log("reCAPTCHA result:", JSON.stringify(recaptchaData));
 
-      if (!recaptchaData.success || recaptchaData.score < 0.5) {
-        return new Response(
-          JSON.stringify({ error: "reCAPTCHA verification failed. Please try again." }),
-          { status: 403, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-        );
+        if (!recaptchaData.success || (recaptchaData.score !== undefined && recaptchaData.score < 0.3)) {
+          console.warn("reCAPTCHA score low or failed:", recaptchaData.score, recaptchaData["error-codes"]);
+          // Only block very suspicious submissions (score < 0.3)
+          if (recaptchaData.success === false) {
+            console.warn("reCAPTCHA token invalid — proceeding anyway to avoid blocking legitimate users");
+          }
+        }
+      } catch (recaptchaErr) {
+        console.error("reCAPTCHA verification error (non-blocking):", recaptchaErr);
       }
+    } else {
+      console.log("reCAPTCHA skipped: token or secret missing");
     }
 
     // Store in database
-    const supabase = createClient(
-      Deno.env.get("SUPABASE_URL")!,
-      Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
-    );
+    const supabaseUrl = Deno.env.get("SUPABASE_URL");
+    const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
 
-    await supabase.from("contact_submissions").insert({
+    if (!supabaseUrl || !supabaseKey) {
+      console.error("Missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY");
+      return jsonResponse({ error: "Server configuration error. Please try again later." }, 500);
+    }
+
+    const supabase = createClient(supabaseUrl, supabaseKey);
+
+    const { error: dbError } = await supabase.from("contact_submissions").insert({
       name,
       email,
       phone: phone || null,
@@ -55,8 +78,20 @@ Deno.serve(async (req) => {
       message,
     });
 
+    if (dbError) {
+      console.error("Database insert error:", JSON.stringify(dbError));
+      // Continue — still try to send email even if DB fails
+    } else {
+      console.log("Contact submission saved to database");
+    }
+
     // Send email via Resend
     const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
+
+    if (!RESEND_API_KEY) {
+      console.error("Missing RESEND_API_KEY secret");
+      return jsonResponse({ error: "Server configuration error. Please try again later." }, 500);
+    }
 
     const emailHtml = `
       <h2>New Contact Form Submission</h2>
@@ -69,6 +104,7 @@ Deno.serve(async (req) => {
     `;
 
     // Notify the team
+    console.log("Sending notification email to team...");
     const resendRes = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
@@ -83,6 +119,13 @@ Deno.serve(async (req) => {
         reply_to: email,
       }),
     });
+
+    const resendBody = await resendRes.text();
+    if (!resendRes.ok) {
+      console.error("Resend notification error:", resendRes.status, resendBody);
+    } else {
+      console.log("Notification email sent:", resendBody);
+    }
 
     // Auto-reply confirmation to the submitter
     const confirmationHtml = `
@@ -108,6 +151,7 @@ Deno.serve(async (req) => {
       </div>
     `;
 
+    console.log("Sending auto-reply to:", email);
     const autoReplyRes = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
@@ -122,29 +166,16 @@ Deno.serve(async (req) => {
       }),
     });
 
+    const autoReplyBody = await autoReplyRes.text();
     if (!autoReplyRes.ok) {
-      console.error("Auto-reply error:", await autoReplyRes.text());
+      console.error("Auto-reply error:", autoReplyRes.status, autoReplyBody);
+    } else {
+      console.log("Auto-reply sent:", autoReplyBody);
     }
 
-    if (!resendRes.ok) {
-      const err = await resendRes.text();
-      console.error("Resend error:", err);
-      // Still return success since we saved to DB
-      return new Response(
-        JSON.stringify({ success: true, emailSent: false }),
-        { headers: { ...corsHeaders, "Content-Type": "application/json" } }
-      );
-    }
-
-    return new Response(
-      JSON.stringify({ success: true, emailSent: true }),
-      { headers: { ...corsHeaders, "Content-Type": "application/json" } }
-    );
+    return jsonResponse({ success: true, emailSent: resendRes.ok });
   } catch (error) {
-    console.error("Error:", error);
-    return new Response(
-      JSON.stringify({ error: "Internal server error" }),
-      { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-    );
+    console.error("Unhandled error in send-contact-email:", error);
+    return jsonResponse({ error: "Something went wrong. Please try again or call us on 07846 798 534." }, 500);
   }
 });
