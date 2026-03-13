@@ -143,9 +143,9 @@ const servicesSchema = [
     "@type": "MarketingAgency",
     "name": "Cornerstone Media",
     "description": "Full-service digital marketing agency in Birmingham offering SEO, PPC, social media marketing, website design, content writing, and website maintenance services.",
-    "url": "https://cornerstonemedialtd.com/services",
+    "url": "https://cornerstone-media.co.uk/services",
     "telephone": "+447846798534",
-    "email": "info@cornerstonemedialtd.com",
+    "email": "info@cornerstone-media.co.uk",
     "address": { "@type": "PostalAddress", "addressLocality": "Birmingham", "addressRegion": "West Midlands", "addressCountry": "GB" },
     "areaServed": [{ "@type": "City", "name": "Birmingham" }, { "@type": "AdministrativeArea", "name": "West Midlands" }],
     "hasOfferCatalog": {
