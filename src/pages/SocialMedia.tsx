@@ -11,7 +11,7 @@ const socialSchema = {
   "provider": {
     "@type": "ProfessionalService",
     "name": "Cornerstone Media",
-    "url": "https://cornerstonemedialtd.com",
+    "url": "https://cornerstone-media.co.uk",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Birmingham",
