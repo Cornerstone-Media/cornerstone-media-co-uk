@@ -10,7 +10,6 @@ const CookieConsent = () => {
   useEffect(() => {
     const consent = localStorage.getItem(COOKIE_KEY);
     if (!consent) {
-      // Small delay so it doesn't flash on load
       const timer = setTimeout(() => setVisible(true), 1500);
       return () => clearTimeout(timer);
     }
@@ -20,9 +19,8 @@ const CookieConsent = () => {
   }, []);
 
   const enableAnalytics = () => {
-    // GTM is already in index.html but we ensure dataLayer consent mode
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ event: "cookie_consent_granted" });
+    (window as any).dataLayer = (window as any).dataLayer || [];
+    (window as any).dataLayer.push({ event: "cookie_consent_granted" });
   };
 
   const accept = () => {

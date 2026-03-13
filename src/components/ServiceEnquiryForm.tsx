@@ -41,7 +41,6 @@ const ServiceEnquiryForm = ({
   });
 
   useEffect(() => {
-    // Load reCAPTCHA if not already loaded
     if (!(window as any).grecaptcha) {
       const script = document.createElement("script");
       script.src = `https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`;
@@ -82,9 +81,8 @@ const ServiceEnquiryForm = ({
       if (error) throw error;
       if (data?.error) throw new Error(data.error);
 
-      // GA4 dataLayer event
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
+      (window as any).dataLayer = (window as any).dataLayer || [];
+      (window as any).dataLayer.push({
         event: "form_submission",
         form_type: "enquiry",
         service_page: sourcePage,

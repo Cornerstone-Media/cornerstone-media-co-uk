@@ -16,8 +16,8 @@ const MobileCTABar = () => {
         href="tel:+447846798534"
         className="flex flex-1 items-center justify-center gap-2 py-3 font-heading text-sm font-semibold text-foreground transition-colors hover:text-secondary"
         onClick={() => {
-          window.dataLayer = window.dataLayer || [];
-          window.dataLayer.push({ event: "phone_click", click_location: "mobile_bar" });
+          (window as any).dataLayer = (window as any).dataLayer || [];
+          (window as any).dataLayer.push({ event: "phone_click", click_location: "mobile_bar" });
         }}
       >
         <Phone className="h-4 w-4" />
@@ -27,8 +27,8 @@ const MobileCTABar = () => {
       <button
         onClick={() => {
           scrollToForm();
-          window.dataLayer = window.dataLayer || [];
-          window.dataLayer.push({ event: "cta_click", click_location: "mobile_bar", cta_type: "get_quote" });
+          (window as any).dataLayer = (window as any).dataLayer || [];
+          (window as any).dataLayer.push({ event: "cta_click", click_location: "mobile_bar", cta_type: "get_quote" });
         }}
         className="flex flex-1 items-center justify-center gap-2 py-3 font-heading text-sm font-semibold text-secondary transition-colors hover:text-accent"
       >

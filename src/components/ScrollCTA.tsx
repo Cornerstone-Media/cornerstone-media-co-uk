@@ -54,8 +54,8 @@ const ScrollCTA = () => {
                 to="/contact"
                 className="gradient-btn inline-block px-4 py-2 text-xs"
                 onClick={() => {
-                  window.dataLayer = window.dataLayer || [];
-                  window.dataLayer.push({ event: "cta_click", click_location: "scroll_cta", cta_type: "book_call" });
+                  (window as any).dataLayer = (window as any).dataLayer || [];
+                  (window as any).dataLayer.push({ event: "cta_click", click_location: "scroll_cta", cta_type: "book_call" });
                 }}
               >
                 Book a Call
