@@ -25,7 +25,7 @@ const footerLinks = [
 ];
 
 const Footer = () => (
-  <footer className="border-t border-border bg-card" role="contentinfo" aria-label="Site footer">
+  <footer className="border-t border-border bg-card pb-16 lg:pb-0" role="contentinfo" aria-label="Site footer">
     <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
       <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
         {/* Brand */}
@@ -42,7 +42,7 @@ const Footer = () => (
           <p className="mt-4 font-body text-sm text-muted-foreground">
             <a href="tel:07846798534" className="transition-colors hover:text-secondary">📞 07846 798 534</a>
             {" · "}
-            <a href="mailto:info@cornerstonemedialtd.com" className="transition-colors hover:text-secondary">info@cornerstonemedialtd.com</a>
+            <a href="mailto:info@cornerstone-media.co.uk" className="transition-colors hover:text-secondary">info@cornerstone-media.co.uk</a>
           </p>
           <div className="mt-6 flex gap-3">
             {["LinkedIn", "Twitter", "Instagram", "Facebook"].map((name) => (
@@ -82,11 +82,14 @@ const Footer = () => (
 
       <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 md:flex-row">
         <p className="font-body text-xs text-muted-foreground">
-          © {new Date().getFullYear()} Cornerstone Media. Digital Marketing Agency, Birmingham, West Midlands. All rights reserved. | Website Created by <Link to="/" className="hover:text-secondary transition-colors">Cornerstone Media Ltd</Link>
+          © {new Date().getFullYear()} Cornerstone Media. Digital Marketing Agency, Birmingham, West Midlands. All rights reserved.
         </p>
-        <p className="font-body text-xs text-muted-foreground">
-          <a href="mailto:info@cornerstonemedialtd.com" className="hover:text-secondary transition-colors">info@cornerstonemedialtd.com</a>
-        </p>
+        <div className="flex flex-wrap gap-4 font-body text-xs text-muted-foreground">
+          <Link to="/privacy-policy" className="hover:text-secondary transition-colors">Privacy Policy</Link>
+          <Link to="/cookie-policy" className="hover:text-secondary transition-colors">Cookie Policy</Link>
+          <Link to="/terms" className="hover:text-secondary transition-colors">Terms</Link>
+          <a href="mailto:info@cornerstone-media.co.uk" className="hover:text-secondary transition-colors">info@cornerstone-media.co.uk</a>
+        </div>
       </div>
     </div>
   </footer>

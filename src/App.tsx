@@ -4,6 +4,9 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
+import CookieConsent from "./components/CookieConsent";
+import MobileCTABar from "./components/MobileCTABar";
+import ScrollCTA from "./components/ScrollCTA";
 import Index from "./pages/Index";
 import PPC from "./pages/PPC";
 import SEO from "./pages/SEO";
@@ -18,6 +21,9 @@ import About from "./pages/About";
 import MeetTheTeam from "./pages/MeetTheTeam";
 import NotFound from "./pages/NotFound";
 import OGImageGenerator from "./pages/OGImageGenerator";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import CookiePolicy from "./pages/CookiePolicy";
+import Terms from "./pages/Terms";
 
 // SEO Supporting Pages
 import LocalSEOBirmingham from "./pages/LocalSEOBirmingham";
@@ -65,6 +71,11 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/thank-you" element={<ThankYou />} />
 
+          {/* Legal Pages */}
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/cookie-policy" element={<CookiePolicy />} />
+          <Route path="/terms" element={<Terms />} />
+
           {/* Service Pillar Pages */}
           <Route path="/ppc-birmingham" element={<PPC />} />
           <Route path="/seo-birmingham" element={<SEO />} />
@@ -111,6 +122,9 @@ const App = () => (
           <Route path="/og-generator" element={<OGImageGenerator />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <MobileCTABar />
+        <ScrollCTA />
+        <CookieConsent />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
