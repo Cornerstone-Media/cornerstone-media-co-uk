@@ -82,8 +82,8 @@ const teamSchema = {
     ].map((p) => ({
       "@type": "Person",
       ...p,
-      worksFor: { "@id": "https://cornerstonemedialtd.com/#organization" },
-      image: "https://cornerstonemedialtd.com/og-logo.png",
+      worksFor: { "@id": "https://cornerstone-media.co.uk/#organization" },
+      image: "https://cornerstone-media.co.uk/og-logo.png",
     })),
   ],
 };
