@@ -45,6 +45,7 @@ const homepageSchema = [
     "name": "Cornerstone Media",
     "description": "Digital marketing agency in Birmingham specialising in PPC, SEO, social media marketing, website design, and website maintenance.",
     "url": "https://cornerstone-media.co.uk",
+    "logo": "https://cornerstone-media.co.uk/og-logo.png",
     "telephone": "+447846798534",
     "email": "info@cornerstone-media.co.uk",
     "address": {
