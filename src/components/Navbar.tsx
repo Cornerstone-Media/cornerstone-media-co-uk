@@ -6,7 +6,6 @@ import logo from "@/assets/logo.png";
 
 const navLinks = [
   { label: "Home", path: "/" },
-  { label: "Services", path: "/services" },
   { label: "PPC", path: "/ppc-birmingham" },
   { label: "SEO", path: "/seo-birmingham" },
   { label: "Social", path: "/social-media-marketing-birmingham" },
