@@ -45,10 +45,17 @@ const Footer = () => (
             <a href="mailto:info@cornerstone-media.co.uk" className="transition-colors hover:text-secondary">info@cornerstone-media.co.uk</a>
           </p>
           <div className="mt-6 flex gap-3">
-            {["LinkedIn", "Twitter", "Instagram", "Facebook"].map((name) => (
+            {[
+              { name: "LinkedIn", url: "#" },
+              { name: "Twitter", url: "#" },
+              { name: "Instagram", url: "#" },
+              { name: "Facebook", url: "https://www.facebook.com/share/1VR9am5V3S/" },
+            ].map(({ name, url }) => (
               <a
                 key={name}
-                href="#"
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={`Follow Cornerstone Media on ${name}`}
                 className="flex h-10 w-10 items-center justify-center rounded-xl border border-border font-heading text-xs font-semibold text-muted-foreground transition-all duration-300 hover:border-secondary/50 hover:text-secondary hover:bg-secondary/5"
               >
