@@ -63,7 +63,7 @@ const teamSchema = {
         name: "Mohsin",
         jobTitle: "Head of SEO",
         description:
-          "Technical and strategic SEO specialist leading a team of 37 SEO experts, helping businesses improve search visibility and organic traffic.",
+          "Technical and strategic SEO specialist leading a team of SEO experts, helping businesses improve search visibility and organic traffic.",
         knowsAbout: [
           "SEO", "Search Engine Optimisation", "Technical SEO", "Local SEO",
           "Keyword Research", "On-Page SEO", "Content Optimisation", "Link Development",
