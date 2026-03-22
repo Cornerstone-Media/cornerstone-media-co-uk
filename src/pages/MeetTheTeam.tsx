@@ -136,7 +136,7 @@ const teamMembers = [
     alt: "Mohsin SEO expert at Birmingham digital marketing agency",
     bio: [
       'Mohsin is our SEO expert, known internally as "The Ninja" because many high-end clients benefit from his work without ever actually seeing him.',
-      "Based in Lahore, Pakistan, he leads a team of 37 SEO specialists covering technical SEO, keyword research, content optimisation and link development.",
+      "Based in Lahore, Pakistan, he leads a team of SEO specialists covering technical SEO, keyword research, content optimisation and link development.",
       "While the UK team might present the results, Mohsin and his team are quietly making sure rankings climb behind the scenes.",
     ],
     tags: ["Technical SEO", "Keyword Research", "SEO Strategy", "On-Page SEO"],
