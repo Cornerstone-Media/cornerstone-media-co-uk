@@ -19,6 +19,7 @@ const footerLinks = [
       { label: "About Us", path: "/about" },
       { label: "Meet the Team", path: "/meet-the-team" },
       { label: "All Services", path: "/services" },
+      { label: "News", path: "/news" },
       { label: "Contact Us", path: "/contact" },
     ],
   },
