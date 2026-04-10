@@ -1,4 +1,4 @@
-import { AbsoluteFill, useCurrentFrame, spring, interpolate, useVideoConfig, Sequence } from "remotion";
+import { AbsoluteFill, useCurrentFrame, spring, interpolate, useVideoConfig } from "remotion";
 import { loadFont } from "@remotion/google-fonts/Montserrat";
 import { loadFont as loadInter } from "@remotion/google-fonts/Inter";
 
@@ -23,7 +23,7 @@ export const Scene2Services: React.FC = () => {
   return (
     <AbsoluteFill
       style={{
-        background: "linear-gradient(160deg, #0d0d14 0%, #0a0a0f 100%)",
+        background: "linear-gradient(160deg, #0a1018 0%, #060911 100%)",
         padding: "80px 120px",
         zIndex: 1,
       }}
@@ -42,7 +42,7 @@ export const Scene2Services: React.FC = () => {
       <div style={{
         width: 80,
         height: 3,
-        background: "#d4af37",
+        background: "linear-gradient(90deg, #1a6ddb, #22b8a0)",
         marginBottom: 60,
         opacity: interpolate(headerProgress, [0, 1], [0, 1]),
       }} />
@@ -62,8 +62,8 @@ export const Scene2Services: React.FC = () => {
             <div
               key={i}
               style={{
-                background: "linear-gradient(135deg, rgba(212,175,55,0.08) 0%, rgba(255,255,255,0.03) 100%)",
-                border: "1px solid rgba(212,175,55,0.15)",
+                background: "linear-gradient(135deg, rgba(26,109,219,0.08) 0%, rgba(34,184,160,0.05) 50%, rgba(19,199,123,0.03) 100%)",
+                border: "1px solid rgba(34,184,160,0.15)",
                 borderRadius: 16,
                 padding: "40px 36px",
                 opacity: cardOpacity,
@@ -74,7 +74,9 @@ export const Scene2Services: React.FC = () => {
                 fontFamily: montserrat,
                 fontSize: 36,
                 fontWeight: 700,
-                color: "#d4af37",
+                background: "linear-gradient(135deg, #1a6ddb, #22b8a0, #13c77b)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
                 marginBottom: 12,
               }}>
                 {service.title}

@@ -18,7 +18,7 @@ export const Scene3Stats: React.FC = () => {
   return (
     <AbsoluteFill
       style={{
-        background: "linear-gradient(135deg, #0f0f18 0%, #0a0a0f 100%)",
+        background: "linear-gradient(135deg, #0a1018 0%, #060911 100%)",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -26,7 +26,6 @@ export const Scene3Stats: React.FC = () => {
         zIndex: 1,
       }}
     >
-      {/* Header */}
       {(() => {
         const p = spring({ frame: frame - 5, fps, config: { damping: 20 } });
         return (
@@ -48,8 +47,7 @@ export const Scene3Stats: React.FC = () => {
         {stats.map((stat, i) => {
           const delay = 15 + i * 15;
           const s = spring({ frame: frame - delay, fps, config: { damping: 12 } });
-          const countFrame = Math.min(frame - delay, 40);
-          
+
           return (
             <div key={i} style={{
               textAlign: "center",
@@ -60,7 +58,7 @@ export const Scene3Stats: React.FC = () => {
                 fontFamily: montserrat,
                 fontSize: 96,
                 fontWeight: 700,
-                background: "linear-gradient(135deg, #d4af37, #f0d060)",
+                background: "linear-gradient(135deg, #1a6ddb, #22b8a0, #13c77b)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 lineHeight: 1,

@@ -23,7 +23,7 @@ export const Scene1Intro: React.FC = () => {
   return (
     <AbsoluteFill
       style={{
-        background: "linear-gradient(135deg, #0a0a0f 0%, #111118 40%, #0d0d14 100%)",
+        background: "linear-gradient(135deg, #060911 0%, #0a1018 40%, #060911 100%)",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -39,7 +39,7 @@ export const Scene1Intro: React.FC = () => {
             top: 0,
             bottom: 0,
             width: 1,
-            background: "#d4af37",
+            background: "#22b8a0",
           }} />
         ))}
       </div>
@@ -49,7 +49,7 @@ export const Scene1Intro: React.FC = () => {
         <div style={{
           width: accentWidth,
           height: 3,
-          background: "linear-gradient(90deg, #d4af37, #f0d060)",
+          background: "linear-gradient(90deg, #1a6ddb, #22b8a0, #13c77b)",
           margin: "0 auto 40px",
           borderRadius: 2,
         }} />
@@ -67,7 +67,7 @@ export const Scene1Intro: React.FC = () => {
           CORNERSTONE
           <br />
           <span style={{
-            background: "linear-gradient(90deg, #d4af37, #f0d060)",
+            background: "linear-gradient(135deg, #1a6ddb, #22b8a0, #13c77b)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
           }}>
@@ -93,7 +93,7 @@ export const Scene1Intro: React.FC = () => {
           fontFamily: montserrat,
           fontSize: 20,
           fontWeight: 400,
-          color: "#d4af37",
+          color: "#22b8a0",
           marginTop: 20,
           letterSpacing: 4,
           opacity: tagOpacity,
