@@ -19,6 +19,8 @@ import About from "./pages/About";
 import MeetTheTeam from "./pages/MeetTheTeam";
 import NotFound from "./pages/NotFound";
 import OGImageGenerator from "./pages/OGImageGenerator";
+import News from "./pages/News";
+import BlogPost from "./pages/BlogPost";
 
 // SEO Supporting Pages
 import LocalSEOBirmingham from "./pages/LocalSEOBirmingham";
@@ -107,6 +109,11 @@ const App = () => (
           <Route path="/seo" element={<Navigate to="/seo-birmingham" replace />} />
           <Route path="/social-media" element={<Navigate to="/social-media-marketing-birmingham" replace />} />
           <Route path="/website-design" element={<Navigate to="/website-design-birmingham" replace />} />
+
+          {/* News / Blog */}
+          <Route path="/news" element={<News />} />
+          <Route path="/news/:slug" element={<BlogPost />} />
+          <Route path="/blog" element={<Navigate to="/news" replace />} />
 
           {/* Utility */}
           <Route path="/og-generator" element={<OGImageGenerator />} />

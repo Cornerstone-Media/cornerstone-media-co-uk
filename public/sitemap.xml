@@ -159,9 +159,9 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Blog -->
+  <!-- News / Blog -->
   <url>
-    <loc>https://cornerstone-media.co.uk/blog</loc>
+    <loc>https://cornerstone-media.co.uk/news</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
