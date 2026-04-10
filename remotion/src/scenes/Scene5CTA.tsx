@@ -14,26 +14,24 @@ export const Scene5CTA: React.FC = () => {
   const urlP = spring({ frame: frame - 50, fps, config: { damping: 20 } });
   const tagP = spring({ frame: frame - 65, fps, config: { damping: 25 } });
 
-  // Pulsing glow
   const glowOpacity = interpolate(Math.sin(frame * 0.08), [-1, 1], [0.15, 0.35]);
 
   return (
     <AbsoluteFill
       style={{
-        background: "linear-gradient(135deg, #0a0a0f 0%, #111118 100%)",
+        background: "linear-gradient(135deg, #060911 0%, #0a1018 100%)",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         zIndex: 1,
       }}
     >
-      {/* Central glow */}
       <div style={{
         position: "absolute",
         width: 600,
         height: 600,
         borderRadius: "50%",
-        background: "radial-gradient(circle, rgba(212,175,55,0.2) 0%, transparent 70%)",
+        background: "radial-gradient(circle, rgba(34,184,160,0.2) 0%, transparent 70%)",
         opacity: glowOpacity,
         filter: "blur(80px)",
       }} />
@@ -50,7 +48,7 @@ export const Scene5CTA: React.FC = () => {
         }}>
           Ready to{" "}
           <span style={{
-            background: "linear-gradient(90deg, #d4af37, #f0d060)",
+            background: "linear-gradient(135deg, #1a6ddb, #22b8a0, #13c77b)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
           }}>
@@ -62,7 +60,9 @@ export const Scene5CTA: React.FC = () => {
           fontFamily: montserrat,
           fontSize: 42,
           fontWeight: 700,
-          color: "#d4af37",
+          background: "linear-gradient(135deg, #1a6ddb, #22b8a0, #13c77b)",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
           marginTop: 50,
           opacity: interpolate(phoneP, [0, 1], [0, 1]),
           transform: `translateY(${interpolate(phoneP, [0, 1], [30, 0])}px)`,

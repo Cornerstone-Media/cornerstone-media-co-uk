@@ -21,12 +21,11 @@ export const Scene4WhyUs: React.FC = () => {
   return (
     <AbsoluteFill
       style={{
-        background: "linear-gradient(160deg, #0a0a0f 0%, #12121c 100%)",
+        background: "linear-gradient(160deg, #060911 0%, #0a1018 100%)",
         display: "flex",
         zIndex: 1,
       }}
     >
-      {/* Left side */}
       <div style={{
         flex: 1,
         display: "flex",
@@ -45,7 +44,7 @@ export const Scene4WhyUs: React.FC = () => {
         }}>
           Why Choose{" "}
           <span style={{
-            background: "linear-gradient(90deg, #d4af37, #f0d060)",
+            background: "linear-gradient(135deg, #1a6ddb, #22b8a0, #13c77b)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
           }}>
@@ -54,7 +53,6 @@ export const Scene4WhyUs: React.FC = () => {
         </div>
       </div>
 
-      {/* Right side - points */}
       <div style={{
         flex: 1,
         display: "flex",
@@ -78,7 +76,7 @@ export const Scene4WhyUs: React.FC = () => {
                 width: 10,
                 height: 10,
                 borderRadius: "50%",
-                background: "#d4af37",
+                background: "linear-gradient(135deg, #1a6ddb, #13c77b)",
                 flexShrink: 0,
               }} />
               <div style={{

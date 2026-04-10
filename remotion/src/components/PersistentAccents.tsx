@@ -16,7 +16,7 @@ export const PersistentAccents: React.FC = () => {
           width: 500,
           height: 500,
           borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(212,175,55,0.12) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(34,184,160,0.12) 0%, transparent 70%)",
           transform: `translate(${orb1X}px, ${orb1Y + 200}px)`,
           filter: "blur(60px)",
         }}
@@ -27,7 +27,7 @@ export const PersistentAccents: React.FC = () => {
           width: 400,
           height: 400,
           borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(26,109,219,0.08) 0%, transparent 70%)",
           transform: `translate(${orb2X}px, ${orb2Y}px)`,
           filter: "blur(50px)",
         }}
