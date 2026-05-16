@@ -1,0 +1,56 @@
+# Cornerstone Media
+
+> Birmingham-based digital marketing agency specialising in SEO, PPC (Google Ads), social media advertising, content writing, and website design for businesses across Birmingham and the wider West Midlands.
+
+Cornerstone Media helps local businesses grow online with transparent, data-driven marketing — no long-term contracts, clear reporting, and measurable ROI. Services are delivered from Birmingham and cover Solihull, Sutton Coldfield, Wolverhampton, Walsall, Dudley and West Bromwich.
+
+## Pages
+
+- [Home](/): Cornerstone Media overview and headline services.
+- [Services](/services): Full list of marketing services.
+- [About](/about): Agency story, values and approach.
+- [Meet the Team](/meet-the-team): The people behind the work.
+- [Contact](/contact): Get a free digital marketing audit.
+
+## SEO
+
+- [SEO Birmingham](/seo-birmingham): Search engine optimisation pillar page.
+- [Local SEO Birmingham](/local-seo-birmingham): Google Maps and local pack ranking.
+- [Technical SEO Birmingham](/technical-seo-birmingham): Site audits and on-page fixes.
+- [SEO Audit Birmingham](/seo-audit-birmingham): Free SEO audit offer.
+
+## PPC & Paid Ads
+
+- [PPC Birmingham](/ppc-birmingham): Pay-per-click advertising pillar page.
+- [Google Ads Management Birmingham](/google-ads-management-birmingham): Google Ads campaign management.
+- [PPC Management Birmingham](/ppc-management-birmingham): Full PPC account management.
+- [Remarketing Ads Birmingham](/remarketing-ads-birmingham): Remarketing and retargeting campaigns.
+
+## Social Media
+
+- [Social Media Marketing Birmingham](/social-media-marketing-birmingham): Social media pillar page.
+- [Facebook Ads Birmingham](/facebook-ads-birmingham): Facebook advertising.
+- [Instagram Marketing Birmingham](/instagram-marketing-birmingham): Instagram strategy and ads.
+- [LinkedIn Ads Birmingham](/linkedin-ads-birmingham): B2B LinkedIn advertising.
+
+## Websites
+
+- [Website Design Birmingham](/website-design-birmingham): Web design pillar page.
+- [WordPress Web Design Birmingham](/wordpress-web-design-birmingham): WordPress builds.
+- [Ecommerce Web Design Birmingham](/ecommerce-website-design-birmingham): Online shops.
+- [Small Business Web Design Birmingham](/small-business-web-design-birmingham): Affordable packages.
+- [Website Maintenance](/website-maintenance): Ongoing support and care plans.
+- [Content Writing](/content-writing): SEO content writing services.
+
+## Locations
+
+- [Digital Marketing Solihull](/digital-marketing-solihull)
+- [Digital Marketing Sutton Coldfield](/digital-marketing-sutton-coldfield)
+- [Digital Marketing Wolverhampton](/digital-marketing-wolverhampton)
+- [Digital Marketing Walsall](/digital-marketing-walsall)
+- [Digital Marketing Dudley](/digital-marketing-dudley)
+- [Digital Marketing West Bromwich](/digital-marketing-west-bromwich)
+
+## News
+
+- [News & Insights](/news): Digital marketing blog and insights.
