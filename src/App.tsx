@@ -117,6 +117,10 @@ const App = () => (
           <Route path="/news/:slug" element={<BlogPost />} />
           <Route path="/blog" element={<Navigate to="/news" replace />} />
 
+          {/* Auth & Admin */}
+          <Route path="/auth" element={<Auth />} />
+          <Route path="/admin/seo-rankings" element={<SeoRankings />} />
+
           {/* Utility */}
           <Route path="/og-generator" element={<OGImageGenerator />} />
           <Route path="*" element={<NotFound />} />
