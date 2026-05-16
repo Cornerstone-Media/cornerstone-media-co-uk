@@ -21,6 +21,8 @@ import NotFound from "./pages/NotFound";
 import OGImageGenerator from "./pages/OGImageGenerator";
 import News from "./pages/News";
 import BlogPost from "./pages/BlogPost";
+import Auth from "./pages/Auth";
+import SeoRankings from "./pages/admin/SeoRankings";
 
 // SEO Supporting Pages
 import LocalSEOBirmingham from "./pages/LocalSEOBirmingham";
