@@ -68,8 +68,8 @@ const ppcFAQSchema = {
 const PPC = () => (
   <div className="min-h-screen bg-background">
     <SEOHead
-      title="PPC Birmingham | Google Ads Agency Birmingham | Cornerstone Media"
-      description="Expert PPC agency in Birmingham. We manage Google Ads campaigns that deliver measurable ROI for Birmingham businesses. Free PPC audit available. Call 07846 798 534."
+      title="PPC Birmingham | Google Ads Agency | Cornerstone Media"
+      description="Expert PPC agency in Birmingham managing Google Ads with measurable ROI. Free PPC audit. Call 07846 798 534."
       canonical="https://cornerstone-media.co.uk/ppc-birmingham"
       schema={ppcFAQSchema}
     />

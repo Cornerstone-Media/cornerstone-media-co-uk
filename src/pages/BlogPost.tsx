@@ -127,6 +127,8 @@ const BlogPost = () => {
         }
         canonical={`https://cornerstone-media.co.uk/news/${post.slug}`}
         schema={articleSchema}
+        ogType="article"
+        ogImage={post.featured_image_url || undefined}
       />
       <Navbar />
       <main className="min-h-screen pt-28">

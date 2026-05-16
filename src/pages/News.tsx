@@ -66,7 +66,7 @@ const News = () => {
     <>
       <SEOHead
         title="Digital Marketing News & Insights | Cornerstone Media Birmingham"
-        description="Stay up to date with the latest digital marketing news, SEO strategies, PPC tips, and website design insights from Cornerstone Media, Birmingham's trusted marketing agency."
+        description="Digital marketing news, SEO, PPC & web design insights from Cornerstone Media — Birmingham's trusted agency."
         canonical="https://cornerstone-media.co.uk/news"
         schema={newsSchema}
       />

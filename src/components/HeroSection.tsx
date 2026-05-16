@@ -12,6 +12,9 @@ const HeroSection = () => {
           alt="Birmingham digital marketing agency office — data analytics dashboard"
           className="h-full w-full object-cover opacity-25"
           loading="eager"
+          fetchPriority="high"
+          width={1920}
+          height={1080}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/50 to-background" />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background/80" />
