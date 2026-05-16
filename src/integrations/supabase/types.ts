@@ -178,6 +178,80 @@ export type Database = {
         }
         Relationships: []
       }
+      keyword_rankings: {
+        Row: {
+          captured_at: string
+          clicks: number
+          ctr: number
+          id: string
+          impressions: number
+          keyword_id: string
+          position: number | null
+          range_end: string
+          range_start: string
+        }
+        Insert: {
+          captured_at?: string
+          clicks?: number
+          ctr?: number
+          id?: string
+          impressions?: number
+          keyword_id: string
+          position?: number | null
+          range_end: string
+          range_start: string
+        }
+        Update: {
+          captured_at?: string
+          clicks?: number
+          ctr?: number
+          id?: string
+          impressions?: number
+          keyword_id?: string
+          position?: number | null
+          range_end?: string
+          range_start?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "keyword_rankings_keyword_id_fkey"
+            columns: ["keyword_id"]
+            isOneToOne: false
+            referencedRelation: "tracked_keywords"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      tracked_keywords: {
+        Row: {
+          country: string
+          created_at: string
+          created_by: string | null
+          id: string
+          keyword: string
+          notes: string | null
+          updated_at: string
+        }
+        Insert: {
+          country?: string
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          keyword: string
+          notes?: string | null
+          updated_at?: string
+        }
+        Update: {
+          country?: string
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          keyword?: string
+          notes?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           id: string
