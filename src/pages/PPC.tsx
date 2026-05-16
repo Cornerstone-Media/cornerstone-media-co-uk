@@ -65,15 +65,23 @@ const ppcFAQSchema = {
   ]
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cornerstone-media.co.uk/" },
+    { "@type": "ListItem", "position": 2, "name": "PPC Birmingham", "item": "https://cornerstone-media.co.uk/ppc-birmingham" }
+  ]
+};
+
 const PPC = () => (
   <div className="min-h-screen bg-background">
     <SEOHead
-      title="PPC Birmingham | Google Ads Agency | Cornerstone Media"
-      description="Expert PPC agency in Birmingham managing Google Ads with measurable ROI. Free PPC audit. Call 07846 798 534."
+      title="PPC Birmingham | PPC Agency & Google Ads Management | Cornerstone Media"
+      description="PPC Birmingham agency managing Google Ads, Microsoft Ads & paid social with measurable ROI. Free PPC audit for Birmingham businesses. Call 07846 798 534."
       canonical="https://cornerstone-media.co.uk/ppc-birmingham"
-      schema={ppcFAQSchema}
+      schema={[ppcSchema, ppcFAQSchema, breadcrumbSchema]}
     />
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ppcSchema) }} />
     <Navbar />
     <main>
       <ServicePageLayout

@@ -59,11 +59,11 @@ const ServicesOverview = () => {
             <span className="gradient-text">Digital Marketing</span> in Birmingham
           </h2>
           <p className="mt-6 max-w-2xl font-body text-base leading-relaxed text-muted-foreground">
-            From <Link to="/ppc-birmingham" className="text-secondary hover:underline">PPC advertising</Link> and{" "}
-            <Link to="/seo-birmingham" className="text-secondary hover:underline">search engine optimisation</Link> to{" "}
-            <Link to="/social-media-marketing-birmingham" className="text-secondary hover:underline">social media marketing</Link> and{" "}
-            <Link to="/website-design-birmingham" className="text-secondary hover:underline">website design</Link>,
-            Cornerstone Media provides everything your Birmingham business needs to grow online.
+            From <Link to="/ppc-birmingham" className="text-secondary hover:underline">PPC Birmingham</Link> and{" "}
+            <Link to="/seo-birmingham" className="text-secondary hover:underline">SEO Birmingham</Link> to{" "}
+            <Link to="/social-media-marketing-birmingham" className="text-secondary hover:underline">social media marketing Birmingham</Link> and{" "}
+            <Link to="/website-design-birmingham" className="text-secondary hover:underline">website design Birmingham</Link>,
+            Cornerstone Media is the digital marketing Birmingham agency businesses choose to grow online.
           </p>
         </motion.div>
 

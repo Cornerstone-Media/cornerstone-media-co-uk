@@ -62,15 +62,23 @@ const webDesignFAQSchema = {
   ]
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cornerstone-media.co.uk/" },
+    { "@type": "ListItem", "position": 2, "name": "Website Design Birmingham", "item": "https://cornerstone-media.co.uk/website-design-birmingham" }
+  ]
+};
+
 const WebsiteDesign = () => (
   <div className="min-h-screen bg-background">
     <SEOHead
-      title="Website Design Birmingham | Cornerstone Media"
-      description="Professional website design in Birmingham. Fast, mobile-responsive sites built for SEO and conversions. Free consultation — call 07846 798 534."
+      title="Website Design Birmingham | Web Design Agency | Cornerstone Media"
+      description="Website design Birmingham agency building fast, mobile-responsive websites that rank and convert. Free consultation — call 07846 798 534."
       canonical="https://cornerstone-media.co.uk/website-design-birmingham"
-      schema={webDesignFAQSchema}
+      schema={[webDesignSchema, webDesignFAQSchema, breadcrumbSchema]}
     />
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webDesignSchema) }} />
     <Navbar />
     <main>
       <ServicePageLayout
