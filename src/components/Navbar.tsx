@@ -22,7 +22,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -57,7 +57,11 @@ const Navbar = () => {
             <img
               src={logo}
               alt="Cornerstone Media logo"
+              width={600}
+              height={400}
               className="h-28 w-auto"
+              fetchPriority="high"
+              decoding="async"
             />
           </Link>
 

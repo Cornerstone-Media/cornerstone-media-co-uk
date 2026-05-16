@@ -34,6 +34,10 @@ const Footer = () => (
           <img
             src={logo}
             alt="Cornerstone Media — Digital Marketing Agency Birmingham"
+            width={600}
+            height={400}
+            loading="lazy"
+            decoding="async"
             className="mb-6 h-20 w-auto"
           />
           <p className="max-w-sm font-body text-sm leading-relaxed text-muted-foreground">
