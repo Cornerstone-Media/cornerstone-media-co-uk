@@ -57,7 +57,11 @@ const Navbar = () => {
             <img
               src={logo}
               alt="Cornerstone Media logo"
+              width={600}
+              height={400}
               className="h-28 w-auto"
+              fetchPriority="high"
+              decoding="async"
             />
           </Link>
 
