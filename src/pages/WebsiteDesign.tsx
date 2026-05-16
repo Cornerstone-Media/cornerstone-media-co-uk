@@ -65,8 +65,8 @@ const webDesignFAQSchema = {
 const WebsiteDesign = () => (
   <div className="min-h-screen bg-background">
     <SEOHead
-      title="Website Design Birmingham | Cornerstone Media"
-      description="Professional website design in Birmingham. Fast, mobile-responsive sites built for SEO and conversions. Free consultation — call 07846 798 534."
+      title="Website Design Birmingham | Web Design Agency | Cornerstone Media"
+      description="Website design Birmingham agency building fast, mobile-responsive websites that rank and convert. Free consultation — call 07846 798 534."
       canonical="https://cornerstone-media.co.uk/website-design-birmingham"
       schema={webDesignFAQSchema}
     />
