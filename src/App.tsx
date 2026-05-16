@@ -21,6 +21,8 @@ import NotFound from "./pages/NotFound";
 import OGImageGenerator from "./pages/OGImageGenerator";
 import News from "./pages/News";
 import BlogPost from "./pages/BlogPost";
+import Auth from "./pages/Auth";
+import SeoRankings from "./pages/admin/SeoRankings";
 
 // SEO Supporting Pages
 import LocalSEOBirmingham from "./pages/LocalSEOBirmingham";
@@ -114,6 +116,10 @@ const App = () => (
           <Route path="/news" element={<News />} />
           <Route path="/news/:slug" element={<BlogPost />} />
           <Route path="/blog" element={<Navigate to="/news" replace />} />
+
+          {/* Auth & Admin */}
+          <Route path="/auth" element={<Auth />} />
+          <Route path="/admin/seo-rankings" element={<SeoRankings />} />
 
           {/* Utility */}
           <Route path="/og-generator" element={<OGImageGenerator />} />
