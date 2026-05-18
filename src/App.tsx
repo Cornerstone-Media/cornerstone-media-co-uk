@@ -121,6 +121,7 @@ const App = () => (
           {/* Auth & Admin */}
           <Route path="/auth" element={<Auth />} />
           <Route path="/admin/seo-rankings" element={<SeoRankings />} />
+          <Route path="/admin/citations" element={<Citations />} />
 
           {/* Utility */}
           <Route path="/og-generator" element={<OGImageGenerator />} />
