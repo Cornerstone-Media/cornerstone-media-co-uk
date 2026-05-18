@@ -131,6 +131,7 @@ const SeoRankings = () => {
               <p className="text-muted-foreground text-sm mt-1">Google Search Console data, last 28-day average per keyword.</p>
             </div>
             <div className="flex flex-wrap gap-2">
+              <Button asChild variant="ghost"><Link to="/admin/citations"><MapPin className="h-4 w-4 mr-2" />Citations</Link></Button>
               <Button onClick={sync} disabled={syncing} variant="secondary">
                 <RefreshCw className={`h-4 w-4 mr-2 ${syncing ? "animate-spin" : ""}`} />
                 {syncing ? "Syncing…" : "Sync now"}
