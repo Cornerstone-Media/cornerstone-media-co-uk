@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Trash2, RefreshCw, Download, LogOut, Plus } from "lucide-react";
+import { Trash2, RefreshCw, Download, LogOut, Plus, MapPin } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -131,6 +131,7 @@ const SeoRankings = () => {
               <p className="text-muted-foreground text-sm mt-1">Google Search Console data, last 28-day average per keyword.</p>
             </div>
             <div className="flex flex-wrap gap-2">
+              <Button asChild variant="ghost"><Link to="/admin/citations"><MapPin className="h-4 w-4 mr-2" />Citations</Link></Button>
               <Button onClick={sync} disabled={syncing} variant="secondary">
                 <RefreshCw className={`h-4 w-4 mr-2 ${syncing ? "animate-spin" : ""}`} />
                 {syncing ? "Syncing…" : "Sync now"}

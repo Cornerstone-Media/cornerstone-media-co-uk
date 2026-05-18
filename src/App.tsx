@@ -23,6 +23,7 @@ import News from "./pages/News";
 import BlogPost from "./pages/BlogPost";
 import Auth from "./pages/Auth";
 import SeoRankings from "./pages/admin/SeoRankings";
+import Citations from "./pages/admin/Citations";
 
 // SEO Supporting Pages
 import LocalSEOBirmingham from "./pages/LocalSEOBirmingham";
@@ -120,6 +121,7 @@ const App = () => (
           {/* Auth & Admin */}
           <Route path="/auth" element={<Auth />} />
           <Route path="/admin/seo-rankings" element={<SeoRankings />} />
+          <Route path="/admin/citations" element={<Citations />} />
 
           {/* Utility */}
           <Route path="/og-generator" element={<OGImageGenerator />} />
