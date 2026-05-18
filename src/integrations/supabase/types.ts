@@ -148,6 +148,75 @@ export type Database = {
         }
         Relationships: []
       }
+      citations: {
+        Row: {
+          category: string
+          created_at: string
+          created_by: string | null
+          domain_authority: number | null
+          id: string
+          is_free: boolean
+          listing_url: string | null
+          live_at: string | null
+          nap_address: string | null
+          nap_name: string | null
+          nap_phone: string | null
+          nap_website: string | null
+          notes: string | null
+          platform_name: string
+          priority: string
+          status: string
+          submission_url: string | null
+          submitted_at: string | null
+          updated_at: string
+          username: string | null
+        }
+        Insert: {
+          category?: string
+          created_at?: string
+          created_by?: string | null
+          domain_authority?: number | null
+          id?: string
+          is_free?: boolean
+          listing_url?: string | null
+          live_at?: string | null
+          nap_address?: string | null
+          nap_name?: string | null
+          nap_phone?: string | null
+          nap_website?: string | null
+          notes?: string | null
+          platform_name: string
+          priority?: string
+          status?: string
+          submission_url?: string | null
+          submitted_at?: string | null
+          updated_at?: string
+          username?: string | null
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          created_by?: string | null
+          domain_authority?: number | null
+          id?: string
+          is_free?: boolean
+          listing_url?: string | null
+          live_at?: string | null
+          nap_address?: string | null
+          nap_name?: string | null
+          nap_phone?: string | null
+          nap_website?: string | null
+          notes?: string | null
+          platform_name?: string
+          priority?: string
+          status?: string
+          submission_url?: string | null
+          submitted_at?: string | null
+          updated_at?: string
+          username?: string | null
+        }
+        Relationships: []
+      }
       contact_submissions: {
         Row: {
           company: string | null
@@ -221,6 +290,60 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      nap_profile: {
+        Row: {
+          address_line1: string
+          address_line2: string | null
+          business_name: string
+          city: string
+          country: string
+          created_at: string
+          description: string | null
+          email: string | null
+          hours: string | null
+          id: string
+          phone: string
+          postcode: string
+          region: string | null
+          updated_at: string
+          website: string
+        }
+        Insert: {
+          address_line1: string
+          address_line2?: string | null
+          business_name: string
+          city: string
+          country?: string
+          created_at?: string
+          description?: string | null
+          email?: string | null
+          hours?: string | null
+          id?: string
+          phone: string
+          postcode: string
+          region?: string | null
+          updated_at?: string
+          website: string
+        }
+        Update: {
+          address_line1?: string
+          address_line2?: string | null
+          business_name?: string
+          city?: string
+          country?: string
+          created_at?: string
+          description?: string | null
+          email?: string | null
+          hours?: string | null
+          id?: string
+          phone?: string
+          postcode?: string
+          region?: string | null
+          updated_at?: string
+          website?: string
+        }
+        Relationships: []
       }
       tracked_keywords: {
         Row: {
