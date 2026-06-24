@@ -17,6 +17,7 @@ const SEOHead = ({
   schema,
   ogType = "website",
   ogImage,
+  robots = "index, follow",
 }: SEOHeadProps) => {
   const schemas = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
   return (
