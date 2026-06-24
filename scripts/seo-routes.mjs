@@ -114,6 +114,7 @@ export const ROUTES = {
   "/thank-you": {
     title: "Thank You | Cornerstone Media",
     description: "Thanks for getting in touch. A member of the Cornerstone Media team will be in contact shortly.",
+    robots: "noindex, nofollow",
   },
   "/ppc-birmingham": {
     title: "PPC Agency Birmingham | Google Ads Management | Cornerstone Media",
