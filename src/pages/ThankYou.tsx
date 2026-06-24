@@ -12,6 +12,7 @@ const ThankYou = () => {
         title="Thank You | Cornerstone Media"
         description="Thanks for getting in touch with Cornerstone Media. We'll respond within 24 hours."
         canonical="https://cornerstone-media.co.uk/thank-you"
+        robots="noindex, nofollow"
       />
       <Navbar />
 
