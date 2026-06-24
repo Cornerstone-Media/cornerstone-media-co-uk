@@ -99,6 +99,7 @@ async function main() {
       title: cfg.title,
       description: cfg.description,
       canonical,
+      robots: cfg.robots || "index, follow",
       jsonLd: cfg.jsonLd || [],
     });
 
