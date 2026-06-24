@@ -93,7 +93,7 @@ const ppcBodyHtml = `
 export const ROUTES = {
   "/": {
     title: "Digital Marketing Birmingham | Cornerstone Media",
-    description: "Cornerstone Media is Birmingham's leading digital marketing agency. Expert PPC, SEO, social media marketing, website design & maintenance. Free strategy call.",
+    description: "Cornerstone Media is Birmingham's leading digital marketing agency. Expert PPC, SEO, social media & web design. Book your free strategy call today.",
   },
   "/services": {
     title: "Digital Marketing Services Birmingham | Cornerstone Media",
