@@ -22,11 +22,11 @@ const escapeHtml = (s) =>
 
 const escapeAttr = escapeHtml;
 
-function buildHead({ title, description, canonical, jsonLd = [] }) {
+function buildHead({ title, description, canonical, robots = "index, follow", jsonLd = [] }) {
   const tags = [
     `<title>${escapeHtml(title)}</title>`,
     `<meta name="description" content="${escapeAttr(description)}" />`,
-    `<meta name="robots" content="index, follow" />`,
+    `<meta name="robots" content="${escapeAttr(robots)}" />`,
     `<link rel="canonical" href="${escapeAttr(canonical)}" />`,
     `<meta property="og:title" content="${escapeAttr(title)}" />`,
     `<meta property="og:description" content="${escapeAttr(description)}" />`,
