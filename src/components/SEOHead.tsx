@@ -7,6 +7,7 @@ interface SEOHeadProps {
   schema?: object | object[];
   ogType?: "website" | "article";
   ogImage?: string;
+  robots?: string;
 }
 
 const SEOHead = ({
