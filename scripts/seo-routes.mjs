@@ -93,7 +93,7 @@ const ppcBodyHtml = `
 export const ROUTES = {
   "/": {
     title: "Digital Marketing Birmingham | Cornerstone Media",
-    description: "Cornerstone Media is Birmingham's leading digital marketing agency. Expert PPC, SEO, social media marketing, website design & maintenance. Free strategy call.",
+    description: "Cornerstone Media is Birmingham's leading digital marketing agency. Expert PPC, SEO, social media & web design. Book your free strategy call today.",
   },
   "/services": {
     title: "Digital Marketing Services Birmingham | Cornerstone Media",
@@ -114,6 +114,7 @@ export const ROUTES = {
   "/thank-you": {
     title: "Thank You | Cornerstone Media",
     description: "Thanks for getting in touch. A member of the Cornerstone Media team will be in contact shortly.",
+    robots: "noindex, nofollow",
   },
   "/ppc-birmingham": {
     title: "PPC Agency Birmingham | Google Ads Management | Cornerstone Media",
@@ -122,7 +123,7 @@ export const ROUTES = {
     bodyHtml: ppcBodyHtml,
   },
   "/seo-birmingham": {
-    title: "SEO Agency Birmingham | Local SEO Experts | Cornerstone Media",
+    title: "SEO Agency Birmingham | Cornerstone Media",
     description: "Birmingham SEO agency helping local businesses rank higher on Google. Technical SEO, local SEO and content strategy. Book a free SEO audit today.",
   },
   "/social-media-marketing-birmingham": {

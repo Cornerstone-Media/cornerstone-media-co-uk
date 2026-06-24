@@ -7,6 +7,7 @@ interface SEOHeadProps {
   schema?: object | object[];
   ogType?: "website" | "article";
   ogImage?: string;
+  robots?: string;
 }
 
 const SEOHead = ({
@@ -16,13 +17,14 @@ const SEOHead = ({
   schema,
   ogType = "website",
   ogImage,
+  robots = "index, follow",
 }: SEOHeadProps) => {
   const schemas = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
   return (
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
-      <meta name="robots" content="index, follow" />
+      <meta name="robots" content={robots} />
       {canonical && <link rel="canonical" href={canonical} />}
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
