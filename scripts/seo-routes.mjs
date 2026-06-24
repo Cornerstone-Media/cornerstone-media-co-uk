@@ -122,7 +122,7 @@ export const ROUTES = {
     bodyHtml: ppcBodyHtml,
   },
   "/seo-birmingham": {
-    title: "SEO Agency Birmingham | Local SEO Experts | Cornerstone Media",
+    title: "SEO Agency Birmingham | Cornerstone Media",
     description: "Birmingham SEO agency helping local businesses rank higher on Google. Technical SEO, local SEO and content strategy. Book a free SEO audit today.",
   },
   "/social-media-marketing-birmingham": {
