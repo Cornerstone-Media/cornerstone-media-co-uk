@@ -8,7 +8,7 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { ROUTES, SITE_ORIGIN } from "./seo-routes.mjs";
+import { ROUTES, SITE_ORIGIN, REDIRECTS } from "./seo-routes.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST = path.resolve(__dirname, "..", "dist");
