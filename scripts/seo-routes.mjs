@@ -353,3 +353,15 @@ for (const [routePath, cfg] of Object.entries(ROUTES)) {
   }
 }
 
+// 301-style redirects for legacy generic service URLs → Birmingham canonicals.
+// Prerender emits a static HTML file at each source path with noindex +
+// canonical to the target + meta refresh + JS fallback, so crawlers
+// consolidate signals on the Birmingham pillar pages.
+export const REDIRECTS = {
+  "/ppc": "/ppc-birmingham",
+  "/seo": "/seo-birmingham",
+  "/social-media": "/social-media-marketing-birmingham",
+  "/website-design": "/website-design-birmingham",
+};
+
+
