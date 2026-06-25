@@ -333,8 +333,10 @@ for (const [routePath, cfg] of Object.entries(ROUTES)) {
   if (routePath === "/") {
     additions.push(localBusinessSchema);
   } else {
-    // BreadcrumbList for every non-homepage route (skip noindex pages).
-    if (cfg.robots !== "noindex, nofollow") {
+    // BreadcrumbList for every non-homepage route (skip noindex pages and
+    // routes that already ship a BreadcrumbList).
+    const hasBreadcrumb = existing.some((s) => s && s["@type"] === "BreadcrumbList");
+    if (cfg.robots !== "noindex, nofollow" && !hasBreadcrumb) {
       additions.push(buildBreadcrumbSchema(routePath, cfg.title));
     }
     // Service schema for the named service pages — but only if one is not
