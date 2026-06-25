@@ -219,3 +219,135 @@ export const ROUTES = {
     description: "Digital marketing news, guides and insights from the Cornerstone Media team in Birmingham. PPC, SEO, social media and web design.",
   },
 };
+
+// ============================================================
+// Auto-injected schemas: LocalBusiness (home), Service (service
+// pages) and BreadcrumbList (every non-homepage route).
+// ============================================================
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Cornerstone Media",
+  "description": "Birmingham's leading digital marketing agency offering SEO, PPC, social media marketing, website design and maintenance.",
+  "url": "https://cornerstone-media.co.uk",
+  "logo": "https://cornerstone-media.co.uk/og-logo.png",
+  "image": "https://cornerstone-media.co.uk/og-logo.png",
+  "telephone": "+447846798534",
+  "email": "info@cornerstone-media.co.uk",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Birmingham",
+    "addressRegion": "West Midlands",
+    "addressCountry": "GB"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 52.4862, "longitude": -1.8904 },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "opens": "09:00",
+    "closes": "17:30"
+  }],
+  "areaServed": ["Birmingham","Solihull","Wolverhampton","Walsall","Dudley","West Bromwich","Sutton Coldfield"],
+  "sameAs": ["https://www.facebook.com/cornerstonemedialtd"]
+};
+
+const SERVICE_PAGES = {
+  "/seo-birmingham": {
+    serviceType: "SEO",
+    name: "SEO Agency Birmingham",
+    description: "Local and technical SEO services for Birmingham businesses. Helping you rank higher on Google with proven SEO strategy.",
+  },
+  "/ppc-birmingham": {
+    serviceType: "PPC Advertising",
+    name: "PPC Agency Birmingham",
+    description: "Google Ads and PPC management for Birmingham businesses. Data-driven pay-per-click campaigns that deliver measurable ROI.",
+  },
+  "/social-media-marketing-birmingham": {
+    serviceType: "Social Media Marketing",
+    name: "Social Media Marketing Birmingham",
+    description: "Social media marketing for Birmingham businesses across Facebook, Instagram, LinkedIn and TikTok.",
+  },
+  "/website-design-birmingham": {
+    serviceType: "Website Design",
+    name: "Website Design Birmingham",
+    description: "Conversion-focused website design and development for Birmingham businesses.",
+  },
+  "/google-ads-management-birmingham": {
+    serviceType: "Google Ads Management",
+    name: "Google Ads Management Birmingham",
+    description: "Specialist Google Ads management in Birmingham across Search, Shopping, Performance Max and YouTube.",
+  },
+  "/local-seo-birmingham": {
+    serviceType: "Local SEO",
+    name: "Local SEO Birmingham",
+    description: "Local SEO services helping Birmingham businesses rank in the Google Map Pack and dominate local searches.",
+  },
+  "/technical-seo-birmingham": {
+    serviceType: "Technical SEO",
+    name: "Technical SEO Birmingham",
+    description: "Technical SEO audits and implementation for Birmingham businesses: Core Web Vitals, indexing, schema and crawl issues.",
+  },
+};
+
+function buildServiceSchema(routePath, cfg) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": cfg.serviceType,
+    "name": cfg.name,
+    "description": cfg.description,
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Cornerstone Media",
+      "url": SITE_ORIGIN,
+    },
+    "areaServed": { "@type": "City", "name": "Birmingham" },
+    "url": `${SITE_ORIGIN}${routePath}`,
+  };
+}
+
+function breadcrumbName(routePath, title) {
+  // Use the part of the title before " | " as the page label.
+  const label = title.split("|")[0].trim();
+  return label || routePath;
+}
+
+function buildBreadcrumbSchema(routePath, title) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_ORIGIN}/` },
+      { "@type": "ListItem", "position": 2, "name": breadcrumbName(routePath, title), "item": `${SITE_ORIGIN}${routePath}` },
+    ],
+  };
+}
+
+// Mutate ROUTES to attach jsonLd arrays. Preserve any existing jsonLd entries
+// (e.g. the rich PPC schemas) and append the new ones.
+for (const [routePath, cfg] of Object.entries(ROUTES)) {
+  const existing = Array.isArray(cfg.jsonLd) ? cfg.jsonLd : [];
+  const additions = [];
+
+  if (routePath === "/") {
+    additions.push(localBusinessSchema);
+  } else {
+    // BreadcrumbList for every non-homepage route (skip noindex pages).
+    if (cfg.robots !== "noindex, nofollow") {
+      additions.push(buildBreadcrumbSchema(routePath, cfg.title));
+    }
+    // Service schema for the named service pages — but only if one is not
+    // already present (the /ppc-birmingham route ships a richer one).
+    const svc = SERVICE_PAGES[routePath];
+    const hasService = existing.some((s) => s && s["@type"] === "Service");
+    if (svc && !hasService) {
+      additions.push(buildServiceSchema(routePath, svc));
+    }
+  }
+
+  if (additions.length) {
+    cfg.jsonLd = [...existing, ...additions];
+  }
+}
+
