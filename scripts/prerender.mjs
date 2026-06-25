@@ -8,7 +8,7 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { ROUTES, SITE_ORIGIN } from "./seo-routes.mjs";
+import { ROUTES, SITE_ORIGIN, REDIRECTS } from "./seo-routes.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST = path.resolve(__dirname, "..", "dist");
@@ -121,6 +121,35 @@ async function main() {
   }
 
   console.log(`[prerender] Wrote ${written} static route files.`);
+
+  // Emit redirect stubs for legacy URLs → canonical Birmingham pages.
+  let redirected = 0;
+  for (const [from, to] of Object.entries(REDIRECTS || {})) {
+    const targetUrl = `${SITE_ORIGIN}${to}`;
+    const html = `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting…</title>
+    <meta name="robots" content="noindex, follow" />
+    <link rel="canonical" href="${escapeAttr(targetUrl)}" />
+    <meta http-equiv="refresh" content="0; url=${escapeAttr(targetUrl)}" />
+    <meta name="description" content="This page has moved to ${escapeAttr(targetUrl)}" />
+    <script>window.location.replace(${JSON.stringify(to)});</script>
+  </head>
+  <body>
+    <p>This page has moved to <a href="${escapeAttr(targetUrl)}">${escapeHtml(targetUrl)}</a>.</p>
+  </body>
+</html>
+`;
+    const outDir = path.join(DIST, from.replace(/^\//, ""));
+    await fs.mkdir(outDir, { recursive: true });
+    await fs.writeFile(path.join(outDir, "index.html"), html, "utf8");
+    redirected++;
+    console.log(`[prerender] redirect ${from} -> ${to}`);
+  }
+  console.log(`[prerender] Wrote ${redirected} redirect stubs.`);
+
 }
 
 main().catch((err) => {
