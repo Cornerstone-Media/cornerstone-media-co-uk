@@ -130,7 +130,7 @@ Deno.serve(async (req) => {
       body: JSON.stringify({
         from: "Cornerstone Media <noreply@cornerstone-media.co.uk>",
         to: ["info@cornerstone-media.co.uk", "cis.shafiq@gmail.com"],
-        subject: `New Contact: ${name}`,
+        subject: `New Contact: ${String(name).replace(/[\r\n]+/g, " ").slice(0, 200)}`,
         html: emailHtml,
         reply_to: email,
       }),
@@ -150,7 +150,7 @@ Deno.serve(async (req) => {
           <h1 style="color: #ffffff; margin: 0; font-size: 24px;">Cornerstone Media</h1>
         </div>
         <div style="padding: 32px;">
-          <h2 style="color: #1a1a2e; margin-top: 0;">Thanks for reaching out, ${name}!</h2>
+          <h2 style="color: #1a1a2e; margin-top: 0;">Thanks for reaching out, ${safeName}!</h2>
           <p style="color: #444; line-height: 1.6;">
             We've received your message and one of our team will be in touch within <strong>24 hours</strong>.
           </p>
