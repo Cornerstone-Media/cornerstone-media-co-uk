@@ -93,14 +93,30 @@ Deno.serve(async (req) => {
       return jsonResponse({ error: "Server configuration error. Please try again later." }, 500);
     }
 
+    // HTML-escape every user-supplied value before embedding it in HTML.
+    const escHtml = (s: string) =>
+      s
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+
+    const safeName = escHtml(String(name));
+    const safeEmail = escHtml(String(email));
+    const safePhone = phone ? escHtml(String(phone)) : "Not provided";
+    const safeCompany = company ? escHtml(String(company)) : "Not provided";
+    // Preserve line breaks but escape HTML first.
+    const safeMessage = escHtml(String(message)).replace(/\n/g, "<br />");
+
     const emailHtml = `
       <h2>New Contact Form Submission</h2>
-      <p><strong>Name:</strong> ${name}</p>
-      <p><strong>Email:</strong> ${email}</p>
-      <p><strong>Phone:</strong> ${phone || "Not provided"}</p>
-      <p><strong>Company:</strong> ${company || "Not provided"}</p>
+      <p><strong>Name:</strong> ${safeName}</p>
+      <p><strong>Email:</strong> ${safeEmail}</p>
+      <p><strong>Phone:</strong> ${safePhone}</p>
+      <p><strong>Company:</strong> ${safeCompany}</p>
       <p><strong>Message:</strong></p>
-      <p>${message}</p>
+      <p>${safeMessage}</p>
     `;
 
     // Notify the team
@@ -114,7 +130,7 @@ Deno.serve(async (req) => {
       body: JSON.stringify({
         from: "Cornerstone Media <noreply@cornerstone-media.co.uk>",
         to: ["info@cornerstone-media.co.uk", "cis.shafiq@gmail.com"],
-        subject: `New Contact: ${name}`,
+        subject: `New Contact: ${String(name).replace(/[\r\n]+/g, " ").slice(0, 200)}`,
         html: emailHtml,
         reply_to: email,
       }),
@@ -134,7 +150,7 @@ Deno.serve(async (req) => {
           <h1 style="color: #ffffff; margin: 0; font-size: 24px;">Cornerstone Media</h1>
         </div>
         <div style="padding: 32px;">
-          <h2 style="color: #1a1a2e; margin-top: 0;">Thanks for reaching out, ${name}!</h2>
+          <h2 style="color: #1a1a2e; margin-top: 0;">Thanks for reaching out, ${safeName}!</h2>
           <p style="color: #444; line-height: 1.6;">
             We've received your message and one of our team will be in touch within <strong>24 hours</strong>.
           </p>
