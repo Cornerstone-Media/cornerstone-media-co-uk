@@ -53,13 +53,13 @@ const Navbar = () => {
           </button>
 
           {/* Logo: left on desktop, centered on mobile */}
-          <Link to="/" className="flex-shrink-0 lg:mr-auto" aria-label="Cornerstone Media — Home">
+          <Link to="/" className="flex-shrink-0 lg:mr-auto flex flex-col items-center" aria-label="Cornerstone Media — Home">
             <img
               src={logo}
               alt="Cornerstone Media logo"
               width={600}
               height={400}
-              className="h-28 w-auto"
+              className={`h-28 w-auto transition-all duration-500 ${scrolled ? '' : 'drop-shadow-[0_0_6px_rgba(255,255,255,0.6)] brightness-110'}`}
               fetchPriority="high"
               decoding="async"
             />
