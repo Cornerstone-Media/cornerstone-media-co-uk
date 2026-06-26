@@ -60,7 +60,7 @@ const Navbar = () => {
               width={600}
               height={400}
               className={`h-28 w-auto transition-all duration-500 ${scrolled ? '' : 'drop-shadow-[0_0_6px_rgba(255,255,255,0.6)] brightness-110'}`}
-              fetchpriority="high"
+              fetchPriority="high"
               decoding="async"
             />
           </Link>
