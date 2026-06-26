@@ -68,5 +68,28 @@
 </table>
 <!-- STOP COPYING HERE -->
 
+<script>
+  document.getElementById('downloadBtn').addEventListener('click', function () {
+    const startMarker = '<!-- COPY EVERYTHING BELOW THIS LINE INTO YOUR EMAIL SIGNATURE SETTINGS -->';
+    const endMarker   = '<!-- STOP COPYING HERE -->';
+    const rawHtml     = document.documentElement.outerHTML;
+    const startIdx    = rawHtml.indexOf(startMarker) + startMarker.length;
+    const endIdx      = rawHtml.indexOf(endMarker);
+    const signature   = rawHtml.slice(startIdx, endIdx).trim();
+
+    const blob = new Blob(
+      ['<!DOCTYPE html>\n<html>\n<head>\n<meta charset="UTF-8">\n<title>Cornerstone Media Signature</title>\n</head>\n<body>\n', signature, '\n</body>\n</html>'],
+      { type: 'text/html' }
+    );
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement('a');
+    a.href     = url;
+    a.download = 'cornerstone-media-signature.html';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  });
+</script>
 </body>
 </html>
