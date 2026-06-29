@@ -124,6 +124,9 @@ const App = () => (
           <Route path="/admin/seo-rankings" element={<SeoRankings />} />
           <Route path="/admin/citations" element={<Citations />} />
 
+          {/* Private Proposals (noindex, not linked from site) */}
+          <Route path="/proposals/social-media" element={<SocialMediaProposal />} />
+
           {/* Utility */}
           <Route path="/og-generator" element={<OGImageGenerator />} />
           <Route path="*" element={<NotFound />} />
