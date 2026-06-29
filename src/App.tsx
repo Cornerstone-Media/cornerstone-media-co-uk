@@ -24,6 +24,7 @@ import BlogPost from "./pages/BlogPost";
 import Auth from "./pages/Auth";
 import SeoRankings from "./pages/admin/SeoRankings";
 import Citations from "./pages/admin/Citations";
+import SocialMediaProposal from "./pages/proposals/SocialMediaProposal";
 
 // SEO Supporting Pages
 import LocalSEOBirmingham from "./pages/LocalSEOBirmingham";
@@ -122,6 +123,9 @@ const App = () => (
           <Route path="/auth" element={<Auth />} />
           <Route path="/admin/seo-rankings" element={<SeoRankings />} />
           <Route path="/admin/citations" element={<Citations />} />
+
+          {/* Private Proposals (noindex, not linked from site) */}
+          <Route path="/proposals/social-media" element={<SocialMediaProposal />} />
 
           {/* Utility */}
           <Route path="/og-generator" element={<OGImageGenerator />} />
