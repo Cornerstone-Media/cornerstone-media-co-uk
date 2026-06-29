@@ -95,6 +95,11 @@ export const ROUTES = {
     title: "Digital Marketing Birmingham | Cornerstone Media",
     description: "Cornerstone Media is Birmingham's leading digital marketing agency. Expert PPC, SEO, social media & web design. Book your free strategy call today.",
   },
+  "/proposals/social-media": {
+    title: "Social Media Management Proposal | Cornerstone Media",
+    description: "Private client proposal — social media management and Meta Ads package.",
+    robots: "noindex, nofollow",
+  },
   "/services": {
     title: "Digital Marketing Services Birmingham | Cornerstone Media",
     description: "Full-service digital marketing in Birmingham: PPC, SEO, social media, website design, content writing and website maintenance. Transparent pricing, local team.",
