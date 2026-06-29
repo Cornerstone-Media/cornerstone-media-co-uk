@@ -24,6 +24,7 @@ import BlogPost from "./pages/BlogPost";
 import Auth from "./pages/Auth";
 import SeoRankings from "./pages/admin/SeoRankings";
 import Citations from "./pages/admin/Citations";
+import SocialMediaProposal from "./pages/proposals/SocialMediaProposal";
 
 // SEO Supporting Pages
 import LocalSEOBirmingham from "./pages/LocalSEOBirmingham";
