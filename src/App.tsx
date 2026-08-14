@@ -22,6 +22,7 @@ import OGImageGenerator from "./pages/OGImageGenerator";
 import News from "./pages/News";
 import BlogPost from "./pages/BlogPost";
 import Auth from "./pages/Auth";
+import OAuthConsent from "./pages/OAuthConsent";
 import SeoRankings from "./pages/admin/SeoRankings";
 import Citations from "./pages/admin/Citations";
 import SocialMediaProposal from "./pages/proposals/SocialMediaProposal";
@@ -121,6 +122,7 @@ const App = () => (
 
           {/* Auth & Admin */}
           <Route path="/auth" element={<Auth />} />
+          <Route path="/.lovable/oauth/consent" element={<OAuthConsent />} />
           <Route path="/admin/seo-rankings" element={<SeoRankings />} />
           <Route path="/admin/citations" element={<Citations />} />
 

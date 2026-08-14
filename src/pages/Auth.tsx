@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -8,22 +8,32 @@ import { toast } from "sonner";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+const safeNext = (value: string | null) =>
+  value && value.startsWith("/") && !value.startsWith("//") ? value : null;
+
 const Auth = () => {
   const navigate = useNavigate();
+  const [params] = useSearchParams();
+  const next = safeNext(params.get("next"));
+  const destination = next ?? "/admin/seo-rankings";
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [mode, setMode] = useState<"signin" | "signup">("signin");
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    const go = () => {
+      if (next) window.location.href = next;
+      else navigate("/admin/seo-rankings", { replace: true });
+    };
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_e, session) => {
-      if (session) navigate("/admin/seo-rankings", { replace: true });
+      if (session) go();
     });
     supabase.auth.getSession().then(({ data }) => {
-      if (data.session) navigate("/admin/seo-rankings", { replace: true });
+      if (data.session) go();
     });
     return () => subscription.unsubscribe();
-  }, [navigate]);
+  }, [navigate, next]);
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -35,7 +45,7 @@ const Auth = () => {
       } else {
         const { error } = await supabase.auth.signUp({
           email, password,
-          options: { emailRedirectTo: `${window.location.origin}/admin/seo-rankings` },
+          options: { emailRedirectTo: `${window.location.origin}${destination}` },
         });
         if (error) throw error;
         toast.success("Account created. An admin must grant you access before you can use the dashboard.");
@@ -46,6 +56,7 @@ const Auth = () => {
       setLoading(false);
     }
   };
+
 
   return (
     <>
