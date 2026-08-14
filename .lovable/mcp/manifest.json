@@ -1,0 +1,297 @@
+{
+  "version": 1,
+  "sdk_version": "0.26.2",
+  "path": "/mcp",
+  "auth": {
+    "type": "oauth",
+    "issuer": "https://kxbnpnejeujlxujuxvtl.supabase.co/auth/v1",
+    "accepted_audiences": [
+      "authenticated"
+    ]
+  },
+  "mcp": {
+    "server": {
+      "name": "cornerstone-growth-engine",
+      "version": "0.1.0",
+      "title": "Cornerstone Growth Engine"
+    },
+    "tools": [
+      {
+        "name": "list_blog_posts",
+        "title": "List blog posts",
+        "description": "List Cornerstone Media news/blog posts, newest first, optionally filtered by status.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": [
+                "draft",
+                "published"
+              ],
+              "description": "Filter by post status."
+            },
+            "search": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Match text in the post title."
+            },
+            "limit": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 50,
+              "default": 10,
+              "description": "Maximum posts to return."
+            }
+          },
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_blog_post",
+        "title": "Get blog post",
+        "description": "Fetch a single blog post with its full content and SEO metadata by slug.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "slug": {
+              "type": "string",
+              "minLength": 1,
+              "description": "URL slug of the post, e.g. digital-marketing-birmingham."
+            }
+          },
+          "required": [
+            "slug"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "create_blog_post",
+        "title": "Create blog post",
+        "description": "Create a new news/blog post. Defaults to draft status so it is not published immediately.",
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Post title."
+            },
+            "slug": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^[a-z0-9-]+$",
+              "description": "URL slug."
+            },
+            "content": {
+              "type": "string",
+              "description": "Post body as HTML."
+            },
+            "excerpt": {
+              "type": "string",
+              "description": "Short summary shown in listings."
+            },
+            "meta_title": {
+              "type": "string",
+              "description": "SEO title tag."
+            },
+            "meta_description": {
+              "type": "string",
+              "description": "SEO meta description."
+            },
+            "status": {
+              "type": "string",
+              "enum": [
+                "draft",
+                "published"
+              ],
+              "default": "draft",
+              "description": "Publication status."
+            },
+            "publish_date": {
+              "type": "string",
+              "description": "ISO date/time to show as the publish date."
+            }
+          },
+          "required": [
+            "title",
+            "slug"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "update_blog_post",
+        "title": "Update blog post",
+        "description": "Update fields of an existing blog post identified by its slug, including publishing a draft.",
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "slug": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Slug of the post to update."
+            },
+            "title": {
+              "type": "string",
+              "minLength": 1
+            },
+            "new_slug": {
+              "type": "string",
+              "pattern": "^[a-z0-9-]+$",
+              "description": "Change the post slug."
+            },
+            "content": {
+              "type": "string",
+              "description": "Post body as HTML."
+            },
+            "excerpt": {
+              "type": "string"
+            },
+            "meta_title": {
+              "type": "string"
+            },
+            "meta_description": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string",
+              "enum": [
+                "draft",
+                "published"
+              ]
+            },
+            "publish_date": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "slug"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_contact_submissions",
+        "title": "List contact enquiries",
+        "description": "List recent website contact form enquiries (leads), newest first.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "limit": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 50,
+              "default": 10,
+              "description": "Maximum enquiries to return."
+            }
+          },
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_keyword_rankings",
+        "title": "List keyword rankings",
+        "description": "List tracked SEO keywords with their most recent Google Search Console position, clicks and impressions.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "keyword": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Filter to keywords containing this text."
+            },
+            "limit": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 50,
+              "default": 20,
+              "description": "Maximum keywords to return."
+            }
+          },
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "add_tracked_keyword",
+        "title": "Add tracked keyword",
+        "description": "Add a keyword to the SEO rank tracking dashboard.",
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "keyword": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Search term to track, e.g. 'ppc birmingham'."
+            },
+            "country": {
+              "type": "string",
+              "minLength": 2,
+              "maxLength": 3,
+              "default": "gbr",
+              "description": "Country code for the tracking market."
+            },
+            "notes": {
+              "type": "string",
+              "description": "Optional note about why this keyword matters."
+            }
+          },
+          "required": [
+            "keyword"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}
