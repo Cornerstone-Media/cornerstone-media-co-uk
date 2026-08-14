@@ -7,7 +7,7 @@ import SEOHead from "@/components/SEOHead";
 const PPCManagementBirmingham = () => (
   <div className="min-h-screen bg-background">
     <SEOHead
-      title="PPC Management Birmingham | Paid Search & Social | Cornerstone Media"
+      title="PPC Management Birmingham | Cornerstone Media"
       description="Professional PPC management in Birmingham covering Google Ads, Microsoft Ads, and paid social. Data-driven campaign management that delivers leads and sales for your business."
       canonical="https://cornerstone-media.co.uk/ppc-management-birmingham"
     />
