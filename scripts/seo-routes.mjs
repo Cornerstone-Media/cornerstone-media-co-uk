@@ -70,23 +70,51 @@ const ppcBodyHtml = `
   <h1>PPC Agency in Birmingham</h1>
   <p>Cornerstone Media is a specialist PPC agency in Birmingham helping local businesses generate high-quality leads and sales through expertly managed Google Ads campaigns. We combine data-driven bidding strategies with compelling ad creative to make sure every pound of your paid search Birmingham budget works harder.</p>
   <h2>Google Ads Management for Birmingham Businesses</h2>
-  <p>Google Ads is the single most powerful customer-acquisition channel for most Birmingham businesses. Done well, paid search puts your business at the top of Google for the exact moments your future customers are ready to buy.</p>
+  <p>Google Ads is the single most powerful customer-acquisition channel for most Birmingham businesses. Done well, paid search puts your business at the top of Google for the exact moments your future customers are ready to buy. Done badly, it quietly drains thousands of pounds a month into clicks that never convert. As a specialist PPC agency Birmingham businesses trust, our job is to make sure your account sits firmly in the first camp.</p>
+  <p>Every Google Ads account we manage is built around your commercial reality — average order value, profit margin, customer lifetime value and the geographies you can realistically serve. Those numbers shape bid strategy, keyword selection, ad copy and landing page choice. The result is a Google Ads agency Birmingham relationship that is measured in revenue, not impressions.</p>
+  <p>We are platform-agnostic and use Search, Performance Max, Shopping, Display, YouTube and Demand Gen wherever they earn their place. Most accounts start with high-intent Search and Shopping, then expand into remarketing and brand defence once the data justifies it.</p>
   <h2>Paid Search Strategy &amp; Landing Page Optimisation</h2>
-  <p>Clicks are only the first half of the equation. A great paid search Birmingham campaign sends the right person to the right page with the right message — and then makes it effortless for them to enquire or buy.</p>
+  <p>Clicks are only the first half of the equation. A great paid search Birmingham campaign sends the right person to the right page with the right message — and then makes it effortless for them to enquire or buy. We audit and rebuild landing pages alongside the ads, focusing on page speed, mobile usability, clear value propositions, social proof and frictionless contact forms.</p>
+  <p>Quality Score is the lever that quietly controls how much you pay per click. We optimise relentlessly across keyword-to-ad-to-landing-page relevance, expected click-through rate and landing page experience to push Quality Scores up and cost-per-clicks down — often by 30-50% within the first quarter.</p>
+  <h2>What Our PPC Birmingham Service Includes</h2>
+  <ul>
+    <li>Google Search Ads targeting high commercial-intent keywords Birmingham customers actually use.</li>
+    <li>Google Shopping campaigns for retailers and e-commerce brands across the West Midlands.</li>
+    <li>Display and remarketing campaigns that bring previous visitors back to convert.</li>
+    <li>Conversion tracking with GA4, Google Tag Manager and offline conversion imports.</li>
+    <li>Microsoft Advertising (Bing Ads) for cheaper clicks and strong B2B performance.</li>
+    <li>Negative keyword management, competitor auction insights and continuous ad copy testing.</li>
+  </ul>
+  <h2>Who We Work With — Birmingham &amp; West Midlands Businesses</h2>
+  <p>We run paid search campaigns for businesses based across Birmingham city centre, Solihull, Edgbaston, Digbeth, the Jewellery Quarter, Sutton Coldfield, Moseley, Harborne and the wider West Midlands. From single-location service businesses to multi-branch retailers, the common thread is owners who care about every pound they spend.</p>
+  <p>Our typical clients are SMEs spending £1,000 to £20,000 per month on Google Ads who want a hands-on, accountable partner rather than a faceless national agency. You will know who is managing your account, you can pick up the phone, and you can meet in person when it helps. We deliberately keep our roster small so every account gets real senior attention.</p>
+  <h2>Our PPC Process</h2>
+  <p>We start with a free PPC audit of your existing campaigns — or competitor data if you are new to paid search — and quote a flat monthly fee. Next comes the strategy and build: detailed campaign structure, keyword mapping, audience targeting, conversion tracking and bespoke ad copy written for the Birmingham market. We then launch with daily bid management through the first 30 days, before moving into an ongoing optimisation cycle that compounds return on ad spend month after month.</p>
   <h2>Pricing &amp; Transparency</h2>
-  <p>Our PPC management fees are simple: a flat monthly retainer based on the complexity of your account, with absolutely no markup on your ad spend. Most Birmingham PPC clients invest between £500 and £2,000 per month in management fees on top of ad spend.</p>
-  <h2>Areas We Serve</h2>
-  <p>We run paid search campaigns for businesses based across Birmingham city centre, Solihull, Edgbaston, Digbeth, the Jewellery Quarter, Sutton Coldfield, Moseley, Harborne and the wider West Midlands.</p>
+  <p>Our PPC management fees are simple: a flat monthly retainer based on the complexity of your account, with absolutely no markup on your ad spend. You see exactly what Google charges, exactly what we charge, and exactly what each lead or sale costs. There are no setup fees hidden in the small print and no long-term contracts.</p>
+  <p>Most Birmingham PPC clients invest between £500 and £2,000 per month in management fees on top of ad spend. We will tell you honestly during the free PPC audit whether your budget is realistic for the keywords and competition in your sector — and if it is not, we will tell you that too.</p>
+  <h2>Results for Birmingham Clients</h2>
+  <p>A Birmingham solicitors firm saw a 340% return on ad spend after we restructured their Google Ads account, cutting cost per lead by 52% while increasing qualified enquiries by 180% in three months. A West Midlands retailer grew from £12K to £45K monthly revenue at 5.2x ROAS through rebuilt Google Shopping campaigns. A Birmingham B2B firm cut cost per acquisition by 67% once offline conversion imports let smart bidding optimise on real sales rather than form fills.</p>
   <h2>Frequently Asked Questions</h2>
   <h3>How much does PPC management cost in Birmingham?</h3>
-  <p>Most Birmingham businesses invest between £500 and £2,000 per month in PPC management fees, on top of ad spend.</p>
+  <p>Most Birmingham businesses invest between £500 and £2,000 per month in PPC management fees, on top of ad spend. We work on flat monthly retainers with no markup on ad spend, no setup fees and no long-term contracts.</p>
   <h3>How long until PPC delivers results?</h3>
-  <p>Paid search can drive clicks and leads from day one. Most Birmingham clients reach a stable cost-per-acquisition within 60-90 days.</p>
+  <p>Paid search can drive clicks and leads from day one. Meaningful optimisation gains typically arrive within 2-4 weeks, and most Birmingham clients reach a stable, profitable cost-per-acquisition within 60-90 days.</p>
   <h3>Do you require long-term contracts?</h3>
-  <p>No. We work on rolling 30-day agreements.</p>
+  <p>No. We work on rolling 30-day agreements — we would rather earn your business every month than lock you in.</p>
+  <h3>Do you work with businesses outside Birmingham?</h3>
+  <p>Yes. Most of our clients are in Birmingham and the West Midlands, but we manage Google Ads accounts for businesses across the UK.</p>
+  <h3>Who owns the Google Ads account?</h3>
+  <p>You do, always. We work inside your own account so all data, history and assets stay with you if we ever part ways.</p>
+  <h3>Can you take over an existing PPC account?</h3>
+  <p>Absolutely. Most of our work starts as a rescue job — we audit the existing account, keep what performs and rebuild the rest.</p>
+  <h2>Book a Free PPC Audit</h2>
+  <p>Find out exactly where your paid search budget is leaking, and what a properly structured account could deliver.</p>
   <p><a href="/contact">Book a Free PPC Audit</a> &middot; <a href="tel:+447846798534">07846 798 534</a></p>
+  <p>Related services: <a href="/google-ads-management-birmingham">Google Ads management Birmingham</a>, <a href="/ppc-management-birmingham">PPC management Birmingham</a>, <a href="/remarketing-ads-birmingham">remarketing ads Birmingham</a> and <a href="/seo-birmingham">SEO Birmingham</a>.</p>
 </main>
 `;
+
 
 // Route map. Path is the URL path (with leading slash). Each entry:
 //   title, description, jsonLd?, bodyHtml?
