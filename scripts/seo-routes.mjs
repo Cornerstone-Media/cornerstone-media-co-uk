@@ -192,7 +192,7 @@ export const ROUTES = {
     description: "Specialist Google Ads management in Birmingham. Search, Shopping, Performance Max and YouTube campaigns built for ROI. No long contracts.",
   },
   "/ppc-management-birmingham": {
-    title: "PPC Management Birmingham | Paid Search Experts | Cornerstone Media",
+    title: "PPC Management Birmingham | Cornerstone Media",
     description: "Full-service PPC management in Birmingham across Google, Microsoft and paid social. Transparent monthly retainers, senior-led account management.",
   },
   "/remarketing-ads-birmingham": {
