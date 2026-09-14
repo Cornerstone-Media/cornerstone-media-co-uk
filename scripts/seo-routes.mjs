@@ -181,8 +181,8 @@ export const ROUTES = {
     bodyHtml: webDesignBodyHtml,
   },
   "/content-writing": {
-    title: "Content Writing Services Birmingham | Cornerstone Media",
-    description: "SEO content writing services for Birmingham businesses. Blog posts, service pages and landing pages written by UK copywriters that rank and convert.",
+    title: "Content Writing Services Birmingham | Copywriting Agency",
+    description: "Content writing services and copywriting agency in Birmingham. Blog posts, website copy, landing pages and content plans written in UK English by our own writers.",
   },
   "/website-maintenance": {
     title: "Website Maintenance Birmingham | Cornerstone Media",
