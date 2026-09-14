@@ -4,6 +4,13 @@
 
 export const SITE_ORIGIN = "https://cornerstone-media.co.uk";
 
+import { homeBodyHtml } from "./body-html/home.mjs";
+import { seoBodyHtml } from "./body-html/seo-birmingham.mjs";
+import { socialBodyHtml } from "./body-html/social-media-marketing-birmingham.mjs";
+import { webDesignBodyHtml } from "./body-html/website-design-birmingham.mjs";
+import { servicesBodyHtml } from "./body-html/services.mjs";
+import { aboutBodyHtml } from "./body-html/about.mjs";
+
 const ppcServiceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -122,6 +129,7 @@ export const ROUTES = {
   "/": {
     title: "Digital Marketing Birmingham | Cornerstone Media",
     description: "Cornerstone Media is Birmingham's leading digital marketing agency. Expert PPC, SEO, social media & web design. Book your free strategy call today.",
+    bodyHtml: homeBodyHtml,
   },
   "/proposals/social-media": {
     title: "Social Media Management Proposal | Cornerstone Media",
@@ -131,10 +139,12 @@ export const ROUTES = {
   "/services": {
     title: "Digital Marketing Services Birmingham | Cornerstone Media",
     description: "Full-service digital marketing in Birmingham: PPC, SEO, social media, website design, content writing and website maintenance. Transparent pricing, local team.",
+    bodyHtml: servicesBodyHtml,
   },
   "/about": {
     title: "About Cornerstone Media | Birmingham Marketing Agency",
     description: "Meet Cornerstone Media — a Birmingham-based digital marketing agency built on honest advice, measurable results and senior-led campaign management.",
+    bodyHtml: aboutBodyHtml,
   },
   "/meet-the-team": {
     title: "Meet the Team | Cornerstone Media Birmingham",
@@ -158,14 +168,17 @@ export const ROUTES = {
   "/seo-birmingham": {
     title: "SEO Agency Birmingham | Cornerstone Media",
     description: "Birmingham SEO agency helping local businesses rank higher on Google. Technical SEO, local SEO and content strategy. Book a free SEO audit today.",
+    bodyHtml: seoBodyHtml,
   },
   "/social-media-marketing-birmingham": {
     title: "Social Media Marketing Birmingham | Cornerstone Media",
     description: "Birmingham social media marketing agency running Facebook, Instagram and LinkedIn campaigns that drive real engagement and leads.",
+    bodyHtml: socialBodyHtml,
   },
   "/website-design-birmingham": {
     title: "Website Design Birmingham | Web Designers | Cornerstone Media",
     description: "Birmingham web design agency building fast, conversion-focused websites. WordPress, e-commerce and small business sites. Free design consultation.",
+    bodyHtml: webDesignBodyHtml,
   },
   "/content-writing": {
     title: "Content Writing Services Birmingham | Cornerstone Media",
