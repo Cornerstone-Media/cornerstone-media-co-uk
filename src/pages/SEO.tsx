@@ -158,7 +158,7 @@ const SEO = () => (
         ]}
         relatedServices={[
           { name: "PPC Birmingham", path: "/ppc-birmingham", description: "Combine organic search with paid advertising for maximum search visibility. Our PPC Birmingham campaigns deliver immediate traffic while SEO builds long-term presence." },
-          { name: "Content Writing Birmingham", path: "/content-writing", description: "High-quality, SEO-optimised content creation that supports your organic search strategy and establishes your brand as an industry authority." },
+          { name: "Content Writing Birmingham", path: "/content-writing", description: "Need the words rather than the wider search programme? Our copywriting agency writes blog posts, website copy and landing pages for Birmingham businesses." },
           { name: "Website Design Birmingham", path: "/website-design-birmingham", description: "A well-designed website is the foundation of effective SEO. Our website design Birmingham team builds fast, accessible sites optimised for search engines." },
           { name: "Local SEO Birmingham", path: "/local-seo-birmingham", description: "Dominate Birmingham's local search results and Google Maps with our specialist local SEO services." },
           { name: "Technical SEO Birmingham", path: "/technical-seo-birmingham", description: "Fix crawlability, indexation, and performance issues that prevent your website from ranking." },

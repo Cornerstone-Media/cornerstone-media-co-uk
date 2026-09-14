@@ -23,8 +23,8 @@ const services = [
   },
   {
     icon: PenLine,
-    title: "Content Writing",
-    description: "Engage your Birmingham audience with SEO-optimised blog posts, website copy, and content strategy that drives organic traffic and conversions.",
+    title: "Content Writing Birmingham",
+    description: "Content writing services and copywriting for Birmingham businesses — blog posts, website copy and landing pages written in clear UK English.",
     path: "/content-writing",
   },
   {
