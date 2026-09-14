@@ -98,13 +98,19 @@ const BlogPost = () => {
     );
   }
 
-  const articleSchema = {
+  const postUrl = `https://cornerstone-media.co.uk/news/${post.slug}`;
+
+  const blogPostingSchema = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: post.title,
+    "@type": "BlogPosting",
+    headline: post.meta_title || post.title,
+    name: post.title,
     description: post.meta_description || post.excerpt || "",
-    url: `https://cornerstone-media.co.uk/news/${post.slug}`,
+    url: postUrl,
+    mainEntityOfPage: { "@type": "WebPage", "@id": postUrl },
     datePublished: post.publish_date || post.created_at,
+    dateModified: post.updated_at || post.publish_date || post.created_at,
+    inLanguage: "en-GB",
     author: {
       "@type": "Person",
       name: post.author_name,
@@ -113,8 +119,22 @@ const BlogPost = () => {
       "@type": "Organization",
       name: "Cornerstone Media",
       url: "https://cornerstone-media.co.uk",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://cornerstone-media.co.uk/og-logo.png",
+      },
     },
     ...(post.featured_image_url && { image: post.featured_image_url }),
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://cornerstone-media.co.uk/" },
+      { "@type": "ListItem", position: 2, name: "News", item: "https://cornerstone-media.co.uk/news" },
+      { "@type": "ListItem", position: 3, name: post.title, item: postUrl },
+    ],
   };
 
   return (
