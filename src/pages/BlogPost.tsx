@@ -18,6 +18,7 @@ interface Post {
   author_name: string;
   publish_date: string | null;
   created_at: string;
+  updated_at: string | null;
   meta_title: string | null;
   meta_description: string | null;
 }
@@ -147,7 +148,7 @@ const BlogPost = () => {
           "Read the latest digital marketing insights from Cornerstone Media Birmingham."
         }
         canonical={`https://cornerstone-media.co.uk/news/${post.slug}`}
-        schema={articleSchema}
+        schema={[blogPostingSchema, breadcrumbSchema]}
         ogType="article"
         ogImage={post.featured_image_url || undefined}
       />
