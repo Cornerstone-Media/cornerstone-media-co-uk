@@ -9,6 +9,7 @@ import { promises as fs } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { ROUTES, SITE_ORIGIN, REDIRECTS } from "./seo-routes.mjs";
+import { loadEnv, fetchPublishedPosts } from "./blog-posts.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST = path.resolve(__dirname, "..", "dist");
@@ -150,6 +151,76 @@ async function main() {
   }
   console.log(`[prerender] Wrote ${redirected} redirect stubs.`);
 
+  // Blog posts: one static file per published post.
+  const env = await loadEnv();
+  const posts = await fetchPublishedPosts(
+    env,
+    "slug,title,content,excerpt,author_name,publish_date,created_at,updated_at,meta_title,meta_description,featured_image_url",
+    "prerender",
+  );
+  let blogWritten = 0;
+  for (const post of posts) {
+    try {
+      const postUrl = `${SITE_ORIGIN}/news/${post.slug}`;
+      const blogPostingSchema = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        headline: post.meta_title || post.title,
+        name: post.title,
+        description: post.meta_description || post.excerpt || "",
+        url: postUrl,
+        mainEntityOfPage: { "@type": "WebPage", "@id": postUrl },
+        datePublished: post.publish_date || post.created_at,
+        dateModified: post.updated_at || post.publish_date || post.created_at,
+        inLanguage: "en-GB",
+        author: { "@type": "Person", name: post.author_name },
+        publisher: {
+          "@type": "Organization",
+          name: "Cornerstone Media",
+          url: "https://cornerstone-media.co.uk",
+          logo: { "@type": "ImageObject", url: "https://cornerstone-media.co.uk/og-logo.png" },
+        },
+        ...(post.featured_image_url && { image: post.featured_image_url }),
+      };
+      const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_ORIGIN}/` },
+          { "@type": "ListItem", position: 2, name: "News", item: `${SITE_ORIGIN}/news` },
+          { "@type": "ListItem", position: 3, name: post.title, item: postUrl },
+        ],
+      };
+      let headBlock = buildHead({
+        title: post.meta_title || `${post.title} | Cornerstone Media`,
+        description:
+          post.meta_description ||
+          post.excerpt ||
+          "Read the latest digital marketing insights from Cornerstone Media Birmingham.",
+        canonical: postUrl,
+        jsonLd: [blogPostingSchema, breadcrumbSchema],
+      }).replace(
+        '<meta property="og:type" content="website" />',
+        '<meta property="og:type" content="article" />',
+      );
+      const bodyHtml = `<article><h1>${escapeHtml(post.title)}</h1>${post.content || ""}</article>`;
+      let html = injectIntoHead(cleaned, headBlock);
+      html = injectIntoBody(html, bodyHtml);
+      const outDir = path.join(DIST, "news", post.slug);
+      await fs.mkdir(outDir, { recursive: true });
+      await fs.writeFile(path.join(outDir, "index.html"), html, "utf8");
+      blogWritten++;
+      console.log(`[prerender] /news/${post.slug}`);
+    } catch (err) {
+      console.warn(`[prerender] Skipped /news/${post.slug}:`, err?.message || err);
+    }
+  }
+  console.log(`[prerender] Wrote ${blogWritten} blog post files.`);
+
+  // Fallback for posts published after the last deploy (served via vercel.json rewrite
+  // only when no static file exists). No title/canonical so it never claims the homepage.
+  await fs.writeFile(path.join(DIST, "news-fallback.html"), cleaned, "utf8");
+  console.log("[prerender] Wrote news-fallback.html");
 }
 
 main().catch((err) => {
