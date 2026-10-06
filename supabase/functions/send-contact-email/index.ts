@@ -69,7 +69,7 @@ Deno.serve(async (req) => {
         console.warn("Rejected: missing reCAPTCHA token");
         return jsonResponse({ error: "Spam check failed. Please refresh the page and try again, or call us on 07846 798 534." }, 400);
       }
-      let data: any;
+      let data: any = null;
       try {
         const res = await fetch("https://www.google.com/recaptcha/api/siteverify", {
           method: "POST",
@@ -78,22 +78,21 @@ Deno.serve(async (req) => {
         });
         data = await res.json();
       } catch (e) {
-        console.warn("Rejected: reCAPTCHA verification request failed", e);
-        return jsonResponse({ error: "Spam check failed. Please try again shortly, or call us on 07846 798 534." }, 400);
+        console.warn("Unverified: reCAPTCHA verification request failed — continuing without auto-reply", e);
       }
-      if (!data?.success) {
-        console.warn("Rejected: reCAPTCHA success=false", data?.["error-codes"]);
-        return jsonResponse({ error: "Spam check failed. Please refresh the page and try again, or call us on 07846 798 534." }, 400);
+      if (data && !data.success) {
+        console.warn("Unverified: reCAPTCHA success=false — continuing without auto-reply", data["error-codes"], "hostname:", data.hostname);
+      } else if (data && data.success) {
+        if (typeof data.score !== "number" || data.score < 0.5) {
+          console.warn("Rejected: reCAPTCHA score too low", data.score);
+          return jsonResponse({ error: "Spam check failed. Please try again, or call us on 07846 798 534." }, 400);
+        }
+        if (data.action !== "contact_submit") {
+          console.warn("Rejected: reCAPTCHA action mismatch", data.action);
+          return jsonResponse({ error: "Spam check failed. Please refresh the page and try again." }, 400);
+        }
+        recaptchaPassed = true;
       }
-      if (typeof data.score !== "number" || data.score < 0.5) {
-        console.warn("Rejected: reCAPTCHA score too low", data.score);
-        return jsonResponse({ error: "Spam check failed. Please try again, or call us on 07846 798 534." }, 400);
-      }
-      if (data.action !== "contact_submit") {
-        console.warn("Rejected: reCAPTCHA action mismatch", data.action);
-        return jsonResponse({ error: "Spam check failed. Please refresh the page and try again." }, 400);
-      }
-      recaptchaPassed = true;
     } else {
       console.warn("RECAPTCHA_SECRET_KEY not configured — not blocking, auto-reply will be skipped");
     }
