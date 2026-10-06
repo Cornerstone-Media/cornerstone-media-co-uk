@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 
-const RECAPTCHA_SITE_KEY = "6LePhXwsAAAAANQ4EUTzL2mYWpLI4B6jSX2vhrUM";
+const RECAPTCHA_SITE_KEY = "6LcmhOItAAAAAPCE2B-xAegnq9zti2aHJ5kePIQf";
 
 const Contact = () => {
   const navigate = useNavigate();
