@@ -19,56 +19,112 @@ Deno.serve(async (req) => {
   }
 
   try {
-    const { name, email, phone, company, message, recaptchaToken } = await req.json();
+    const body = await req.json().catch(() => ({}));
+    const str = (v: unknown) => (v === undefined || v === null ? "" : String(v)).trim();
+    const name = str(body.name);
+    const email = str(body.email).toLowerCase();
+    const phone = str(body.phone);
+    const company = str(body.company);
+    const message = str(body.message);
+    const recaptchaToken = str(body.recaptchaToken);
+    const website = str(body.website);
 
-    // Validate required fields
-    if (!name || !email || !message) {
-      console.warn("Validation failed: missing required fields");
-      return jsonResponse({ error: "Name, email, and message are required." }, 400);
+    // Honeypot — silently pretend success
+    if (website) {
+      console.warn("Rejected: honeypot field filled");
+      return jsonResponse({ success: true, emailSent: true });
     }
 
-    // Basic email format check
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      console.warn("Validation failed: invalid email format", email);
+    // Content validation
+    if (name.length < 2 || name.length > 100) {
+      console.warn("Rejected: invalid name length", name.length);
+      return jsonResponse({ error: "Please enter your name (2–100 characters)." }, 400);
+    }
+    if (!email || email.length > 255 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      console.warn("Rejected: invalid email");
       return jsonResponse({ error: "Please provide a valid email address." }, 400);
     }
-
-    // Verify reCAPTCHA v3 token (non-blocking — log but don't reject on failure)
-    const recaptchaSecret = Deno.env.get("RECAPTCHA_SECRET_KEY");
-    if (recaptchaToken && recaptchaSecret) {
-      try {
-        const recaptchaRes = await fetch("https://www.google.com/recaptcha/api/siteverify", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: `secret=${recaptchaSecret}&response=${recaptchaToken}`,
-        });
-        const recaptchaData = await recaptchaRes.json();
-        console.log("reCAPTCHA result:", JSON.stringify(recaptchaData));
-
-        if (!recaptchaData.success || (recaptchaData.score !== undefined && recaptchaData.score < 0.3)) {
-          console.warn("reCAPTCHA score low or failed:", recaptchaData.score, recaptchaData["error-codes"]);
-          // Only block very suspicious submissions (score < 0.3)
-          if (recaptchaData.success === false) {
-            console.warn("reCAPTCHA token invalid — proceeding anyway to avoid blocking legitimate users");
-          }
-        }
-      } catch (recaptchaErr) {
-        console.error("reCAPTCHA verification error (non-blocking):", recaptchaErr);
-      }
-    } else {
-      console.log("reCAPTCHA skipped: token or secret missing");
+    if (phone.length > 20) {
+      console.warn("Rejected: phone too long");
+      return jsonResponse({ error: "Phone number must be 20 characters or fewer." }, 400);
+    }
+    if (company.length > 100) {
+      console.warn("Rejected: company too long");
+      return jsonResponse({ error: "Company name must be 100 characters or fewer." }, 400);
+    }
+    if (message.length < 10 || message.length > 1000) {
+      console.warn("Rejected: invalid message length", message.length);
+      return jsonResponse({ error: "Please write a message between 10 and 1,000 characters." }, 400);
+    }
+    if ((message.match(/\p{L}/gu) || []).length < 3) {
+      console.warn("Rejected: message lacks letters");
+      return jsonResponse({ error: "Please tell us a little about your project in words." }, 400);
     }
 
-    // Store in database
+    // reCAPTCHA v3 — enforced when secret configured
+    const recaptchaSecret = Deno.env.get("RECAPTCHA_SECRET_KEY");
+    let recaptchaPassed = false;
+    if (recaptchaSecret) {
+      if (!recaptchaToken) {
+        console.warn("Rejected: missing reCAPTCHA token");
+        return jsonResponse({ error: "Spam check failed. Please refresh the page and try again, or call us on 07846 798 534." }, 400);
+      }
+      let data: any;
+      try {
+        const res = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: `secret=${encodeURIComponent(recaptchaSecret)}&response=${encodeURIComponent(recaptchaToken)}`,
+        });
+        data = await res.json();
+      } catch (e) {
+        console.warn("Rejected: reCAPTCHA verification request failed", e);
+        return jsonResponse({ error: "Spam check failed. Please try again shortly, or call us on 07846 798 534." }, 400);
+      }
+      if (!data?.success) {
+        console.warn("Rejected: reCAPTCHA success=false", data?.["error-codes"]);
+        return jsonResponse({ error: "Spam check failed. Please refresh the page and try again, or call us on 07846 798 534." }, 400);
+      }
+      if (typeof data.score !== "number" || data.score < 0.5) {
+        console.warn("Rejected: reCAPTCHA score too low", data.score);
+        return jsonResponse({ error: "Spam check failed. Please try again, or call us on 07846 798 534." }, 400);
+      }
+      if (data.action !== "contact_submit") {
+        console.warn("Rejected: reCAPTCHA action mismatch", data.action);
+        return jsonResponse({ error: "Spam check failed. Please refresh the page and try again." }, 400);
+      }
+      recaptchaPassed = true;
+    } else {
+      console.warn("RECAPTCHA_SECRET_KEY not configured — not blocking, auto-reply will be skipped");
+    }
+
     const supabaseUrl = Deno.env.get("SUPABASE_URL");
     const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
-
     if (!supabaseUrl || !supabaseKey) {
       console.error("Missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY");
       return jsonResponse({ error: "Server configuration error. Please try again later." }, 500);
     }
-
     const supabase = createClient(supabaseUrl, supabaseKey);
+
+    // Rate limiting
+    const ip = (req.headers.get("x-forwarded-for") || "").split(",")[0].trim() || "unknown";
+    const hashBuf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(`${ip}|${supabaseKey.slice(0, 16)}`));
+    const ipHash = Array.from(new Uint8Array(hashBuf)).map((b) => b.toString(16).padStart(2, "0")).join("");
+    const since = new Date(Date.now() - 60 * 60 * 1000).toISOString();
+    const [ipRes, emailRes] = await Promise.all([
+      supabase.from("contact_rate_limits").select("id", { count: "exact", head: true }).eq("ip_hash", ipHash).gte("created_at", since),
+      supabase.from("contact_rate_limits").select("id", { count: "exact", head: true }).eq("email", email).gte("created_at", since),
+    ]);
+    if ((ipRes.count ?? 0) >= 3) {
+      console.warn("Rejected: IP rate limit exceeded");
+      return jsonResponse({ error: "Too many submissions. Please try again in an hour, or call us on 07846 798 534." }, 429);
+    }
+    if ((emailRes.count ?? 0) >= 2) {
+      console.warn("Rejected: email rate limit exceeded");
+      return jsonResponse({ error: "We've already received messages from this email address recently. Please try again in an hour, or call us on 07846 798 534." }, 429);
+    }
+    const { error: rlError } = await supabase.from("contact_rate_limits").insert({ ip_hash: ipHash, email });
+    if (rlError) console.error("Rate limit insert error:", JSON.stringify(rlError));
 
     const { error: dbError } = await supabase.from("contact_submissions").insert({
       name,
@@ -80,7 +136,6 @@ Deno.serve(async (req) => {
 
     if (dbError) {
       console.error("Database insert error:", JSON.stringify(dbError));
-      // Continue — still try to send email even if DB fails
     } else {
       console.log("Contact submission saved to database");
     }
