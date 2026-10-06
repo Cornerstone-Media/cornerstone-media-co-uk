@@ -222,26 +222,30 @@ Deno.serve(async (req) => {
       </div>
     `;
 
-    console.log("Sending auto-reply to:", email);
-    const autoReplyRes = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${RESEND_API_KEY}`,
-      },
-      body: JSON.stringify({
-        from: "Cornerstone Media <noreply@cornerstone-media.co.uk>",
-        to: [email],
-        subject: "We've received your message — Cornerstone Media",
-        html: confirmationHtml,
-      }),
-    });
-
-    const autoReplyBody = await autoReplyRes.text();
-    if (!autoReplyRes.ok) {
-      console.error("Auto-reply error:", autoReplyRes.status, autoReplyBody);
+    if (!recaptchaPassed) {
+      console.warn("Auto-reply skipped: submission did not pass reCAPTCHA verification");
     } else {
-      console.log("Auto-reply sent:", autoReplyBody);
+      console.log("Sending auto-reply to submitter");
+      const autoReplyRes = await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${RESEND_API_KEY}`,
+        },
+        body: JSON.stringify({
+          from: "Cornerstone Media <noreply@cornerstone-media.co.uk>",
+          to: [email],
+          subject: "We've received your message — Cornerstone Media",
+          html: confirmationHtml,
+        }),
+      });
+
+      const autoReplyBody = await autoReplyRes.text();
+      if (!autoReplyRes.ok) {
+        console.error("Auto-reply error:", autoReplyRes.status, autoReplyBody);
+      } else {
+        console.log("Auto-reply sent:", autoReplyBody);
+      }
     }
 
     return jsonResponse({ success: true, emailSent: resendRes.ok });
