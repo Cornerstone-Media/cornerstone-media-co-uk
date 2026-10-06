@@ -217,6 +217,27 @@ export type Database = {
         }
         Relationships: []
       }
+      contact_rate_limits: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          ip_hash: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          ip_hash: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          ip_hash?: string
+        }
+        Relationships: []
+      }
       contact_submissions: {
         Row: {
           company: string | null
