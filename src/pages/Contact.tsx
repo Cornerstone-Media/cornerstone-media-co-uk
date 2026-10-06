@@ -22,6 +22,7 @@ const Contact = () => {
     phone: "",
     company: "",
     message: "",
+    website: "",
   });
   const [submitting, setSubmitting] = useState(false);
 
@@ -53,11 +54,18 @@ const Contact = () => {
     e.preventDefault();
     setSubmitting(true);
     try {
-      const recaptchaToken = await getRecaptchaToken();
+      const recaptchaToken = await getRecaptchaToken().catch(() => "");
       const { data, error } = await supabase.functions.invoke("send-contact-email", {
         body: { ...formData, recaptchaToken },
       });
-      if (error) throw error;
+      if (error) {
+        let serverMsg: string | undefined;
+        try {
+          const ctx = (error as any).context;
+          if (ctx && typeof ctx.json === "function") serverMsg = (await ctx.json())?.error;
+        } catch { /* ignore */ }
+        throw new Error(serverMsg || error.message);
+      }
       if (data?.error) throw new Error(data.error);
       navigate("/thank-you");
     } catch (err: any) {
@@ -158,7 +166,12 @@ const Contact = () => {
 
                 <div className="space-y-2">
                   <label htmlFor="contact-message" className="font-heading text-sm font-medium text-foreground">Message *</label>
-                  <Textarea id="contact-message" name="message" value={formData.message} onChange={handleChange} required maxLength={1000} rows={5} placeholder="Tell us about your project and goals..." className="border-border bg-muted/30" />
+                  <Textarea id="contact-message" name="message" value={formData.message} onChange={handleChange} required minLength={10} maxLength={1000} rows={5} placeholder="Tell us about your project and goals..." className="border-border bg-muted/30" />
+                </div>
+
+                <div aria-hidden="true" style={{ position: "absolute", left: "-10000px", top: "auto", width: "1px", height: "1px", overflow: "hidden" }}>
+                  <label htmlFor="contact-website">Website</label>
+                  <input id="contact-website" name="website" type="text" value={formData.website} onChange={handleChange} tabIndex={-1} autoComplete="off" />
                 </div>
 
                 <Button type="submit" disabled={submitting} className="gradient-btn w-full border-0 text-base">
