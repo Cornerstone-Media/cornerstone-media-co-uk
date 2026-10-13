@@ -221,6 +221,15 @@ async function main() {
   // only when no static file exists). No title/canonical so it never claims the homepage.
   await fs.writeFile(path.join(DIST, "news-fallback.html"), cleaned, "utf8");
   console.log("[prerender] Wrote news-fallback.html");
+
+  // App shell for SPA-only routes (/auth, /admin/*, /og-generator,
+  // /.lovable/oauth/consent): cleaned base HTML, noindex, no title/canonical.
+  const appShell = injectIntoHead(
+    cleaned,
+    '<meta name="robots" content="noindex, nofollow" />',
+  );
+  await fs.writeFile(path.join(DIST, "app-shell.html"), appShell, "utf8");
+  console.log("[prerender] Wrote app-shell.html");
 }
 
 main().catch((err) => {
