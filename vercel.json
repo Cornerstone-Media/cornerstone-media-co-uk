@@ -1,5 +1,12 @@
 {
   "rewrites": [
-    { "source": "/news/:slug", "destination": "/news-fallback.html" }
+    { "source": "/news/:slug", "destination": "/news-fallback.html" },
+    { "source": "/auth", "destination": "/app-shell.html" },
+    { "source": "/admin/:path*", "destination": "/app-shell.html" },
+    { "source": "/og-generator", "destination": "/app-shell.html" },
+    { "source": "/.lovable/oauth/consent", "destination": "/app-shell.html" }
+  ],
+  "redirects": [
+    { "source": "/blog", "destination": "/news", "permanent": true }
   ]
 }
